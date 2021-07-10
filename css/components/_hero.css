@@ -1,0 +1,36 @@
+.hero {
+  padding-top: 170px;
+  /* height: 100vh; */
+  min-height: 800px;
+  background-image: url(/img/hero_main.jpg);
+  background-position: center;
+  background-size: cover;
+  background-position: no-repeat;
+  color: var(--color-white);
+}
+
+.hero-title {
+  max-width: 37%;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 98px;
+}
+
+.hero-descr {
+  margin-bottom: 92px;
+  max-width: 37%;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 30px;
+  color: #FFFFFF;
+}
+
+.hero-btn {
+  padding: 21px 33px;
+  background-color: var(--color-amethyst);
+}
+
+
+
