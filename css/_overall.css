@@ -1,19 +1,15 @@
 /* Общие стили для элементов сайта */
 .container {
-  max-width: 1663px;
+  max-width: 1660px;
   margin: 0 auto;
   padding: 0 30px;
 }
 
-.site-container {
+.site__container {
   overflow: hidden;
 }
 
-.flex {
-  display: flex;
-}
-
-.btn-reset {
+.btn_reset {
   padding: 0;
   border: none;
   background-color: transparent;
@@ -28,7 +24,7 @@
   color: var(--color-white);
 }
 
-.descr {
+.description {
   line-height: 32px;
   color:var(--night-rider);
 }
@@ -41,7 +37,7 @@ input[type="search"]::-webkit-search-results-decoration {
   display: none;
 }
 
-.section-title {
+.section__title {
   font-size: 48px;
   font-weight: 400;
   line-height: 1;

@@ -7,32 +7,34 @@
   background-repeat: no-repeat;
 }
 
-.gallety-container {
+.gallety__container {
+  display: flex;
+  padding-top: 89px;
+  padding-bottom: 70px;
   justify-content: space-between;
   height: 100%;
-  padding-top: 88px;
-  padding-bottom: 80px;
 }
 
 .gallery-left {
-  max-width: 400px;
-  margin-right: 50px;
-  height: 100%;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-right: 50px;
+  max-width: 400px;
+  height: 100%;
 }
 
 .gallery-left__top {
-  margin-bottom: 550px;
-  margin-left: 2px;
+  margin-bottom: 554px;
+  margin-left: 1px;
 }
 
-.gallery-title {
+.gallery__title {
   margin-bottom: 24px;
   color: var(--color-white);
 }
 
-.gallery-label {
+.gallery__label {
   display: block;
   margin-bottom: 10px;
   font-weight: 600;
@@ -46,6 +48,7 @@
   z-index: 2;
   position: relative;
   padding: 0;
+  min-height: 0;
   border: 1px solid var(--color-white);
   border-radius: 6px;
   background: transparent;
@@ -106,6 +109,11 @@
   background: transparent;
 }
 
+.choices__list--single {
+  padding: 2px 2px 4px 12px;
+}
+
+
 .choices__list--dropdown {
   /* z-index: 1; */
   z-index: 5;
@@ -161,13 +169,13 @@
 
 
 
-.gallery-left__descr {
+.gallery-left__description {
   /* width: 60%; */
   font-weight: 600;
   color: var(--color-white);
 }
 
-.gallery-left__descr--wisteria {
+.gallery-left__description--wisteria {
   color: var(--color-wisteria);
 }
 

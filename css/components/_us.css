@@ -1,15 +1,15 @@
-.us {
+.us__container {
   padding-top: 89px;
-  padding-bottom: 70px;
+  padding-bottom: 69px;
 
 }
 
-.us-title {
+.us__title {
   margin-bottom: 25px;
-  margin-left: 2px;
+  margin-left: 1px;
 }
 
-.us-descr {
+.us__description {
   margin-left: 2px;
-  max-width: 67%;
+  max-width: 1074px;
 }

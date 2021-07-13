@@ -2,13 +2,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  Выпадающие списки в header-bottom
 
-  let link = document.querySelectorAll('.bottom-menu__link');
+  let link = document.querySelectorAll('.header-bottom-nav__link');
 
   for (i = 0; i < link.length; i++) {
     let subMenu = link[i].nextElementSibling;
     let thisLink = link[i];
-    console.log(subMenu);
-    console.log(thisLink);
+    // console.log(subMenu);
+    // console.log(thisLink);
 
     link[i].addEventListener('click', function () {
 
@@ -38,15 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Скроллы в выпадающих списках в header-bottom
 
-  document.querySelectorAll('.bottom-menu__dropdown').forEach(el => {
+  document.querySelectorAll('.dropdown__list').forEach(el => {
     new SimpleBar(el)
   });
 
 
   // Селект в Gallery
-
   const selectGallery = () => {
-    const item = document.querySelector('.gallery-select');
+    const item = document.querySelector('.gallery__select');
     const choices = new Choices(item, {
       searchEnabled: false,
       itemSelectText: '',
