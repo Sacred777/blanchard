@@ -9,17 +9,26 @@
   color: var(--color-white);
 }
 
+.hero-container {
+  margin-left: 122px;
+  padding-top: 69px;
+
+}
+
 .hero-title {
+  margin-bottom: 19px;
   max-width: 37%;
   font-family: Open Sans;
   font-style: normal;
   font-weight: 700;
   font-size: 72px;
-  line-height: 98px;
+  line-height: 84px;
 }
 
 .hero-descr {
   margin-bottom: 92px;
+  /* margin-left: 2px; */
+  /* padding-left: 5px; */
   max-width: 37%;
   font-weight: 700;
   font-size: 18px;
@@ -28,7 +37,8 @@
 }
 
 .hero-btn {
-  padding: 21px 33px;
+  /* margin-left: 2px; */
+  padding: 23px 34px;
   background-color: var(--color-amethyst);
 }
 

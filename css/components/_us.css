@@ -1,13 +1,15 @@
 .us {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 89px;
+  padding-bottom: 70px;
 
 }
 
 .us-title {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  margin-left: 2px;
 }
 
 .us-descr {
+  margin-left: 2px;
   max-width: 67%;
 }
