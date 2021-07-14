@@ -2,6 +2,10 @@
 @import "/libs/simplebar.css";
 @import "/libs/choices.min.css";
 @import "/libs/swiper-bundle.min.css";
+@import url("//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css");
+@import url("/resources/demos/style.css") ;
+
+
 
 
 
