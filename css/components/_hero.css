@@ -12,7 +12,6 @@
 .hero__container {
   margin-left: 122px;
   padding-top: 69px;
-
 }
 
 .hero__title {
@@ -25,7 +24,7 @@
   line-height: 84px;
 }
 
-.hero__description {
+.hero__descr {
   margin-bottom: 92px;
   /* margin-left: 2px; */
   /* padding-left: 5px; */

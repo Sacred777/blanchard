@@ -1,12 +1,11 @@
-/* Общие стили для элементов сайта */
+.site__container {
+  overflow: hidden;
+}
+
 .container {
   max-width: 1660px;
   margin: 0 auto;
   padding: 0 30px;
-}
-
-.site__container {
-  overflow: hidden;
 }
 
 .btn_reset {
@@ -24,7 +23,7 @@
   color: var(--color-white);
 }
 
-.description {
+.descr {
   line-height: 32px;
   color:var(--night-rider);
 }

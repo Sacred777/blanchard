@@ -25,12 +25,12 @@
 
 .nav__list {
   display: flex;
-  /* margin-left: -1px; */
+  margin-left: 6px;
   padding-bottom: 2px;
 }
 
-.nav__item {
-  margin-right: 62.4px;
+.nav__item:not(:last-child) {
+  margin-right: 50.4px;
 }
 
 .nav__item:last-child {
@@ -38,18 +38,38 @@
 }
 
 .nav__link {
+  padding: 3px 6px 4px 6px;
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
   color: var(--color-white);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.nav__link:focus {
+  outline: none;
+  background-color: var(--color-studio);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav__link:hover {
+  color: var(--color-wisteria);
+  transition: color 0.3s ease-in-out;
+}
+
+.nav__link:active {
+  background-color: transparent;
+  color: var(--color-studio);
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .login {
   position: relative;
-  margin-right: -2px;
-  padding-left: 20px;
+  margin-right: -8px;
+  padding: 5px 6px 5px 28px;
+  /* padding-left: 20px; */
   /* padding-right: 2px; */
-  padding-bottom: 1px;
+  /* padding-bottom: 1px; */
   font-size: 18px;
   line-height: 1;
   text-align: center;
@@ -59,18 +79,46 @@
 .login::before {
   content: "";
   position: absolute;
-  top: 2px;
-  left: 0;
+  top: 50%;
+  left: 7px;
   height: 13px;
   width: 13px;
+  transform: translateY(-50%);
   background-image: url(/img/header_login.svg);
   background-position: center;
   background-size: cover;
   background-position: no-repeat;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.login:focus {
+  outline: none;
+  background-color: var(--color-studio);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login:hover {
+  color: var(--color-wisteria);
+  transition: color 0.3s ease-in-out;
+}
+
+.login:hover::before {
+  background-image: url(/img/header_login_hover.svg);
+  transition: background-image 0.3s ease-in-out;
+}
+
+.login:active {
+  color: var(--color-amethyst);
+  transition: color 0.3s ease-in-out;
+}
+
+.login:active::before {
+  background-image: url(/img/header_login_active.svg);
+  transition: background-image 0.3s ease-in-out;
 }
 
 .header-bottom {
-  background: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .header-bottom__container {
@@ -83,34 +131,41 @@
 
 .header-bottom-nav__list {
   display: flex;
-  margin-left: -1px;
+  margin-left: -8px;
 }
 
 .header-bottom-nav__item {
   position: relative;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .header-bottom-nav__item:not(:last-child) {
-  margin-right: 96.5px;
+  margin-right: 83.5px;
 }
 
 .header-bottom-nav__item:nth-child(3) {
-  margin-right: 98px;
+  margin-right: 85px;
 }
 
 .header-bottom-nav__item:nth-child(4) {
-  margin-right: 98px;
+  margin-right: 85px;
 }
 
-
 .header-bottom-nav__link {
+  padding: 5px 22px 4px 7px;
   font-size: 18px;
   line-height: 1;
-  color: var(--color-white)
+  color: var(--color-white);
+  transition: color 0.3s ease-in-out;
 }
 
 .header-bottom-nav__link::after {
   content: "";
+  position: absolute;
+  top: 50%;
+  /* left: 0px; */
+  right: 7px;
+  transform: translateY(-50%);
   width: 12px;
   height: 12px;
   display: inline-block;
@@ -119,8 +174,28 @@
   background-position: center;
   background-repeat: no-repeat;
   margin-left: 4px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out, background-image 0.3s ease-in-out;
 }
+
+.header-bottom-nav__link:focus {
+  outline: none;
+  background-color: var(--color-studio);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header-bottom-nav__link:hover {
+  color: var(--color-wisteria);
+  transition: color 0.3s ease-in-out;
+}
+
+.header-bottom-nav__link:hover::after {
+  background-image: url(/img/header_dropdown_hover.svg);
+  transition: background-image 0.3s ease-in-out;
+}
+
+
+
+
 
 /* TODO для чего это? */
 .rotait {
@@ -141,7 +216,7 @@
   display: block;
   visibility: hidden;
   opacity: 0;
-  padding: 40px 30px 40px 40px;
+  padding: 40px 20px 40px 40px;
   /* max-height: 300px; */
   background: rgba(0, 0, 0, 0.6);
 /* здесь нужен transition */
