@@ -1,43 +1,70 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   //  Выпадающие списки в header-bottom
-
-  let link = document.querySelectorAll('.header-bottom-nav__link');
-
-  for (i = 0; i < link.length; i++) {
-    let subMenu = link[i].nextElementSibling;
-    let thisLink = link[i];
-    // console.log(subMenu);
-    // console.log(thisLink);
-
-    link[i].addEventListener('click', function () {
-
-      if (subMenu.classList.contains('open')) {
-        subMenu.classList.remove('open');
-        if (thisLink.classList.contains('rotait')) {
-          thisLink.classList.remove('rotait');
+  function controlDropdows() {
+    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__link');
+    dropdownLinks.forEach((dropdownLink) => {
+      dropdownLink.addEventListener('click', (event) => {
+        event.stopImmediatePropagation();
+        const dropdown = dropdownLink.nextElementSibling;
+        if (dropdown.classList.contains('open')) {
+          dropdown.classList.remove('open');
+          dropdownLink.classList.remove('rotait');
+        } else {
+          closeDropdowns();
+          dropdown.classList.add('open');
+          dropdownLink.classList.add('rotait');
+          getLink(dropdown);
         };
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      console.log('target', event.target);
+      // console.log('this', event.this);
+
+      if (event.target.classList.contains('dropdown__container')) {
+        console.log('Yes')
         return;
-      };
+      } else {
+        console.log('No')
+        closeDropdowns();
+      }
+    });
 
-      const openedList = document.querySelector('.open');
-      rotaitFigure = document.querySelector('.rotait');
-      if (openedList) {
-        openedList.classList.remove('open')
-      };
+  };
 
-      if (rotaitFigure) {
-        rotaitFigure.classList.remove('rotait')
-      };
-
-      subMenu.classList.add('open');
-      thisLink.classList.add('rotait');
-
+  function closeDropdowns() {
+    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__link');
+    dropdownLinks.forEach((dropdownLink) => {
+      dropdownLink.classList.remove('rotait');
+      dropdownLink.nextElementSibling.classList.remove('open');
     });
   };
 
-  // Скроллы в выпадающих списках в header-bottom
+  function getLink(dropdown) {
+    const dropdownLiks = dropdown.querySelectorAll('.dropdown__link');
+    
+    dropdownLiks.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        closeDropdowns();
+      });
 
+      link.addEventListener('keydown', (event) => {
+        event.preventDefault();
+        if (event.code = 'Enter') {
+          closeDropdowns();
+        };
+      });
+    });
+
+  };
+
+  controlDropdows();
+
+
+  // Скроллы в выпадающих списках в header-bottom
   document.querySelectorAll('.dropdown__list').forEach(el => {
     new SimpleBar(el)
   });
@@ -76,7 +103,28 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+  // Плавный скрол к секции по нажатию на навигацию верхнего меню
+  const linksToSections = document.querySelectorAll('[data-path]');
+  // console.log(linksToSections);
+  linksToSections.forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      // console.log(link);
+      const path = link.dataset.path
+      showSection(path);
+    });
+  });
+
+  function showSection(path) {
+    // console.log(path);
+    const targetSection = document.getElementById(path);
+    // console.log(targetSection);
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
 
 
-})
+});

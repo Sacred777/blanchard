@@ -5,7 +5,7 @@
   --color-night-rider: #333; /*текст*/
   --color-amethyst: #9D5CD0; /* в событиях Подробнее в блоке editions фон цены, обрамление кнопок*/
   --color-vl-grey: #cacaca;
-  --color-whisper :#ececec;
+  --color-whisper:#ececec;
   --color-pink-swan: #b6b6b6;
   --color-studio: #7943A4; /* для состояния active в выпадающих списках */
   --color-nobel: #999; /*блеклый текст */
@@ -18,5 +18,6 @@
   --color-can-can: #d88f99;
   --color-whisp : #eaeaea;
   --color-harley-davidson-orange : #d11616;
-  --color-nero: #161616; 
+  --color-nero: #161616;
+  --color-unactive: #bbb;
 }

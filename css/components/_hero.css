@@ -1,16 +1,20 @@
 .hero {
   padding-top: 170px;
-  /* height: 100vh; */
   min-height: 800px;
   background-image: url(/img/hero_main.jpg);
   background-position: center;
-  background-size: cover;
+  /* background-size: 100%; */
   background-position: no-repeat;
   color: var(--color-white);
+  animation: grow 8s ease-in-out infinite alternate;
+}
+
+@keyframes grow {
+  0% {background-size: 124%;}
+  100% {background-size: 134%;}
 }
 
 .hero__container {
-  margin-left: 122px;
   padding-top: 69px;
 }
 
@@ -26,8 +30,6 @@
 
 .hero__descr {
   margin-bottom: 92px;
-  /* margin-left: 2px; */
-  /* padding-left: 5px; */
   max-width: 37%;
   font-weight: 700;
   font-size: 18px;
@@ -36,10 +38,42 @@
 }
 
 .hero__btn {
-  /* margin-left: 2px; */
-  padding: 23px 34px;
-  background-color: var(--color-amethyst);
+  position: relative;
+  padding: 19px 32px;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
+
+.hero__btn::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+  border: 2px solid var(--color-wisteria);
+  border-radius: 100px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+}
+
+.hero__btn:focus {
+  outline: none;
+}
+
+.hero__btn:focus::after {
+  opacity: 1;
+}
+
+.hero__btn:hover {
+  border-color: var(--color-mauve);  
+}
+
+.hero__btn:active {
+  background-color: var(--color-studio);
+}
+
+
 
 
 
