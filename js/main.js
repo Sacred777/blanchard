@@ -84,22 +84,36 @@ document.addEventListener('DOMContentLoaded', function () {
   selectGallery();
 
   // Слайдер в Gallery
-  const slider = document.querySelector('.swiper-container');
+  const slider = document.querySelector('.gallery__swiper-container');
 
   let mySwiper = new Swiper(slider, {
     slidesPerView: 3,
+    slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     slidesPerGroup: 3,
     spaceBetween: 50,
+    direction: 'horizontal',
     pagination: {
-      el: '.swiper-pagination',
+      el: '.gallery__swiper-pagination',
       type: 'fraction',
     },
 
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.gallery__swiper-button-next',
+      prevEl: '.gallery__swiper-button-prev',
     },
+
+    breakpoints: {
+
+
+      1920: {
+        slidesPerView:3,
+        slidesPerColumnFill: 'row',
+       slidesPerColumn: 2,
+       spaceBetween: 50,
+       slidesPerGroup: 3,
+      },
+    }
   });
 
 
