@@ -32,8 +32,25 @@
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
-  /* border-radius: 50%; */
-  /* transition: filter .2s linear; */
+  border-radius: 50%;
+  transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.tabs__btn:focus {
+  filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+}
+
+.tabs__btn:hover {
+  filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
+}
+
+.tabs__btn:active {
+  filter: none;
+  box-shadow:0px 0px 0px 2px var(--color-studio);
+}
+
+.tabs__btn_active {
+  box-shadow: 0px 0px 0px 6px var(--color-white), 0px 0px 0px 8px var(--color-studio);
 }
 
 .tabs__btn_fr {
@@ -56,8 +73,20 @@
   background-image: url(/img/catalog_be.svg);
 }
 
+.tab-content {
+  /* visibility: hidden; */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3 ease-in-out;
+}
+
+.tab-content_active {
+  display: block;
+  opacity: 1;
+}
+
 .tab-content__descr {
-  margin-bottom: 41px;
+  margin-bottom: 38px;
   padding-right: 487px;
   line-height: 32px;
   color: var(--color-night-rider);
@@ -73,7 +102,7 @@
 }
 
 .artist-card__img {
-  margin-bottom: 29px;
+  margin-bottom: 28px;
 }
 
 .artist-card__name {
@@ -98,149 +127,197 @@
   color: var(--color-night-rider);
 }
 
+/* Аккордион */
 .accordion__wrap {
   width: 50%;
 }
 
-.accordion__title {
+.ui-accordion-header {
   position: relative;
-  /* margin-bottom: 27px; */
   padding: 41px 0;
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.accordion__title {
+  display: inline-block;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
   color: var(--color-night-rider);
-  cursor: pointer;
+  transition: color 0.3s ease-in-out;
 }
 
-.accordion__title:first-child {
-  /* border-top: 1px solid var(--color-night-rider); */
-}
-
-.ui-accordion-header-active {
-  /* border-top: 1px solid currentColor; */
-  /* border-bottom: 1px solid currentColor; */
-  /* border-color: currentColor; */
-  /* color: var(--color-studio); */
-}
-
-.accordion__title::before {
+.ui-accordion-header::before {
   content: '';
   position: absolute;
   width: 50px;
   height: 50px;
   right: 0;
-  /* top: 28%; */
   top: 50%;
-  /* top: 0; */
   transform: translateY(-50%);
   border-radius: 50%;
   background-color: var(--color-whisper);
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.accordion__title::after {
+.ui-accordion-header::after {
   content: '';
-    position: absolute;
-    right: 19px;
-    top: 50%;
-    /* top: 0; */
-    /* transform: translateY(-50%); */
-    /* top: 44%; */
-    width: 12px;
-    height: 12px;
-    border-bottom: 1px solid var(--color-black);
-    border-right: 1px solid var(--color-black);
-    /* transform: rotate(45deg) translateY(-50%); */
-    transform: translateY(-50%) rotate(45deg);
-}
-
-/* .ui-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #ececec;
-  /* transition: all .2s linear; */
-} */
-
-/* .ui-accordion-header-active .ui-icon {
-  background-color: var(--color-mauve);
-  border: 2px solid var(--color-amethyst);
-} */
-
-/* .ui-icon::after {
-  content: "";
+  position: absolute;
+  right: 18px;
+  /* top: 50%; */
+  top: 47%;
   width: 12px;
   height: 12px;
-  border-left: 1px solid var(--color-black);
   border-bottom: 1px solid var(--color-black);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  /* transition: transform .2s linear; */
-  /* transform: rotate(-45deg) translate(22%, -78%); */
-/* } */
-
-/* .ui-accordion-header-active .ui-icon::after {
-  border-color: var(--color-black);
-  transform-origin: center;
-  transform: rotate(135deg) translate(18%, 45%);
-} */
+  border-right: 1px solid var(--color-black);
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.3s ease-in-out;
+}
 
 .ui-accordion-content {
-  padding-top: 27px;
+  padding-top: 1px;
 }
+
+/* Состояния аккордиона */
+/* Collapsed */
+.ui-accordion-header-collapsed {
+  border-top: 1px solid transparent;
+  /* border-top: 1px solid var(--color-vl-grey); */
+  border-bottom: 1px solid var(--color-vl-grey);
+}
+
+.ui-accordion-header-collapsed:first-child {
+  border-top-color: var(--color-vl-grey);
+  /* border-bottom: 1px var(--color-vl-grey); */
+}
+
+/* Focus */
+.ui-state-focus {
+  outline: none;
+}
+
+.ui-state-focus .accordion__title {
+  color: var(--color-white);
+  /* border-top: 1px solid var(--color-amethyst); */
+  /* border-bottom: 1px solid var(--color-amethyst); */
+  background-color: var(--color-amethyst);
+}
+
+.ui-state-focus::before {
+  background-color: var(--color-mauve);
+}
+
+/* Hover */
+/* .ui-state-hover  */
+.ui-accordion-header-collapsed:hover {
+  /* border-top: 1px solid var(--color-amethyst); */
+  /* border-bottom: 1px solid var(--color-amethyst); */
+  border-color: var(--color-amethyst);
+}
+
+.ui-state-hover .accordion__title {
+  color: var(--color-amethyst);
+  background-color: transparent;
+}
+
+.ui-state-hover::before {
+  /* color: var(--color-white); */
+  background-color: var(--color-mauve);
+}
+
+
+/* Active */
+
+.ui-accordion-header:active {
+/* .ui-state-active { */
+  /* background-color: aquamarine; */
+  border-color: var(--color-studio);
+}
+
+.ui-accordion-header:active .accordion__title {
+  color: var(--color-studio);
+  background-color: transparent;
+}
+
+.ui-accordion-header:active::before {
+  background-color: var(--color-mauve);
+  border: 2px solid var(--color-amethyst);
+  /* border-color: var(--color-amethyst); */
+}
+
+
+
+
+
+
+
+.ui-accordion-header-active {
+  color: var(--color-studio);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  /* border-color: currentColor; */
+}
+
+.ui-accordion-header-active::before  {
+  border: 1px solid var(--color-amethyst);
+  background-color: var(--color-mauve);
+}
+
+.ui-accordion-header-active::after  {
+  transform: rotate(225deg);
+}
+
+.ui-accordion-content-active {
+  border-bottom: 1px solid var(--color-vl-grey);
+}
+
+
 
 .accordion__list {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   max-height: 343px;
-  padding: 24px 73px 23px 0;
-  /* border-bottom: 1px solid var(--highlight-color); */
-  /* border-top: 1px solid var(--highlight-color); */
-}
-
-.accordion__list_filled {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* flex-wrap: wrap; */
- 
-  /* max-height: 343px; */
-  /* padding: 24px 73px 25px 0; */
-  /* border-bottom: 1px solid var(--highlight-color); */
-  /* border-top: 1px solid var(--highlight-color); */
-}
-
-.accordion__item {
-  /* width: fit-content; */
-  /* min-width: 208px; */
+  padding: 24px 70px 23px 0;
 }
 
 .accordion_btn {
-  /* border-bottom: 2px solid transparent; */
-  /* font-weight: 400; */
-  /* font-size: 16px; */
-  /* border: none; */
-  /* background-color: transparent; */
+  margin-bottom: -1px;
+  padding-right: 2px;
+  border-bottom: 1px solid transparent;
   text-align: left;
   color: var(--color-night-rider);
   line-height: 32px;
-  transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.accordion_btn:hover {
+  color: var(--color-amethyst);
+  border-color: currentColor;
+  background-color: transparent;
+}
+
+.accordion_btn:focus {
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-amethyst);
+}
+
+.accordion_btn:active {
+  color: var(--color-studio);
+  border-color: transparent;
+  background-color: transparent;
 }
 
 .accordion-content {
   display: flex;
-  /* align-items: center; */
   padding: 25px 0;
 }
 
 .accordion-left__wrap {
   position: relative;
   margin-right: 24px;
-  /* padding 20px 0; */
   width: 275px;
   height: 189px;
   border: 2px solid var(--color-pink-sw);
@@ -281,5 +358,22 @@
   font-size: 16px;
   line-height: 22px;
   color: var(--color-amethyst);
-
 }
+
+.accordion-content__link:focus {
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-amethyst);
+}
+
+.accordion-content__link:hover {
+  color: var(--color-wisteria);
+  background-color: transparent;
+  border-bottom: 2px solid currentColor;
+}
+
+.accordion-content__link:active {
+  color: var(--color-studio);
+  background-color: transparent;
+}
+

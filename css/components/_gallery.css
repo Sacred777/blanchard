@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 89px;
-  padding-bottom: 69px;
+  padding-bottom: 71px;
   height: 100%;
 }
 
@@ -122,6 +122,24 @@
 
 .gallery-filter__descr--wisteria {
   color: var(--color-wisteria);
+  transition: color 0.3 ease-in-out, background-color 0.3 ease-in-out;
+}
+
+.gallery-filter__descr--wisteria:focus {
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-amethyst);
+}
+
+.gallery-filter__descr--wisteria:hover {
+  color: var(--color-amethyst);
+  background-color: transparent;
+  border-bottom: 2px solid currentColor;
+}
+
+.gallery-filter__descr--wisteria:active {
+  color: var(--color-studio);
+  background-color: transparent;
 }
 
 .gallery__swiper-container {
