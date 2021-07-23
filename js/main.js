@@ -20,14 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('click', (event) => {
-      console.log('target', event.target);
+      // console.log('target', event.target);
       // console.log('this', event.this);
 
       if (event.target.classList.contains('dropdown__container')) {
-        console.log('Yes')
+        // console.log('Yes')
         return;
       } else {
-        console.log('No')
+        // console.log('No')
         closeDropdowns();
       }
     });
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function getLink(dropdown) {
     const dropdownLiks = dropdown.querySelectorAll('.dropdown__link');
-    
+
     dropdownLiks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -107,11 +107,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       1920: {
-        slidesPerView:3,
+        slidesPerView: 3,
         slidesPerColumnFill: 'row',
-       slidesPerColumn: 2,
-       spaceBetween: 50,
-       slidesPerGroup: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 50,
+        slidesPerGroup: 3,
       },
     }
   });
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Плавный скрол к секции по нажатию на навигацию верхнего меню
   const linksToSections = document.querySelectorAll('[data-path]');
-  // console.log(linksToSections);
+  console.log(linksToSections);
   linksToSections.forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
@@ -130,15 +130,37 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function showSection(path) {
-    // console.log(path);
+    console.log(path);
     const targetSection = document.getElementById(path);
-    // console.log(targetSection);
+    console.log(targetSection);
     targetSection.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
   };
 
+  $(function () {
+    const catalogOpenButtons = document.querySelectorAll('.tabs__btn');
+    catalogOpenButtons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.preventDefault();
+        catalogOpenButtons.forEach((button) => {
+          button.classList.remove('tabs__btn_active');
+        });
+        button.classList.add('tabs__btn_active');
 
+        const catalogs = document.querySelectorAll('.tab-content');
+        catalogs.forEach((catalog) => {
+          if (catalog.dataset.catalog == button.dataset.catalog) {
+            catalog.classList.add('tab-content_active');
+          } else {
+            catalog.classList.remove('tab-content_active');
+          };
+        });
+        
+        $(".accordion").accordion("refresh"); // обновление аккордиона
+      });
+    });
+  });
 
 });
