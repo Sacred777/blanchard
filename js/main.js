@@ -259,4 +259,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+  // Закрываем и открываем События
+  const eventsItems = document.querySelectorAll('.events__item')
+  eventsItems.forEach((eventItem, index) => {
+    if (index > 2) {
+      eventItem.classList.add('events__item_invisible');
+    }
+  })
+
+  const eventButton = document.querySelector('.event__btn')
+
+  eventButton.addEventListener('click', (event) => {
+    eventsItems.forEach((eventItem) => {
+      eventItem.classList.remove('events__item_invisible');
+    });  
+  });
+
+
 });
