@@ -15,8 +15,8 @@
     <header class="header">
       <div class="header-top">
         <div class="container header__container">
-          <a class="logo header__logo link_reset">
-            <img src="/img/logo.svg" alt="Логотип художественной галереи Блэнчард">
+          <a class="logo logo__link link_reset">
+            <img class="logo__img" src="/img/logo.svg" alt="Логотип художественной галереи Блэнчард">
           </a>
           <nav class="header__nav">
             <ul class="nav__list list_reset">
@@ -167,10 +167,10 @@
             </ul>
           </nav>
           <form class="search-form" action="/" method="POST">
-            <!-- <label class="saerch__label"> -->
-            <span class="search__icon"></span>
-            <input type="search" name="search" class="search-form__field" placeholder="Поиск по сайту">
-            <!-- </label>               -->
+            <label class="saerch__label">
+              <button class="search__btn btn_reset"></button>
+              <input type="search" name="search" class="search-form__field" placeholder="Поиск по сайту">
+            </label>
           </form>
         </div>
       </div>
@@ -406,7 +406,8 @@
                       <button class="accordion__btn btn_reset" data-artist="unknow">Брамантино</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Бреа, Людовико</button>
+                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Бреа,
+                        Людовико</button>
                     </li>
                     <li class="accordion__item">
                       <button class="accordion__btn btn_reset" data-artist="unknow">Бьяджо д’Антонио Туччи</button>
@@ -550,7 +551,11 @@
           </div>
 
           <div class="tab-content" data-catalog="de">
-            <p class="tab-content__descr p_reset">Герма&#769;ния, официальное название&nbsp;&mdash; Федерати&#769;вная Респу&#769;блика Герма&#769;ния, ФРГ&mdash; государство в&nbsp;Центральной Европе. Площадь территории&nbsp;&mdash; 357 408,74&nbsp;км&sup2;. Численность населения на&nbsp;30&nbsp;сентября 2019 года&nbsp;&mdash; 83&nbsp;149&nbsp;300&nbsp;жителей. Занимает 18-е место в&nbsp;мире по&nbsp;численности населения (2-е в&nbsp;Европе) и&nbsp;62-е в&nbsp;мире по&nbsp;территории (8-е в&nbsp;Европе).</p>
+            <p class="tab-content__descr p_reset">Герма&#769;ния, официальное название&nbsp;&mdash; Федерати&#769;вная
+              Респу&#769;блика Герма&#769;ния, ФРГ&mdash; государство в&nbsp;Центральной Европе. Площадь
+              территории&nbsp;&mdash; 357 408,74&nbsp;км&sup2;. Численность населения на&nbsp;30&nbsp;сентября 2019
+              года&nbsp;&mdash; 83&nbsp;149&nbsp;300&nbsp;жителей. Занимает 18-е место в&nbsp;мире по&nbsp;численности
+              населения (2-е в&nbsp;Европе) и&nbsp;62-е в&nbsp;мире по&nbsp;территории (8-е в&nbsp;Европе).</p>
             <div class="catolog-content">
 
               <article class="artist-card"></article>
@@ -605,7 +610,8 @@
                       <button class="accordion__btn btn_reset" data-artist="unknow">Граначчи, Франческо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Грегорио ди Чекко</button>
+                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Грегорио ди
+                        Чекко</button>
                     </li>
                     <li class="accordion__item">
                       <button class="accordion__btn btn_reset" data-artist="unknow">Джованни да Удине</button>
@@ -723,7 +729,7 @@
               </div>
             </div>
           </div>
-          
+
           <div class="tab-content tab-content_active" data-catalog="it">
 
             <p class="tab-content__descr p_reset">Акционеры крупнейших компаний, которые представляют собой яркий
@@ -906,7 +912,13 @@
 
           <div class="tab-content" data-catalog="ru">
 
-            <p class="tab-content__descr p_reset">Росси&#769;я или Росси&#769;йская Федера&#769;ция,&nbsp;&mdash; государство в&nbsp;Восточной Европе и&nbsp;Северной Азии. Территория России в&nbsp;её&nbsp;конституционных границах составляет 17&nbsp;125&nbsp;191&nbsp;км&sup2;; население страны составляет 146&nbsp;171&nbsp;015&nbsp;чел. (2021). Занимает первое место в&nbsp;мире по&nbsp;территории, шестое&nbsp;&mdash; по&nbsp;объёму ВВП по&nbsp;ППС, и&nbsp;девятое&nbsp;&mdash; по&nbsp;численности населения. Столица&nbsp;&mdash; Москва. Государственный язык&nbsp;&mdash; русский. Денежная единица&nbsp;&mdash; российский рубль.</p>
+            <p class="tab-content__descr p_reset">Росси&#769;я или Росси&#769;йская Федера&#769;ция,&nbsp;&mdash;
+              государство в&nbsp;Восточной Европе и&nbsp;Северной Азии. Территория России в&nbsp;её&nbsp;конституционных
+              границах составляет 17&nbsp;125&nbsp;191&nbsp;км&sup2;; население страны составляет
+              146&nbsp;171&nbsp;015&nbsp;чел. (2021). Занимает первое место в&nbsp;мире по&nbsp;территории,
+              шестое&nbsp;&mdash; по&nbsp;объёму ВВП по&nbsp;ППС, и&nbsp;девятое&nbsp;&mdash; по&nbsp;численности
+              населения. Столица&nbsp;&mdash; Москва. Государственный язык&nbsp;&mdash; русский. Денежная
+              единица&nbsp;&mdash; российский рубль.</p>
             <div class="catolog-content">
 
               <article class="artist-card"></article>
@@ -918,7 +930,8 @@
                 <div class="accordion-content_full">
                   <ul class="accordion__list list_reset">
                     <li class="accordion__item">
-                      <button class="accordion__btn btn_reset  accordion__btn-active" data-artist="unknow">Бенедетто ди Биндо</button>
+                      <button class="accordion__btn btn_reset  accordion__btn-active" data-artist="unknow">Бенедетто ди
+                        Биндо</button>
                     </li>
                     <li class="accordion__item">
                       <button class="accordion__btn btn_reset" data-artist="unknow">Бергоньоне, Амброджо</button>
@@ -961,7 +974,8 @@
                       <button class="accordion__btn btn_reset" data-artist="unknow">Граначчи, Франческо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Грегорио ди Чекко</button>
+                      <button class="accordion__btn btn_reset accordion__btn-active" data-artist="unknow">Грегорио ди
+                        Чекко</button>
                     </li>
                     <li class="accordion__item">
                       <button class="accordion__btn btn_reset" data-artist="unknow">Джованни да Удине</button>
@@ -1097,7 +1111,8 @@
                       <button class="accordion__btn btn_reset" data-artist="unknow">Бенедетто ди Биндо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn_reset   accordion__btn-active" data-artist="unknow">Бергоньоне, Амброджо</button>
+                      <button class="accordion__btn btn_reset   accordion__btn-active" data-artist="unknow">Бергоньоне,
+                        Амброджо</button>
                     </li>
                     <li class="accordion__item">
                       <button class="accordion__btn btn_reset" data-artist="unknow">Биссоло, Франческо</button>
