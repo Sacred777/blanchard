@@ -190,6 +190,11 @@
   stroke: var(--color-amethyst);
 }
 
+.gallery__swiper-button-prev:hover,
+.gallery__swiper-button-next:hover {
+  cursor: initial;
+}
+
 .gallery__swiper-button-prev:hover .gallery__swiper-svg_style,
 .gallery__swiper-button-next:hover .gallery__swiper-svg_style {
   fill: var(--color-mauve);

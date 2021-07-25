@@ -37,15 +37,45 @@
   cursor: pointer;
 }
 
+.fieldset_reset {
+  padding: 0;
+  border: none;
+}
+
 .btn-primery {
   border: 3px solid var(--color-amethyst);
   border-radius: 100px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 18px;
   line-height: 25px;
   color: var(--color-white);
   background-color: var(--color-amethyst);
 }
+
+.btn-secondary {
+  position: relative;
+  border: 2px solid var(--color-amethyst);
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: var(--color-white);
+  background-color: transparent;
+}
+
+/* .btn-secondary::after {
+  --gap: 5px;
+  content: '';
+  position: absolute;
+  top: calc(0px - var(--gap));
+  left: calc(0px - var(--gap));
+  width: calc(100% + var(--gap) * 2);
+  height: calc(100% + var(--gap) *2);
+  border: 2px solid var(--color-wisteria);
+  border-radius: 100px;
+  opacity: 1;
+} */
+
 
 .descr {
   line-height: 32px;

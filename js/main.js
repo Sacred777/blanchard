@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Слайдер в Gallery
   const slider = document.querySelector('.gallery__swiper-container');
 
-  let mySwiper = new Swiper(slider, {
+  let mySwiper = new Swiper('.gallery__swiper-container', {
     slidesPerView: 3,
     slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
@@ -272,8 +272,41 @@ document.addEventListener('DOMContentLoaded', function () {
   eventButton.addEventListener('click', (event) => {
     eventsItems.forEach((eventItem) => {
       eventItem.classList.remove('events__item_invisible');
-    });  
+    });
   });
 
+
+  // Слайдер в Editions
+  // const sliderEditions = document.querySelector('.editions__swiper-container');
+
+  let mySwiperEditions = new Swiper('.editions__swiper-container', {
+    slidesPerView: 3,
+    // slidesPerColumnFill: 'row',
+    // slidesPerColumn: 2,
+    // slidesPerGroup: 3,
+    spaceBetween: 50,
+    direction: 'horizontal',
+    pagination: {
+      el: '.editions__swiper-pagination',
+      type: 'fraction',
+    },
+
+    navigation: {
+      nextEl: '.editions__swiper-button-next',
+      prevEl: '.editions__swiper-button-prev',
+    },
+
+    breakpoints: {
+
+
+      1920: {
+        // slidesPerView: 3,
+        // slidesPerColumnFill: 'row',
+        // slidesPerColumn: 2,
+        // spaceBetween: 50,
+        // slidesPerGroup: 3,
+      },
+    }
+  });
 
 });

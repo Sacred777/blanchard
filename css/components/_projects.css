@@ -1,0 +1,27 @@
+.projects__container {
+  margin-top: 88px;
+  margin-bottom: 80px;
+}
+
+.projects__title {
+  margin-bottom: 25px;
+}
+
+.projects__info {
+  /* padding-right: 545px; */
+  max-width: 1080px;
+  line-height: 32px;
+  color: var(--color-night-rider);
+}
+
+.tooltip__descr {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.tooltip-invisible {
+  display: block;
+}

@@ -1298,8 +1298,8 @@
             <li class="events__item">
               <article class="event-card">
                 <div class="event-card__top">
-                <img class="event-card__img" src="./img/events_2.jpg" alt="Фотография Дмитрий Петров и Сергей Ильин">
-              </div>
+                  <img class="event-card__img" src="./img/events_2.jpg" alt="Фотография Дмитрий Петров и Сергей Ильин">
+                </div>
                 <div class="event-card__bottom">
                   <span class="event-card__place">ММОМА</span>
                   <span class="event-card__time">24&nbsp;марта 19:00</span>
@@ -1373,121 +1373,195 @@
         <div class="container editions__container">
           <div class="editions-left">
             <h2 class="editions__title section__title title_reset">Издания</h2>
-            <form class="categories__list">
-              <fieldset>
-                <legend class="form__legend">Категории</legend>
-                <label class="categories__lable">Бестселлеры<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Бестселлеры"></label>
-                <label class="categories__lable">Искусство<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Искусство"></label>
-                <label class="categories__lable">Архитектура<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Архитектура"></label>
-                <label class="categories__lable">Дизайн<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Дизайн"></label>
-                <label class="categories__lable">Мода<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Мода"></label>
-                <label class="categories__lable">Детям<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Детям"></label>
-                <label class="categories__lable">Художественная литература<input class="categories__input"
-                    type="checkbox" name="categories[]" value="Художественная литература"></label>
-                <label class="categories__lable">Публицистика<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Публицистика"></label>
-                <label class="categories__lable">Путеводители<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Путеводители"></label>
-                <label class="categories__lable">Философия<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Философия"></label>
-                <label class="categories__lable">Учебная литература<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Учебная литература"></label>
-                <label class="categories__lable">Журналы и&nbsp;газеты<input class="categories__input" type="checkbox"
-                    name="categories[]" value="Журналы и газеты"></label>
-              </fieldset>
+            <form class="categories__form">
+              <!-- <fieldset class="fieldset_reset"> -->
+                <legend class="categories-form__legend">Категории</legend>
+                <div class="categories__wrap">
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Бестселлеры">
+                    <span class="categories__name">Бестселлеры</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Искусство">
+                    <span class="categories__name">Искусство</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Архитектура">
+                    <span class="categories__name">Архитектура</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Дизайн">
+                    <span class="categories__name">Дизайн</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Мода">
+                    <span class="categories__name">Мода</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Детям">
+                    <span class="categories__name">Детям</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]"
+                      value="Художественная литература">
+                    <span class="categories__name">Художественная литература</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Публицистика">
+                    <span class="categories__name">Публицистика</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Путеводители">
+                    <span class="categories__name">Путеводители</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Философия">
+                    <span class="categories__name">Философия</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Учебная литература">
+                    <span class="categories__name">Учебная литература</span>
+                  </label>
+                  <label class="categories__lable">
+                    <input class="categories__input" type="checkbox" name="categories[]" value="Журналы и газеты">
+                    <span class="categories__name">Журналы и&nbsp;газеты</span>
+                  </label>
+                </div>
+              <!-- </fieldset> -->
             </form>
             <div class="price">
               <h3 class="price__title title_reset">Цена</h3>
               <form class="price__form">
-                <label class="price__lable">>От<input class="price__input" type="text" name="price_from" value="50">
+                <label class="price__lable">
+                  <span class="price-lable__name">От</span>
+                  <input class="price__input" type="text" name="price_from" value="50">
                 </label>
-                <label class="price__lable">до<input class="price__input" type="text" name="price_to" value="25 000">
-                </label><span class="price__currency">руб.</span>
+                <label class="price__lable">
+                  <span class="price-lable__name">до</span>
+                  <input class="price__input" type="text" name="price_to" value="25 000">
+                </label>
+                <span class="price__currency">руб.</span>
               </form>
             </div>
           </div>
-          <div class="editions-right">
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_1.jpg" alt="Обложка книги Иттена Йоханнса, Искусство цвета">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Искусство цвета</h3>
-                <span class="slide__price">620 руб</span>
+          <div class="editions-right editions__swiper-container">
+
+            <div class="editions__pagination-wrap">
+              <div class="editions__swiper-button-prev">
+                <svg class="editions__swiper-button__svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="editions__swiper-svg_style"
+                    d="M15 0.999999C7.26801 0.999999 1 7.26801 1 15C1 22.732 7.26801 29 15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999998 15 0.999999Z"
+                    fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                  <path class="editions__swiper-svg__triangle" d="M16 10L11 15L16 20" stroke="black" />
+                </svg>
               </div>
-              <span class="slide__artist-name">Иттен, Иоханнес</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
+
+              <div class="editions__swiper-pagination"></div>
+
+
+              <div class="editions__swiper-button-next">
+                <svg class="editions__swiper-button__svg" width="30" height="30" viewBox="0 0 30 30" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path class="editions__swiper-svg_style"
+                    d="M15 29C22.732 29 29 22.732 29 15C29 7.26801 22.732 0.999999 15 0.999999C7.26801 1 1 7.26801 1 15C1 22.732 7.26801 29 15 29Z"
+                    fill="#ECECEC" stroke="#ECECEC" stroke-width="2" />
+                  <path class="editions__swiper-svg__triangle" d="M14 20L19 15L14 10" stroke="black" />
+                </svg>
+              </div>
+
             </div>
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_2.jpg" alt="Обложка книги Эмиля Рудера, Типографика">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Типографика</h3>
-                <span class="slide__price">2 450 руб</span>
-              </div>
-              <span class="slide__artist-name">Рудер, Эмиль</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
+            <div class="swiper-wrapper editions__swiper-wrapper">
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_3.jpg" alt="Обложка книги Юрия Гордона, Книга про буквы">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Книга про буквы</h3>
-                <span class="slide__price">2200 руб</span>
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_1.jpg" alt="Обложка книги Иттена Йоханнса, Искусство цвета">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Искусство цвета</h3>
+                  <span class="slide__price">620 руб</span>
+                </div>
+                <span class="slide__artist-name">Иттен, Иоханнес</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
               </div>
-              <span class="slide__artist-name">Гордон, Юрий</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_4.jpg"
-                alt="Обложка книги Владимира Кричевского, Николай Ильин: У меня есть кое-какие мысли относительно наборной обложки">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Николай Ильин</h3>
-                <span class="slide__price">1 100 руб</span>
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_2.jpg" alt="Обложка книги Эмиля Рудера, Типографика">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Типографика</h3>
+                  <span class="slide__price">2 450 руб</span>
+                </div>
+                <span class="slide__artist-name">Рудер, Эмиль</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
               </div>
-              <span class="slide__artist-name">Кричевский, Владимир</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_5.jpg"
-                alt="Обложка книги Йозефа Мюллера-Брокманна, Модульные сетки в графическом дизайне">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Модульные сетки в граф...</h3>
-                <span class="slide__price">1 450 руб</span>
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_3.jpg" alt="Обложка книги Юрия Гордона, Книга про буквы">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Книга про буквы</h3>
+                  <span class="slide__price">2200 руб</span>
+                </div>
+                <span class="slide__artist-name">Гордон, Юрий</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
               </div>
-              <span class="slide__artist-name">Мюллер-Брокманн, Йозеф</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_6.jpg"
-                alt="Обложка книги Стивена Хеллера и Сеймура Чваста, Эволюция графических стилей">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Эволюция графических ст...</h3>
-                <span class="slide__price">3 200 руб</span>
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_4.jpg"
+                  alt="Обложка книги Владимира Кричевского, Николай Ильин: У меня есть кое-какие мысли относительно наборной обложки">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Николай Ильин</h3>
+                  <span class="slide__price">1 100 руб</span>
+                </div>
+                <span class="slide__artist-name">Кричевский, Владимир</span>
+                <div class="slide-btn__wrap"> <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
               </div>
-              <span class="slide__artist-name">Хеллер, Чваст</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
 
-            <div class="slide">
-              <img class="slide__img" src="./img/editions_7.jpg"
-                alt="Обложка книжки Рудольфа Арнхейма, Искусство и визуальное восприятие">
-              <div class="slide-title__wrap">
-                <h3 class="slide__title title_reset">Искусство и визуальное в...</h3>
-                <span class="slide__price">2 200 руб</span>
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_5.jpg"
+                  alt="Обложка книги Йозефа Мюллера-Брокманна, Модульные сетки в графическом дизайне">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Модульные сетки в граф...</h3>
+                  <span class="slide__price">1 450 руб</span>
+                </div>
+                <span class="slide__artist-name">Мюллер-Брокманн, Йозеф</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
               </div>
-              <span class="slide__artist-name">Арнхейм, Рудольф</span>
-              <button class="slide__btn btn btn-reset">Заказать</button>
-            </div>
 
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_6.jpg"
+                  alt="Обложка книги Стивена Хеллера и Сеймура Чваста, Эволюция графических стилей">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Эволюция графических ст...</h3>
+                  <span class="slide__price">3 200 руб</span>
+                </div>
+                <span class="slide__artist-name">Хеллер, Чваст</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
+              </div>
+
+              <div class="swiper-slide editions__slide">
+                <img class="slide__img" src="./img/editions_7.jpg"
+                  alt="Обложка книжки Рудольфа Арнхейма, Искусство и визуальное восприятие">
+                <div class="slide-title__wrap">
+                  <h3 class="slide__title title_reset">Искусство и визуальное в...</h3>
+                  <span class="slide__price">2 200 руб</span>
+                </div>
+                <span class="slide__artist-name">Арнхейм, Рудольф</span>
+                <div class="slide-btn__wrap">
+                  <button class="slide__btn btn-secondary btn-reset">Заказать</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
