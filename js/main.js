@@ -338,4 +338,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+
+  // Tooltips in The Projects section
+  
+
+
+
+
 });
