@@ -277,8 +277,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Слайдер в Editions
-  // const sliderEditions = document.querySelector('.editions__swiper-container');
-
   let mySwiperEditions = new Swiper('.editions__swiper-container', {
     slidesPerView: 3,
     // slidesPerColumnFill: 'row',
@@ -310,20 +308,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
     // Слайдер в Projects
-
   let mySwiperProjects = new Swiper('.projects__swiper-container', {
     slidesPerView: 3,
     spaceBetween: 50,
+    slidesPerGroup: 3,
     // cssMode: true,
     navigation: {
-      nextEl: ".projects__swiper-button-next",
-      prevEl: ".projects__swiper-button-prev",
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     pagination: {
-      el: ".projects__swiper-pagination",
+      // el: ".projects__swiper-pagination",
     },
-    mousewheel: true,
-    keyboard: true,
+    // mousewheel: true,
+    // keyboard: true,
 
     breakpoints: {
 
@@ -338,9 +336,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-
-  // Tooltips in The Projects section
-  
 
 
 

@@ -129,11 +129,58 @@ button:focus::before {
   /* transition: stroke 0.3s ease-in-out; */
 }
 
+.projects-site__link {
+  display: inline-block;
+  /* padding: 4px 2px; */
+  /* position: relative; */
+  /* z-index: 100; */
+  border-bottom: 1px solid transparent;
+  color: var(--color-amethyst);
+  /* color: var(--color-white); */
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 32px;
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
 
 
+.projects-site__link:focus {
+  outline: none;
+  color: var(--color-white);
+  background-color: var(--color-amethyst);
+  box-shadow: 0px 0px 0px 2px var(--color-amethyst);
+}
+
+.projects-site__link:hover {
+  /* outline: none; */
+  color: var(--color-amethyst);
+  background-color: var(--color-white);
+  box-shadow: none;
+  border-color: var(--color-amethyst);
+}
+
+.projects-site__link:active {
+  /* outline: none; */
+  color: var(--color-studio);
+  background-color: var(--color-white);
+  box-shadow: none;
+  border-color: var(--color-studio);
+}
 
 
+.projects-slider__container{
+  position: relative;
+}
 
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
+  right: 0;
+}
+
+.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
+  left: 0;
+}
 
 .projects__subtitle {
   margin-bottom: 20px;
@@ -144,12 +191,52 @@ button:focus::before {
 }
 
 .projects__swiper-container {
-  width: 100%;
-  height: 150px;
+  /* height: 150px; */
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1480px;
 }
 
-.partners__slide {
-  min-width: 450px;
+.swiper-button-next,
+.swiper-button-prev {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+}
+
+.projects-swiper-btn__svg_backgroud {
+  fill: var(--color-whisper);
+  stroke: var(--color-whisper);
+  transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.projects-swiper-btn__svg_color {
+  stroke: var(--color-black);
+  transition: stroke 0.3s ease-in-out;
+}
+
+.swiper-button-next:focus,
+.swiper-button-prev:focus {
+  outline: none;
+}
+
+.swiper-button-next:focus .projects-swiper-btn__svg_backgroud,
+.swiper-button-prev:focus .projects-swiper-btn__svg_backgroud {
+  fill: var(--color-whisper);
+  stroke: var(--color-amethyst);
+  
+}
+
+
+
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  display: none;
 }
 
 .partners__logo {
@@ -157,4 +244,9 @@ button:focus::before {
   width: 100%;
   /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+}
+
+.partners__logo:hover {
+  filter: grayscale(0%);
 }
