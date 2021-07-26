@@ -230,7 +230,17 @@ button:focus::before {
   
 }
 
+.swiper-button-next:hover .projects-swiper-btn__svg_backgroud,
+.swiper-button-prev:hover .projects-swiper-btn__svg_backgroud {
+  fill: var(--color-mauve);
+  stroke: var(--color-mauve);
+}
 
+.swiper-button-next:active .projects-swiper-btn__svg_backgroud,
+.swiper-button-prev:active .projects-swiper-btn__svg_backgroud {
+  fill: var(--color-mauve);
+  stroke: var(--color-amethyst);
+}
 
 
 
