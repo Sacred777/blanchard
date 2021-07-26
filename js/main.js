@@ -309,4 +309,33 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
+    // Слайдер в Projects
+
+  let mySwiperProjects = new Swiper('.projects__swiper-container', {
+    slidesPerView: 3,
+    spaceBetween: 50,
+    // cssMode: true,
+    navigation: {
+      nextEl: ".projects__swiper-button-next",
+      prevEl: ".projects__swiper-button-prev",
+    },
+    pagination: {
+      el: ".projects__swiper-pagination",
+    },
+    mousewheel: true,
+    keyboard: true,
+
+    breakpoints: {
+
+
+      1920: {
+        // slidesPerView: 3,
+        // slidesPerColumnFill: 'row',
+        // slidesPerColumn: 2,
+        // spaceBetween: 50,
+        // slidesPerGroup: 3,
+      },
+    }
+  });
+
 });

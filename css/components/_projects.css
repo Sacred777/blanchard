@@ -9,19 +9,48 @@
 
 .projects__info {
   /* padding-right: 545px; */
+  margin-bottom: 20px;
   max-width: 1080px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
 
 .tooltip__descr {
+  padding: 5px 7px;
+  max-width: 264px;
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
   text-align: center;
   color: var(--color-white);
+  background-color: var(--color-amethyst);
+
 }
 
 .tooltip-invisible {
+  /* display: none; */
+}
+
+.projects__subtitle {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--color-night-rider);
+}
+
+.projects__swiper-container {
+  width: 100%;
+  height: 150px;
+}
+
+.partners__slide {
+  min-width: 450px;
+}
+
+.partners__logo {
   display: block;
+  width: 100%;
+  /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
 }
