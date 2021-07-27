@@ -1,6 +1,6 @@
 .projects__container {
   margin-top: 88px;
-  margin-bottom: 80px;
+  margin-bottom: 91px;
 }
 
 .projects__title {
@@ -175,11 +175,11 @@ button:focus::before {
 }
 
 .swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-  right: 0;
+  right: -9px;
 }
 
 .swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  left: 0;
+  left: -11px;
 }
 
 .projects__subtitle {

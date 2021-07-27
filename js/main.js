@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-    // Слайдер в Projects
+  // Слайдер в Projects
   let mySwiperProjects = new Swiper('.projects__swiper-container', {
     slidesPerView: 3,
     spaceBetween: 50,
@@ -337,6 +337,48 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+  // Map
+  // Функция ymaps.ready() будет вызвана, когда
+  // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+  ymaps.ready(init);
+  function init() {
+    // Создание карты.
+    var myMap = new ymaps.Map("map", {
+      // Координаты центра карты.
+      // Порядок по умолчанию: «широта, долгота».
+      // Чтобы не определять координаты центра карты вручную,
+      // воспользуйтесь инструментом Определение координат.
+
+      center: [55.761781, 37.633850],
+      // Уровень масштабирования. Допустимые значения:
+      // от 0 (весь мир) до 19.
+      zoom: 14,
+    });
+
+    var myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
+      iconLayout: 'default#image',
+      iconImageHref: '/img/contacts_mark.svg',
+      iconImageSize: [20, 20],
+      iconImageOffset: [0, 0]
+    });
+
+    
+    
+    myMap.geoObjects.add(myPlacemark);
+    
+    myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier']);
+    
+    myMap.controls.remove('geolocationControl');
+    myMap.controls.remove('searchControl');
+    myMap.controls.remove("routeButtonControl");
+    myMap.controls.remove('trafficControl');
+    myMap.controls.remove('typeSelector');
+    myMap.controls.remove('fullscreenControl');
+    myMap.controls.remove('zoomControl');
+    myMap.controls.remove('rulerControl');
+
+
+  };
 
 
 
