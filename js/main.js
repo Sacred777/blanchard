@@ -348,8 +348,9 @@ document.addEventListener('DOMContentLoaded', function () {
       // Порядок по умолчанию: «широта, долгота».
       // Чтобы не определять координаты центра карты вручную,
       // воспользуйтесь инструментом Определение координат.
-
-      center: [55.761781, 37.633850],
+      center: [55.760081, 37.7223],
+      // center: [55.758301, 37.685551],
+      // center: [55.761781, 37.633850],
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
       zoom: 14,
@@ -366,7 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     myMap.geoObjects.add(myPlacemark);
     
-    myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier']);
+    myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier','scrollZoom']);
     
     myMap.controls.remove('geolocationControl');
     myMap.controls.remove('searchControl');
@@ -376,10 +377,61 @@ document.addEventListener('DOMContentLoaded', function () {
     myMap.controls.remove('fullscreenControl');
     myMap.controls.remove('zoomControl');
     myMap.controls.remove('rulerControl');
-
+    // myMap.behaviors.disable('scrollZoom');
 
   };
 
 
+  // InputMask
+  const phoneInput = document.querySelector('input[type="tel"]');
+  // console.log(phoneInput);
+  const im = new Inputmask("+7 (999) 999-99-99");
+  im.mask(phoneInput);
+
+  // Validate
+  function validateForm(selector, rules) {
+    new window.JustValidate(selector, {
+      rules: rules,
+
+      messages: {
+        name: {
+          required: 'Пожалуйста, напишите своё имя',
+        },
+        tel: {
+          required: 'Пожалуйста, напишите свой телефон',
+        },  
+      },
+
+      colorWrong: '#D11616',
+
+
+      submitHandler: function (form, values, ajax) {
+        console.log(form);
+
+        const formData = new formData(form);
+        fetch('mail.php', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(function(data) {
+          console.log(data);
+          console.log('Отправлено');
+          form.reset();
+        });
+      },
+
+
+    });
+  };
+
+  validateForm('.contacts__form', {
+    name: {
+      required: true,
+      // minLength: 3,
+    },
+    tel: {
+      required: true,
+    },
+  })
 
 });
