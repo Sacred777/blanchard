@@ -1,5 +1,5 @@
 .contacts__container {
-  margin-bottom: 80px;
+  padding-bottom: 2px;
 }
 
 .contacts__wraper {
@@ -117,6 +117,9 @@
   font-size: 18px;
   line-height: 25px;
   color: var(--color-amethyst);
+  transition-property: color, border-color, background-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .form_btn::after {
