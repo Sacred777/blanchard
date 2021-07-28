@@ -4,7 +4,7 @@
   background-image: url(/img/hero_main.jpg);
   background-position: center;
   /* background-size: 100%; */
-  background-position: no-repeat;
+  background-repeat: no-repeat;
   color: var(--color-white);
   animation: grow 8s ease-in-out infinite alternate;
 }

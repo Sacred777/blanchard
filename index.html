@@ -168,7 +168,11 @@
           </nav>
           <form class="search-form" action="/" method="POST">
             <label class="saerch__label">
-              <button class="search__btn btn_reset"></button>
+              <svg class="search__svg" width="23" height="22" viewBox="0 0 23 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="white"/>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z" fill="white"/>
+                </svg>
+              <!-- <button class="search__btn btn_reset"></button> -->
               <input type="search" name="search" class="search-form__field" placeholder="Поиск по сайту">
             </label>
           </form>
@@ -1375,57 +1379,83 @@
             <h2 class="editions__title section__title title_reset">Издания</h2>
             <form class="categories__form">
               <!-- <fieldset class="fieldset_reset"> -->
-              <legend class="categories-form__legend">Категории</legend>
-              <div class="categories__wrap">
-                <label class="categories__lable">
+                <div class="categories__wrap">
+                <h4 class="categorits__title">Категории</h4>
+                <ul class="list_reset">
+<li>
+                  <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Бестселлеры">
                   <span class="categories__name">Бестселлеры</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Искусство">
                   <span class="categories__name">Искусство</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Архитектура">
                   <span class="categories__name">Архитектура</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Дизайн">
                   <span class="categories__name">Дизайн</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Мода">
                   <span class="categories__name">Мода</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Детям">
                   <span class="categories__name">Детям</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]"
                     value="Художественная литература">
                   <span class="categories__name">Художественная литература</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Публицистика">
                   <span class="categories__name">Публицистика</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Путеводители">
                   <span class="categories__name">Путеводители</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Философия">
                   <span class="categories__name">Философия</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Учебная литература">
                   <span class="categories__name">Учебная литература</span>
                 </label>
+</li>
+                <li>
                 <label class="categories__lable">
                   <input class="categories__input" type="checkbox" name="categories[]" value="Журналы и газеты">
                   <span class="categories__name">Журналы и&nbsp;газеты</span>
                 </label>
+</li>
+              </ul>
               </div>
               <!-- </fieldset> -->
             </form>
@@ -1834,8 +1864,9 @@
 
   <script src="./js/accordion_initial.js"></script>
 
-  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
-  </script>
+  <!-- <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script> -->
+  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
+
 
   <script src="./js/just-validate.min.js"></script>
   <script src="./js/inputmask.min.js"></script>

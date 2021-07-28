@@ -63,7 +63,7 @@
 }
 
 .projects__tooltip .tooltip-color {
-  fill: rgba(157, 92, 208, 0,5);
+  fill: rgba(157, 92, 208, 0.5);
   transition: fill 0.3s ease-in-out;    
 }
 
@@ -73,7 +73,7 @@
 }
 
 .projects__tooltip .tooltip-border {
-  stroke: rgba(157, 92, 208, 0,5);
+  stroke: rgba(157, 92, 208, 0.5);
   transition: stroke 0.3s ease-in-out;
 }
 

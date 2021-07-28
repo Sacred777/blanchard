@@ -122,7 +122,7 @@
 
 .gallery-filter__descr--wisteria {
   color: var(--color-wisteria);
-  transition: color 0.3 ease-in-out, background-color 0.3 ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .gallery-filter__descr--wisteria:focus {

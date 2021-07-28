@@ -123,13 +123,13 @@
 }
 
 .form_btn::after {
-  --gap: 5px;
+  /* --gap: 5px; */
   content: '';
   position: absolute;
-  top: calc(0px - var(--gap));
-  left: calc(0px - var(--gap));
-  width: calc(100% + var(--gap) * 2);
-  height: calc(100% + var(--gap) *2);
+  top: -5px;
+  left: -5px;
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
   border: 2px solid var(--color-wisteria);
   border-radius: 100px;
   opacity: 0;
