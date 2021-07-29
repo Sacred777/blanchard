@@ -14,16 +14,16 @@
   color: var(--color-night-rider);
 }
 
-.projects__tooltip {
+.projects-tooltip {
   display: inline-block;
   transform: translateY(3px);
 }
 
-.tooltip__btn {
+.projects-tooltip__btn {
   position: relative;
 }
 
-.projects__tooltip .tooltip__text {
+.projects-tooltip .projects-tooltip__text {
   content: "";
   position: absolute;
   left: 50%;
@@ -42,11 +42,11 @@
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.projects__tooltip .tooltip__text_3 {
+.projects-tooltip .projects-tooltip__text_3 {
   width: 242px;
 }
 
-.tooltip__btn::before {
+.projects-tooltip__btn::before {
   content: "";
   position: absolute;
   bottom: calc(100% + 5px);
@@ -62,81 +62,73 @@
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
-.projects__tooltip .tooltip-color {
+.projects-tooltip .projects-tooltip__color {
   fill: rgba(157, 92, 208, 0.5);
   transition: fill 0.3s ease-in-out;    
 }
 
-.projects__tooltip .tooltip-background {
+.projects-tooltip .projects-tooltip__background {
   fill: var(--color-white);
   transition: fill 0.3s ease-in-out;
 }
 
-.projects__tooltip .tooltip-border {
+.projects-tooltip .projects-tooltip__border {
   stroke: rgba(157, 92, 208, 0.5);
   transition: stroke 0.3s ease-in-out;
 }
 
-.tooltip__btn:focus {
+.projects-tooltip__btn:focus {
   outline: none;
 }
 
-.tooltip__btn:focus .tooltip-color {
+.projects-tooltip__btn:focus .projects-tooltip__color {
   fill: var(--color-white);
 }
 
-.tooltip__btn:focus .tooltip-background {
+.projects-tooltip__btn:focus .projects-tooltip__background {
   fill: var(--color-amethyst);
 }
 
-.tooltip__btn:focus .tooltip-border {
+.projects-tooltip__btn:focus .r {
   stroke: var(--color-amethyst);
 }
 
-button:focus + .tooltip__text,
-button:focus::before {
-  /* color: var(--color-amethyst); */
+.projects-tooltip__btn:focus + .projects-tooltip__text, 
+.projects-tooltip__btn:focus::before {
   opacity: 1;
   visibility: visible;
 }
 
-.projects__tooltip:hover .tooltip__text,
-.projects__tooltip:hover .tooltip__btn::before {
+.projects-tooltip:hover .projects-tooltip__text,
+.projects-tooltip:hover .tooltip__btn::before {
   opacity: 1;
   visibility: visible;
 }
 
-.projects__tooltip:hover .tooltip__text {
+.projects-tooltip:hover .projects-tooltip__text {
   background-color: var(--color-studio);
 }
 
-.projects__tooltip:hover .tooltip__btn::before {
+.projects-tooltip:hover .tooltip__btn::before {
   border-color: var(--color-studio) transparent transparent transparent;
 }
 
-.projects__tooltip:hover .tooltip-color {
+.projects-tooltip:hover .projects-tooltip__color {
   fill: var(--color-white);
-  /* transition: fill 0.3s ease-in-out;     */
 }
 
-.projects__tooltip:hover .tooltip-background {
+.projects-tooltip:hover .projects-tooltip__background {
   fill: var(--color-studio);
-  /* transition: fill 0.3s ease-in-out; */
 }
 
-.projects__tooltip:hover .tooltip-border {
+.projects-tooltip:hover .projects-tooltip__border {
   stroke: var(--color-studio);
-  /* transition: stroke 0.3s ease-in-out; */
 }
 
 .projects-site__link {
   display: inline-block;
-  /* padding: 4px 2px; */
-  /* position: relative; */
-  /* z-index: 100; */
   border-bottom: 1px solid transparent;
   color: var(--color-amethyst);
-  /* color: var(--color-white); */
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
@@ -144,7 +136,6 @@ button:focus::before {
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
 }
-
 
 .projects-site__link:focus {
   outline: none;
@@ -154,7 +145,6 @@ button:focus::before {
 }
 
 .projects-site__link:hover {
-  /* outline: none; */
   color: var(--color-amethyst);
   background-color: var(--color-white);
   box-shadow: none;
@@ -162,7 +152,6 @@ button:focus::before {
 }
 
 .projects-site__link:active {
-  /* outline: none; */
   color: var(--color-studio);
   background-color: var(--color-white);
   box-shadow: none;
@@ -191,7 +180,6 @@ button:focus::before {
 }
 
 .projects__swiper-container {
-  /* height: 150px; */
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1480px;
@@ -207,13 +195,13 @@ button:focus::before {
   background-size: 30px 30px;
 }
 
-.projects-swiper-btn__svg_backgroud {
+.swiper-btn__svg_backgroud {
   fill: var(--color-whisper);
   stroke: var(--color-whisper);
   transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
-.projects-swiper-btn__svg_color {
+.swiper-btn__svg_color {
   stroke: var(--color-black);
   transition: stroke 0.3s ease-in-out;
 }
@@ -223,40 +211,36 @@ button:focus::before {
   outline: none;
 }
 
-.swiper-button-next:focus .projects-swiper-btn__svg_backgroud,
-.swiper-button-prev:focus .projects-swiper-btn__svg_backgroud {
+.swiper-button-next:focus .swiper-btn__svg_backgroud,
+.swiper-button-prev:focus .swiper-btn__svg_backgroud {
   fill: var(--color-whisper);
   stroke: var(--color-amethyst);
-  
 }
 
-.swiper-button-next:hover .projects-swiper-btn__svg_backgroud,
-.swiper-button-prev:hover .projects-swiper-btn__svg_backgroud {
+.swiper-button-next:hover .swiper-btn__svg_backgroud,
+.swiper-button-prev:hover .swiper-btn__svg_backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-mauve);
 }
 
-.swiper-button-next:active .projects-swiper-btn__svg_backgroud,
-.swiper-button-prev:active .projects-swiper-btn__svg_backgroud {
+.swiper-button-next:active .swiper-btn__svg_backgroud,
+.swiper-button-prev:active .swiper-btn__svg_backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-amethyst);
 }
-
-
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   display: none;
 }
 
-.partners__logo {
+.partners-slide__logo {
   display: block;
   width: 100%;
-  /* -webkit-filter: grayscale(100%); Safari 6.0 - 9.0 */
   filter: grayscale(100%);
   transition: filter 0.3s ease-in-out;
 }
 
-.partners__logo:hover {
+.partners-slide__logo:hover {
   filter: grayscale(0%);
 }

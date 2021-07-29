@@ -12,7 +12,6 @@
 .events__list {
   display: flex;
   flex-wrap: wrap;
-  /* padding-bottom: 20px; */
 }
 
 .events__item {
@@ -41,7 +40,6 @@
   display: block;
   padding-right: 18px;
   text-align: right;
-  /* font-weight: 600; */
   font-size: 12px;
   line-height: 16px;
   color: var(--color-nobel);
@@ -64,7 +62,6 @@
 }
 
 .event-card__descr {
-  /* margin-bottom: auto; */
   line-height: 32px;
   color: var(--color-night-rider);
 }
@@ -97,12 +94,15 @@
 }
 
 .event__btn {
-  /* margin: 0 auto; */
   position: relative;
   padding: 17px 34px;
   border: 2px solid currentColor;
   color: var(--color-amethyst);
   background-color: var(--color-white);
+}
+
+.event__btn-invisible {
+  display: none;
 }
 
 .event__btn::after {
@@ -137,7 +137,6 @@
 }
 
 .event__btn:active {
-  /* box-sizing: content-box; */
   padding: 16px 33px;
   color: var(--color-white);
   background-color: var(--color-studio);

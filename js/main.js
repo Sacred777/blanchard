@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Селект в Gallery
   const selectGallery = () => {
-    const item = document.querySelector('.gallery__select');
+    const item = document.querySelector('.gallery-filter__select');
     const choices = new Choices(item, {
       searchEnabled: false,
       itemSelectText: '',
@@ -233,13 +233,13 @@ document.addEventListener('DOMContentLoaded', function () {
       imgElement.setAttribute('src', artistData.imgLink);
       imgElement.setAttribute('alt', artistData.imgAlt);
 
-      fullNameElement.classList.add('artist-card__name', 'title_reset');
+      fullNameElement.classList.add('artist-card__name', 'title-reset');
       fullNameElement.textContent = artistData.fullName;
 
       periodOfLifeElement.classList.add('artist-card__dates');
       periodOfLifeElement.textContent = artistData.periodOfLife;
 
-      infoElement.classList.add('artist-card__info', 'p_reset');
+      infoElement.classList.add('artist-card__info', 'p-reset');
       infoElement.innerHTML = artistData.info;
 
       cardElement.append(imgElement);
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!artistData.periodOfLife) {
         const linkElement = document.createElement('a');
-        linkElement.classList.add('artist-card__link', 'link_reset');
+        linkElement.classList.add('artist-card__link', 'link-reset');
         linkElement.setAttribute('data-path', 'gallery');
         linkElement.innerHTML = `В&nbsp;галерею`;
 
@@ -274,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
     eventsItems.forEach((eventItem) => {
       eventItem.classList.remove('events__item_invisible');
     });
+    eventButton.classList.add('event__btn-invisible');
   });
 
 

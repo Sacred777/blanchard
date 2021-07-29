@@ -11,7 +11,7 @@
 
 }
 
-.tabs__list {
+.tabs {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +54,7 @@
 }
 
 .tabs__btn_fr {
-  background-image: url(../../img/catalog_fr.png);
+  background-image: url(../../img/catalog_fr.svg);
 }
 
 .tabs__btn_de {
@@ -74,7 +74,6 @@
 }
 
 .tab-content {
-  /* visibility: hidden; */
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
@@ -82,7 +81,6 @@
 
 .tab-content_active {
   display: block;
-  /* visibility:visible; */
   opacity: 1;
 }
 
@@ -123,7 +121,6 @@
 }
 
 .artist-card__info {
-  /* padding-right: 50px; */
   margin-bottom: 25px;
   line-height: 32px;
   color: var(--color-night-rider);
@@ -211,13 +208,11 @@
 /* Collapsed */
 .ui-accordion-header-collapsed {
   border-top: 1px solid transparent;
-  /* border-top: 1px solid var(--color-vl-grey); */
   border-bottom: 1px solid var(--color-vl-grey);
 }
 
 .ui-accordion-header-collapsed:first-child {
   border-top-color: var(--color-vl-grey);
-  /* border-bottom: 1px var(--color-vl-grey); */
 }
 
 /* Focus */
@@ -227,8 +222,6 @@
 
 .ui-state-focus .accordion__title {
   color: var(--color-white);
-  /* border-top: 1px solid var(--color-amethyst); */
-  /* border-bottom: 1px solid var(--color-amethyst); */
   background-color: var(--color-amethyst);
 }
 
@@ -237,10 +230,7 @@
 }
 
 /* Hover */
-/* .ui-state-hover  */
 .ui-accordion-header-collapsed:hover {
-  /* border-top: 1px solid var(--color-amethyst); */
-  /* border-bottom: 1px solid var(--color-amethyst); */
   border-color: var(--color-amethyst);
 }
 
@@ -250,16 +240,12 @@
 }
 
 .ui-state-hover::before {
-  /* color: var(--color-white); */
   background-color: var(--color-mauve);
 }
 
 
 /* Active */
-
 .ui-accordion-header:active {
-/* .ui-state-active { */
-  /* background-color: aquamarine; */
   border-color: var(--color-studio);
 }
 
@@ -271,20 +257,12 @@
 .ui-accordion-header:active::before {
   background-color: var(--color-mauve);
   border: 2px solid var(--color-amethyst);
-  /* border-color: var(--color-amethyst); */
 }
-
-
-
-
-
-
 
 .ui-accordion-header-active {
   color: var(--color-studio);
   border-top: 1px solid currentColor;
   border-bottom: 1px solid currentColor;
-  /* border-color: currentColor; */
 }
 
 .ui-accordion-header-active::before  {
@@ -299,8 +277,6 @@
 .ui-accordion-content-active {
   border-bottom: 1px solid var(--color-vl-grey);
 }
-
-
 
 .accordion__list {
   display: flex;
@@ -337,8 +313,6 @@
   border-color: transparent;
   background-color: transparent;
 }
-
-
 
 .accordion-content {
   display: flex;
