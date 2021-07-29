@@ -1,43 +1,43 @@
-.site__container {
+.site-container {
   overflow: hidden;
 }
 
 .container {
-  max-width: 1628px;
+  max-width: 1630px;
   margin: 0 auto;
   padding: 0 14px;
 }
 
-.title_reset { /* h1, h2, h3, h4, h5, h6*/
+.title-reset { /* h1, h2, h3, h4, h5, h6*/
   margin: 0;
   padding: 0;
 }
 
-.p_reset { /* p */
+.p-reset { /* p */
   margin: 0;
   padding: 0;
 }
 
-.list_reset { /* ul, ol */
+.list-reset { /* ul, ol */
   margin: 0;
   padding: 0;
   list-style-type: none;
   /* list-style: none; */
 }
 
-.link_reset { /* a */
+.link-reset { /* a */
   color: inherit;
   text-decoration: none;
 }
 
-.btn_reset {
+.btn-reset {
   padding: 0;
   border: none;
   background-color: transparent;
   cursor: pointer;
 }
 
-.fieldset_reset {
+.fieldset-reset {
   margin: 0;
   padding: 0;
   border: none;

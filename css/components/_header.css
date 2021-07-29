@@ -13,8 +13,10 @@
 .header__container {
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
   padding-top: 28px;
   padding-bottom: 29px;
+  
 }
 
 .logo__link {
@@ -65,7 +67,7 @@
 
 .login {
   position: relative;
-  margin-right: -8px;
+  margin-right: -5px;
   padding: 5px 6px 5px 28px;
   font-size: 18px;
   line-height: 1;
@@ -82,7 +84,7 @@
   height: 13px;
   width: 13px;
   transform: translateY(-50%);
-  background-image: url(/img/header_login.svg);
+  background-image: url(../../img/header_login.svg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -99,7 +101,7 @@
 }
 
 .login:hover::before {
-  background-image: url(/img/header_login_hover.svg);
+  background-image: url(../../img/header_login_hover.svg);
 }
 
 .login:active {
@@ -107,7 +109,7 @@
 }
 
 .login:active::before {
-  background-image: url(/img/header_login_active.svg);
+  background-image: url(../../img/header_login_active.svg);
 }
 
 .header-bottom {
@@ -223,10 +225,7 @@
   border: 2px solid  transparent;;
   font-weight: 600;
   font-size: 14px;
-  /* line-height: 40px; */
   color: var(--color-white);
-
-  /* background-image: url(/img/choice1_1.jpg); */
 }
 
 .dropdown__link:focus-visible {
@@ -258,83 +257,83 @@
 
 
 .dropdown__link--bg11 {
-  background-image: url(/img/choice1_1.jpg);
+  background-image: url(../../img/choice1_1.jpg);
 }
 
 .dropdown__link--bg12 {
-  background-image: url(/img/choice1_2.jpg);
+  background-image: url(../../img/choice1_2.jpg);
 }
 
 .dropdown__link--bg13 {
-  background-image: url(/img/choice1_3.jpg);
+  background-image: url(../../img/choice1_3.jpg);
 }
 
 .dropdown__link--bg14 {
-  background-image: url(/img/choice1_4.jpg);
+  background-image: url(../../img/choice1_4.jpg);
 }
 
 .dropdown__link--bg21 {
-  background-image: url(/img/choice2_1.jpg);
+  background-image: url(../../img/choice2_1.jpg);
 }
 
 .dropdown__link--bg22 {
-  background-image: url(/img/choice2_2.jpg);
+  background-image: url(../../img/choice2_2.jpg);
 }
 
 .dropdown__link--bg23 {
-  background-image: url(/img/choice2_3.jpg);
+  background-image: url(../../img/choice2_3.jpg);
 }
 
 .dropdown__link--bg24 {
-  background-image: url(/img/choice2_4.jpg);
+  background-image: url(../../img/choice2_4.jpg);
 }
 
 .dropdown__link--bg31 {
-  background-image: url(/img/choice3_1.jpg);
+  background-image: url(../../img/choice3_1.jpg);
 }
 
 .dropdown__link--bg32 {
-  background-image: url(/img/choice3_2.jpg);
+  background-image: url(../../img/choice3_2.jpg);
 }
 
 .dropdown__link--bg33 {
-  background-image: url(/img/choice3_3.jpg);
+  background-image: url(../../img/choice3_3.jpg);
 }
 
 .dropdown__link--bg34 {
-  background-image: url(/img/choice3_4.jpg);
+  background-image: url(../../img/choice3_4.jpg);
 }
 
 .dropdown__link--bg41 {
-  background-image: url(/img/choice4_1.jpg);
+  background-image: url(../../img/choice4_1.jpg);
 }
 
 .dropdown__link--bg42 {
-  background-image: url(/img/choice4_2.jpg);
+  background-image: url(../../img/choice4_2.jpg);
 }
 
 .dropdown__link--bg43 {
-  background-image: url(/img/choice4_3.jpg);
+  background-image: url(../../img/choice4_3.jpg);
 }
 
 .dropdown__link--bg44 {
-  background-image: url(/img/choice4_4.jpg);
+  background-image: url(../../img/choice4_4.jpg);
 }
 
 .dropdown__link--bg51 {
-  background-image: url(/img/choice5_1.jpg);
+  background-image: url(../../img/choice5_1.jpg);
 }
 
 .dropdown__link--bg52 {
-  background-image: url(/img/choice5_2.jpg);
+  background-image: url(../../img/choice5_2.jpg);
 }
 
 .dropdown__link--bg53 {
-  background-image: url(/img/choice5_3.jpg);
+  background-image: url(../../img/choice5_3.jpg);
 }
 
 .dropdown__link--bg54 {
-  background-image: url(/img/choice5_4.jpg);
+  background-image: url(../../img/choice5_4.jpg);
 }
 
 .simplebar-track.simplebar-vertical {

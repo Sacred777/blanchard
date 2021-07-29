@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Скроллы в выпадающих списках в header-bottom
   document.querySelectorAll('.dropdown__list').forEach(el => {
+    // console.log(el);
     new SimpleBar(el)
   });
 
@@ -354,29 +355,30 @@ document.addEventListener('DOMContentLoaded', function () {
       // Уровень масштабирования. Допустимые значения:
       // от 0 (весь мир) до 19.
       zoom: 14,
+      controls: [],
     });
 
     var myPlacemark = new ymaps.Placemark([55.758468, 37.601088], {}, {
       iconLayout: 'default#image',
-      iconImageHref: '/img/contacts_mark.svg',
+      iconImageHref: 'img/contacts_mark.svg',
       iconImageSize: [20, 20],
       iconImageOffset: [0, 0]
     });
 
-    
-    
+
+
     myMap.geoObjects.add(myPlacemark);
-    
-    myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier','scrollZoom']);
-    
-    myMap.controls.remove('geolocationControl');
-    myMap.controls.remove('searchControl');
-    myMap.controls.remove("routeButtonControl");
-    myMap.controls.remove('trafficControl');
-    myMap.controls.remove('typeSelector');
-    myMap.controls.remove('fullscreenControl');
-    myMap.controls.remove('zoomControl');
-    myMap.controls.remove('rulerControl');
+
+    myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom']);
+
+    // myMap.controls.remove('geolocationControl');
+    // myMap.controls.remove('searchControl');
+    // myMap.controls.remove("routeButtonControl");
+    // myMap.controls.remove('trafficControl');
+    // myMap.controls.remove('typeSelector');
+    // myMap.controls.remove('fullscreenControl');
+    // myMap.controls.remove('zoomControl');
+    // myMap.controls.remove('rulerControl');
     // myMap.behaviors.disable('scrollZoom');
 
   };
@@ -399,7 +401,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         tel: {
           required: 'Пожалуйста, напишите свой телефон',
-        },  
+        },
       },
 
       colorWrong: '#D11616',
@@ -413,11 +415,11 @@ document.addEventListener('DOMContentLoaded', function () {
           method: 'POST',
           body: formData,
         })
-        .then(function(data) {
-          console.log(data);
-          console.log('Отправлено');
-          form.reset();
-        });
+          .then(function (data) {
+            console.log(data);
+            console.log('Отправлено');
+            form.reset();
+          });
       },
 
 

@@ -54,23 +54,23 @@
 }
 
 .tabs__btn_fr {
-  background-image: url(/img/catalog_fr.svg);
+  background-image: url(../../img/catalog_fr.png);
 }
 
 .tabs__btn_de {
-  background-image: url(/img/catalog_de.svg);
+  background-image: url(../../img/catalog_de.svg);
 }
 
 .tabs__btn_it {
-  background-image: url(/img/catalog_it.svg);
+  background-image: url(../../img/catalog_it.svg);
 }
 
 .tabs__btn_ru {
-  background-image: url(/img/catalog_ru.svg);
+  background-image: url(../../img/catalog_ru.svg);
 }
 
 .tabs__btn_be {
-  background-image: url(/img/catalog_be.svg);
+  background-image: url(../../img/catalog_be.svg);
 }
 
 .tab-content {
