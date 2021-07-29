@@ -145,19 +145,19 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.price__input:focus {
+.price-lable__input:focus {
   outline: none;
   border-color: var(--color-white);
   background-color: var(--color-amethyst);
 }
 
-.price__input:hover {
+.price-lable__input:hover {
   border-color: transparent;
   background-color: var(--color-amethyst);
   cursor: pointer;
 }
 
-.price__input:active {
+.price-lable__input:active {
   background-color: var(--color-studio);
 }
 

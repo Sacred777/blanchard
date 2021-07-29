@@ -427,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  validateForm('.contacts__form', {
+  validateForm('.contacts', {
     name: {
       required: true,
       // minLength: 3,
