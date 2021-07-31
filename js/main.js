@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  Выпадающие списки в header-bottom
   function controlDropdows() {
-    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__link');
+    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__btn');
     dropdownLinks.forEach((dropdownLink) => {
       dropdownLink.addEventListener('click', (event) => {
         event.stopImmediatePropagation();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function closeDropdowns() {
-    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__link');
+    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__btn');
     dropdownLinks.forEach((dropdownLink) => {
       dropdownLink.classList.remove('rotait');
       dropdownLink.nextElementSibling.classList.remove('open');
@@ -51,12 +51,13 @@ document.addEventListener('DOMContentLoaded', function () {
         closeDropdowns();
       });
 
-      link.addEventListener('keydown', (event) => {
-        event.preventDefault();
-        if (event.code = 'Enter') {
-          closeDropdowns();
-        };
-      });
+      // link.addEventListener('keydown', (event) => {
+        // event.preventDefault();
+        // console.log(event.code);
+        // if (event.code = 'Enter') {
+          // closeDropdowns();
+        // };
+      // });
     });
 
   };

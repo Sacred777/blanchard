@@ -14,13 +14,20 @@
 }
 
 .hero__container {
-  padding-top: 69px;
+  padding-top: 70px;
 }
 
-.hero__title {
+.site-title {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.hero__tagline {
+  display: block;
   margin-bottom: 19px;
+  padding-left: 1px;
   max-width: 37%;
-  font-family: Open Sans;
   font-style: normal;
   font-weight: 700;
   font-size: 72px;
@@ -29,16 +36,17 @@
 
 .hero__descr {
   margin-bottom: 92px;
+  padding-left: 1px;
   max-width: 37%;
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: var(--color-white);
 }
 
 .hero__btn {
   position: relative;
-  padding: 19px 32px;
+  padding: 19px 33px;
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 

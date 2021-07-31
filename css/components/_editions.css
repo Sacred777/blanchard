@@ -38,11 +38,11 @@
   margin-bottom: 27px;
 }
 
-.categories__lable {
+.categories__label {
   color: var(--color-white);
 }
 
-.categories__lable:hover {
+.categories__label:hover {
   cursor: pointer;
   color: var(--color-wisteria);
 }
@@ -123,19 +123,19 @@
   border-radius: 6px;
 }
 
-.price-lable {
+.price-label {
   display: flex;
   align-items: center;
 }
 
-.price-lable__name {
+.price-label__name {
   padding: 0 10px;
   line-height: 32px;
   color: var(--color-white);
 }
 
 
-.price-lable__input {
+.price-label__input {
   padding-left: 7px;
   max-width: 73px;
   line-height: 32px;
@@ -145,19 +145,19 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
-.price-lable__input:focus {
+.price-label__input:focus {
   outline: none;
   border-color: var(--color-white);
   background-color: var(--color-amethyst);
 }
 
-.price-lable__input:hover {
+.price-label__input:hover {
   border-color: transparent;
   background-color: var(--color-amethyst);
   cursor: pointer;
 }
 
-.price-lable__input:active {
+.price-label__input:active {
   background-color: var(--color-studio);
 }
 

@@ -12,7 +12,7 @@
   <div class="site-container">
     <header class="header">
       <div class="header-top">
-        <div class="header-top__container container">
+        <div class="header-top__container">
           <a class="logo logo__link link-reset">
             <img class="logo__img" src="img/logo.svg" alt="Логотип художественной галереи Блэнчард">
           </a>
@@ -41,15 +41,23 @@
               </li>
             </ul>
           </nav>
-          <a class="login list-reset" href="#">Войти</a>
+          <a class="login list-reset" href="#">
+            <svg class="login-svg" width="13" height="13" viewBox="0 0 13 13" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path class="login-svg_color"
+                d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"
+                fill="white" />
+            </svg>
+            Войти</a>
         </div>
       </div>
       <div class=" header-bottom">
-        <div class="header-bottom__container container">
+        <div class="header-bottom__container">
           <nav class="header-bottom-nav">
             <ul class="header-bottom-nav__list list-reset">
               <li class="header-bottom-nav__item">
-                <a class="header-bottom-nav__link link-reset" href="#">Реализм</a>
+                <button class="header-bottom-nav__btn btn-reset" type="button"
+                  aria-label="Выпадающий список Реализм">Реализм</button>
                 <div class="dropdown__container">
                   <ul class="dropdown__list list-reset">
                     <li class="dropdown__item">
@@ -74,7 +82,8 @@
                 </div>
               </li>
               <li class="header-bottom-nav__item">
-                <a class="header-bottom-nav__link link-reset" href="#">Импрессионизм</a>
+                <button class="header-bottom-nav__btn btn-reset" type="button"
+                  aria-label="Выпадающий список Импрессионизм">Импрессионизм</button>
                 <div class="dropdown__container">
                   <ul class="dropdown__list list-reset">
                     <li class="dropdown__item">
@@ -96,7 +105,8 @@
                 </div>
               </li>
               <li class="header-bottom-nav__item">
-                <a class="header-bottom-nav__link link-reset" href="#">Постимпрессионизм</a>
+                <button class="header-bottom-nav__btn btn-reset" type="button"
+                  aria-label="Выпадающий список Постимпрессионизм">Постимпрессионизм</button>
                 <div class="dropdown__container">
                   <ul class="dropdown__list list-reset">
                     <li class="dropdown__item">
@@ -118,7 +128,8 @@
                 </div>
               </li>
               <li class="header-bottom-nav__item">
-                <a class="header-bottom-nav__link link-reset" href="#">Авангард</a>
+                <button class="header-bottom-nav__btn btn-reset" type="button"
+                  aria-label="Выпадающий список Авангард">Авангард</button>
                 <div class="dropdown__container">
                   <ul class="dropdown__list list-reset">
                     <li class="dropdown__item">
@@ -141,7 +152,7 @@
                 </div>
               </li>
               <li class="header-bottom-nav__item">
-                <a class="header-bottom-nav__link link-reset" href="#">Футуризм</a>
+                <button class="header-bottom-nav__btn btn-reset" type="button" aria-label="Футуризм">Футуризм</button>
                 <div class="dropdown__container">
                   <ul class="dropdown__list list-reset">
                     <li class="dropdown__item">
@@ -165,7 +176,7 @@
             </ul>
           </nav>
           <form class="search-form" action="/" method="POST">
-            <label class="saerch-form__label">
+            <button class="search-form__btn btn-reset" type="button" aria-label="Открыть поиск по сайту" disabled>
               <svg class="search-form__svg" width="23" height="22" viewBox="0 0 23 22" fill="none"
                 xmlns="http://www.w3.org/2000/svg">
                 <rect width="6.8678" height="1.71695"
@@ -174,6 +185,8 @@
                   d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
                   fill="white" />
               </svg>
+            </button>
+            <label class="search-form__label">
               <input type="search" name="search" class="search-form__field" placeholder="Поиск по сайту">
             </label>
           </form>
@@ -186,7 +199,8 @@
       <!-- Секция Hero -->
       <section class="hero">
         <div class="hero__container container">
-          <h1 class="hero__title title-reset">Прикоснитесь к&nbsp;прекрасному</h1>
+          <h1 class="site-title">Художественная галерея Blanchard</h1>
+          <span class="hero__tagline">Прикоснитесь к&nbsp;прекрасному</span>
           <p class="hero__descr descr p-reset">Мы вынуждены отталкиваться от того, что реализация намеченных
             плановых заданий создаёт предпосылки для новых предложений.</p>
           <button class="hero__btn btn-primery btn-reset" data-path="contacts">Подписаться на&nbsp;рассылку</button>
@@ -227,7 +241,7 @@
             </select>
             <p class="gallery-filter__descr descr p-reset">
               Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний <a
-                class="gallery-filter__descr--wisteria list-reset" href="/">авторизуйтесь,</a> либо воспользуйтесь
+                class="gallery-filter__descr--wisteria link-reset" href="/">авторизуйтесь,</a> либо воспользуйтесь
               лицензией.
             </p>
           </div>
@@ -1362,74 +1376,74 @@
                 <h4 class="categorits__title">Категории</h4>
                 <ul class="list-reset">
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Бестселлеры">
                       <span class="categories__name">Бестселлеры</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Искусство">
                       <span class="categories__name">Искусство</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Архитектура">
                       <span class="categories__name">Архитектура</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Дизайн">
                       <span class="categories__name">Дизайн</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Мода">
                       <span class="categories__name">Мода</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Детям">
                       <span class="categories__name">Детям</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]"
                         value="Художественная литература">
                       <span class="categories__name">Художественная литература</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Публицистика">
                       <span class="categories__name">Публицистика</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Путеводители">
                       <span class="categories__name">Путеводители</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Философия">
                       <span class="categories__name">Философия</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Учебная литература">
                       <span class="categories__name">Учебная литература</span>
                     </label>
                   </li>
                   <li>
-                    <label class="categories__lable">
+                    <label class="categories__label">
                       <input class="categories__input" type="checkbox" name="categories[]" value="Журналы и газеты">
                       <span class="categories__name">Журналы и&nbsp;газеты</span>
                     </label>
@@ -1440,13 +1454,13 @@
             <div class="price">
               <h3 class="price__title title-reset">Цена</h3>
               <form class="price__form">
-                <label class="price-lable">
-                  <span class="price-lable__name">От</span>
-                  <input class="price-lable__input" type="text" name="price_from" value="50">
+                <label class="price-label">
+                  <span class="price-label__name">От</span>
+                  <input class="price-label__input" type="text" name="price_from" value="50">
                 </label>
-                <label class="price-lable">
-                  <span class="price-lable__name">до</span>
-                  <input class="price-lable__input" type="text" name="price_to" value="25 000">
+                <label class="price-label">
+                  <span class="price-label__name">до</span>
+                  <input class="price-label__input" type="text" name="price_to" value="25 000">
                 </label>
                 <span class="price__currency">руб.</span>
               </form>

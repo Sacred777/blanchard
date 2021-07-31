@@ -1,15 +1,15 @@
 .us__container {
-  padding-top: 89px;
+  padding-top: 90px;
   padding-bottom: 69px;
 
 }
 
 .us__title {
   margin-bottom: 25px;
-  margin-left: 1px;
+  padding-left: 1px;
 }
 
 .us__descr {
-  margin-left: 2px;
+  padding-left: 2px;
   max-width: 1092px;
 }

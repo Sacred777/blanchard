@@ -21,12 +21,14 @@
 
 .gallery__title {
   margin-bottom: 24px;
+  padding-left: 1px;
   color: var(--color-white);
 }
 
 .gallery-filter__label {
   display: block;
   margin-bottom: 10px;
+  padding-left: 1px;
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
@@ -95,7 +97,7 @@
   content: "";
   position: absolute;
   top: 50%;
-  right: 14px;
+  right: 13px;
   height: 7px;
   width: 7px;
   border:0;
