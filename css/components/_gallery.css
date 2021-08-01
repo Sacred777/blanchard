@@ -203,7 +203,12 @@
 
 .swiper-button-next.swiper-button-disabled,
 .swiper-button-prev.swiper-button-disabled {
-  opacity: 0.7;
+  opacity: 1;
+}
+
+.gallery-button__next.swiper-button-disabled,
+.gallery-button__prev.swiper-button-disabled {
+  opacity: 0.5;
 }
 
 .swiper-button-gray__background {

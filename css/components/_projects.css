@@ -9,7 +9,7 @@
 
 .projects__info {
   margin-bottom: 20px;
-  max-width: 1080px;
+  max-width: 1079px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
@@ -63,17 +63,14 @@
 }
 
 .projects-tooltip .projects-tooltip__color {
-  fill: rgba(157, 92, 208, 0.5);
   transition: fill 0.3s ease-in-out;    
 }
 
 .projects-tooltip .projects-tooltip__background {
-  fill: var(--color-white);
   transition: fill 0.3s ease-in-out;
 }
 
 .projects-tooltip .projects-tooltip__border {
-  stroke: rgba(157, 92, 208, 0.5);
   transition: stroke 0.3s ease-in-out;
 }
 
@@ -82,15 +79,11 @@
 }
 
 .projects-tooltip__btn:focus .projects-tooltip__color {
-  fill: var(--color-white);
+  /* fill: var(--color-white); */
 }
 
 .projects-tooltip__btn:focus .projects-tooltip__background {
-  fill: var(--color-amethyst);
-}
-
-.projects-tooltip__btn:focus .r {
-  stroke: var(--color-amethyst);
+  fill: var(--color-mauve);
 }
 
 .projects-tooltip__btn:focus + .projects-tooltip__text, 
@@ -100,30 +93,35 @@
 }
 
 .projects-tooltip:hover .projects-tooltip__text,
-.projects-tooltip:hover .tooltip__btn::before {
+.projects-tooltip:hover .projects-tooltip__btn::before {
   opacity: 1;
   visibility: visible;
 }
 
-.projects-tooltip:hover .projects-tooltip__text {
-  background-color: var(--color-studio);
+.projects-tooltip:hover .projects-tooltip__background {
+  fill: var(--color-mauve);
 }
 
-.projects-tooltip:hover .tooltip__btn::before {
-  border-color: var(--color-studio) transparent transparent transparent;
+.projects-tooltip:active .projects-tooltip__text,
+.projects-tooltip:active .projects-tooltip__btn::before {
+  opacity: 1;
+  visibility: visible;
 }
 
-.projects-tooltip:hover .projects-tooltip__color {
+.projects-tooltip:active .projects-tooltip__color {
   fill: var(--color-white);
 }
 
-.projects-tooltip:hover .projects-tooltip__background {
-  fill: var(--color-studio);
+.projects-tooltip:active .projects-tooltip__background {
+  fill: var(--color-amethyst);
 }
 
-.projects-tooltip:hover .projects-tooltip__border {
-  stroke: var(--color-studio);
+.projects-tooltip:active .projects-tooltip__border {
+  stroke: var(--color-amethyst);
 }
+
+
+
 
 .projects-site__link {
   display: inline-block;
@@ -158,35 +156,22 @@
   border-color: var(--color-studio);
 }
 
-
-.projects-slider__container{
-  position: relative;
-}
-
-.swiper-button-next, .swiper-container-rtl .swiper-button-prev {
-  right: -9px;
-}
-
-.swiper-button-prev, .swiper-container-rtl .swiper-button-next {
-  left: -11px;
-}
-
 .projects__subtitle {
   margin-bottom: 20px;
+  padding-left: 1px;
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
 
-.projects__swiper-container {
-  margin: 0 auto;
-  padding: 0 15px;
-  max-width: 1480px;
+/* Slider */
+.projects-slider{
+  position: relative;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
+.projects-button__next,
+.projects-button__prev {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -195,44 +180,42 @@
   background-size: 30px 30px;
 }
 
-.swiper-btn__svg_backgroud {
-  fill: var(--color-whisper);
-  stroke: var(--color-whisper);
+.projects-button__next, .swiper-container-rtl .projects-button__prev {
+  right: -9px;
+}
+
+.projects-button__prev, .swiper-container-rtl .projects-button__next {
+  left: -11px;
+}
+
+.projects-button__next.swiper-button-disabled .swiper-button-light__triangle,
+.projects-button__prev.swiper-button-disabled .swiper-button-light__triangle {
+  stroke: var(--color-unactive);
+}
+
+.swiper-button-light__backgroud {
   transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
-.swiper-btn__svg_color {
-  stroke: var(--color-black);
-  transition: stroke 0.3s ease-in-out;
-}
-
-.swiper-button-next:focus,
-.swiper-button-prev:focus {
-  outline: none;
-}
-
-.swiper-button-next:focus .swiper-btn__svg_backgroud,
-.swiper-button-prev:focus .swiper-btn__svg_backgroud {
-  fill: var(--color-whisper);
+.swiper-button-light:focus .swiper-button-light__backgroud {
   stroke: var(--color-amethyst);
 }
 
-.swiper-button-next:hover .swiper-btn__svg_backgroud,
-.swiper-button-prev:hover .swiper-btn__svg_backgroud {
+.swiper-button-light:hover .swiper-button-light__backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-mauve);
 }
 
-.swiper-button-next:active .swiper-btn__svg_backgroud,
-.swiper-button-prev:active .swiper-btn__svg_backgroud {
+.swiper-button-light:active .swiper-button-light__backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-amethyst);
 }
 
-/* .swiper-button-next::after,
-.swiper-button-prev::after {
-  display: none;
-} */
+.projects-swiper-container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1480px;
+}
 
 .partners-slide__logo {
   display: block;

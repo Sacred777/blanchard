@@ -20,14 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     document.addEventListener('click', (event) => {
-      // console.log('target', event.target);
-      // console.log('this', event.this);
-
       if (event.target.classList.contains('dropdown__container')) {
-        // console.log('Yes')
         return;
       } else {
-        // console.log('No')
         closeDropdowns();
       }
     });
@@ -50,16 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
         closeDropdowns();
       });
-
-      // link.addEventListener('keydown', (event) => {
-        // event.preventDefault();
-        // console.log(event.code);
-        // if (event.code = 'Enter') {
-          // closeDropdowns();
-        // };
-      // });
     });
-
   };
 
   controlDropdows();
@@ -67,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Скроллы в выпадающих списках в header-bottom
   document.querySelectorAll('.dropdown__list').forEach(el => {
-    // console.log(el);
     new SimpleBar(el)
   });
 
@@ -87,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Слайдер в Gallery
-  // const slider = document.querySelector('.gallery__swiper-container');
   const mySwiperGallery = new Swiper('.gallery-swiper-container', {
     slidesPerView: 3,
     slidesPerColumnFill: 'row',
@@ -107,8 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     breakpoints: {
-
-
       1920: {
         slidesPerView: 3,
         slidesPerColumnFill: 'row',
@@ -123,20 +105,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // Плавный скрол к секции по нажатию на навигацию верхнего меню
   function smoothScrollToAnchor() {
     const linksToSections = document.querySelectorAll('[data-path]');
-    // console.log(linksToSections);
     linksToSections.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        // console.log(link);
         const path = link.dataset.path
         showSection(path);
       });
     });
 
     function showSection(path) {
-      // console.log(path);
       const targetSection = document.getElementById(path);
-      // console.log(targetSection);
       targetSection.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -198,7 +176,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function setEventsOnArtistBtns(activeCatalog) {
-      // const activeCatalog = document.querySelector('.tab-content_active');
       const artistBtns = activeCatalog.querySelectorAll('.accordion__btn');
       artistBtns.forEach((artistBtn) => {
         artistBtn.addEventListener('click', (event) => {
@@ -213,7 +190,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function showArtistCard(activeCatalog) {
       const activeArtistBtn = activeCatalog.querySelector('.accordion__btn-active');
-      // console.log(activeArtistBtn);
       if (activeArtistBtn) {
         if (activeArtistBtn.dataset.artist == 'Гирландайо') {
           createArtistCard(currentArtistData, activeCatalog);
@@ -254,12 +230,10 @@ document.addEventListener('DOMContentLoaded', function () {
         linkElement.classList.add('artist-card__link', 'link-reset');
         linkElement.setAttribute('data-path', 'gallery');
         linkElement.innerHTML = `В&nbsp;галерею`;
-
         cardElement.append(linkElement);
         smoothScrollToAnchor();
       };
     };
-
   });
 
   // Закрываем и открываем События
@@ -283,11 +257,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Слайдер в Editions
   let mySwiperEditions = new Swiper('.editions-swiper-container', {
     slidesPerView: 3,
-    // slidesPerColumnFill: 'row',
-    // slidesPerColumn: 2,
-    // slidesPerGroup: 3,
     spaceBetween: 50,
-    direction: 'horizontal',
+    // slidesPerGroup: 3,
+    // direction: 'horizontal',
     pagination: {
       el: '.editions-button__pagination',
       type: 'fraction',
@@ -302,24 +274,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
       1920: {
-        // slidesPerView: 3,
-        // slidesPerColumnFill: 'row',
-        // slidesPerColumn: 2,
-        // spaceBetween: 50,
+        slidesPerView: 3,
+        spaceBetween: 50,
         // slidesPerGroup: 3,
       },
     }
   });
 
   // Слайдер в Projects
-  let mySwiperProjects = new Swiper('.projects__swiper-container', {
+  let mySwiperProjects = new Swiper('.projects-swiper-container', {
     slidesPerView: 3,
     spaceBetween: 50,
     slidesPerGroup: 3,
     // cssMode: true,
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: ".projects-button__next",
+      prevEl: ".projects-button__prev",
     },
     pagination: {
       // el: ".projects__swiper-pagination",
@@ -328,35 +298,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // keyboard: true,
 
     breakpoints: {
-
-
       1920: {
-        // slidesPerView: 3,
-        // slidesPerColumnFill: 'row',
-        // slidesPerColumn: 2,
-        // spaceBetween: 50,
-        // slidesPerGroup: 3,
+        slidesPerView: 3,
+        spaceBetween: 50,
+        slidesPerGroup: 3,
       },
     }
   });
 
 
   // Map
-  // Функция ymaps.ready() будет вызвана, когда
-  // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
   ymaps.ready(init);
   function init() {
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-      // Координаты центра карты.
-      // Порядок по умолчанию: «широта, долгота».
-      // Чтобы не определять координаты центра карты вручную,
-      // воспользуйтесь инструментом Определение координат.
       center: [55.760081, 37.7223],
-      // center: [55.758301, 37.685551],
-      // center: [55.761781, 37.633850],
-      // Уровень масштабирования. Допустимые значения:
-      // от 0 (весь мир) до 19.
       zoom: 14,
       controls: [],
     });
@@ -368,28 +324,14 @@ document.addEventListener('DOMContentLoaded', function () {
       iconImageOffset: [0, 0]
     });
 
-
-
     myMap.geoObjects.add(myPlacemark);
 
     myMap.behaviors.disable(['drag', 'rightMouseButtonMagnifier', 'scrollZoom']);
-
-    // myMap.controls.remove('geolocationControl');
-    // myMap.controls.remove('searchControl');
-    // myMap.controls.remove("routeButtonControl");
-    // myMap.controls.remove('trafficControl');
-    // myMap.controls.remove('typeSelector');
-    // myMap.controls.remove('fullscreenControl');
-    // myMap.controls.remove('zoomControl');
-    // myMap.controls.remove('rulerControl');
-    // myMap.behaviors.disable('scrollZoom');
-
   };
 
 
   // InputMask
   const phoneInput = document.querySelector('input[type="tel"]');
-  // console.log(phoneInput);
   const im = new Inputmask("+7 (999) 999-99-99");
   im.mask(phoneInput);
 
@@ -409,30 +351,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
       colorWrong: '#D11616',
 
-
       submitHandler: function (form, values, ajax) {
-        console.log(form);
-
         const formData = new formData(form);
         fetch('mail.php', {
           method: 'POST',
           body: formData,
         })
           .then(function (data) {
-            console.log(data);
-            console.log('Отправлено');
+            // console.log(data);
+            // console.log('Отправлено');
             form.reset();
           });
       },
-
-
     });
   };
 
   validateForm('.contacts', {
     name: {
       required: true,
-      // minLength: 3,
     },
     tel: {
       required: true,
