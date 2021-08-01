@@ -85,8 +85,8 @@
 }
 
 .tab-content__descr {
-  margin-bottom: 42px;
-  padding-right: 487px;
+  margin-bottom: 39px;
+  padding-right: 488px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
@@ -106,6 +106,7 @@
 
 .artist-card__name {
   margin-bottom: 4px;
+  padding-left: 1px;
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
@@ -114,7 +115,7 @@
 
 .artist-card__dates {
   display: inline-block;
-  margin-bottom: 7px;
+  margin-bottom: 9px;
   font-size: 12px;
   line-height: 16px;
   color: var(--color-nobel)

@@ -85,24 +85,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
   selectGallery();
 
-  // Слайдер в Gallery
-  const slider = document.querySelector('.gallery__swiper-container');
 
-  let mySwiper = new Swiper('.gallery__swiper-container', {
+  // Слайдер в Gallery
+  // const slider = document.querySelector('.gallery__swiper-container');
+  const mySwiperGallery = new Swiper('.gallery-swiper-container', {
     slidesPerView: 3,
     slidesPerColumnFill: 'row',
     slidesPerColumn: 2,
     slidesPerGroup: 3,
     spaceBetween: 50,
     direction: 'horizontal',
+    
     pagination: {
-      el: '.gallery__swiper-pagination',
+      el: '.gallery-button__pagination',
       type: 'fraction',
     },
 
     navigation: {
-      nextEl: '.gallery__swiper-button-next',
-      prevEl: '.gallery__swiper-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
 
     breakpoints: {
@@ -280,7 +281,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Слайдер в Editions
-  let mySwiperEditions = new Swiper('.editions__swiper-container', {
+  let mySwiperEditions = new Swiper('.editions-swiper-container', {
     slidesPerView: 3,
     // slidesPerColumnFill: 'row',
     // slidesPerColumn: 2,
@@ -288,13 +289,13 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 50,
     direction: 'horizontal',
     pagination: {
-      el: '.editions__swiper-pagination',
+      el: '.editions-button__pagination',
       type: 'fraction',
     },
 
     navigation: {
-      nextEl: '.editions__swiper-button-next',
-      prevEl: '.editions__swiper-button-prev',
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
 
     breakpoints: {
