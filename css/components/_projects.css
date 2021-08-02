@@ -78,10 +78,6 @@
   outline: none;
 }
 
-.projects-tooltip__btn:focus .projects-tooltip__color {
-  /* fill: var(--color-white); */
-}
-
 .projects-tooltip__btn:focus .projects-tooltip__background {
   fill: var(--color-mauve);
 }
@@ -119,9 +115,6 @@
 .projects-tooltip:active .projects-tooltip__border {
   stroke: var(--color-amethyst);
 }
-
-
-
 
 .projects-site__link {
   display: inline-block;
