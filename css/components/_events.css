@@ -100,6 +100,9 @@
   border: 2px solid currentColor;
   color: var(--color-amethyst);
   background-color: var(--color-white);
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .event__btn-invisible {

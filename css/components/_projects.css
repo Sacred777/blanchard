@@ -181,20 +181,15 @@
   left: -11px;
 }
 
-.projects-button__next.swiper-button-disabled .swiper-button-light__triangle,
-.projects-button__prev.swiper-button-disabled .swiper-button-light__triangle {
-  stroke: var(--color-unactive);
-}
-
 .swiper-button-light__backgroud {
   transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
-.swiper-button-light:focus .swiper-button-light__backgroud {
+.swiper-button-light:focus:not(.swiper-button-disabled) .swiper-button-light__backgroud {
   stroke: var(--color-amethyst);
 }
 
-.swiper-button-light:hover .swiper-button-light__backgroud {
+.swiper-button-light:hover:not(.swiper-button-disabled) .swiper-button-light__backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-mauve);
 }
@@ -202,6 +197,11 @@
 .swiper-button-light:active .swiper-button-light__backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-amethyst);
+}
+
+.projects-button__next.swiper-button-disabled .swiper-button-light__triangle,
+.projects-button__prev.swiper-button-disabled .swiper-button-light__triangle {
+  stroke: var(--color-unactive);
 }
 
 .projects-swiper-container {
