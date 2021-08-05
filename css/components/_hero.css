@@ -1,11 +1,23 @@
 .hero {
   padding-top: 170px;
   min-height: 800px;
-  background-image: url(../../img/hero_main.jpg);
   background-position: center;
   background-repeat: no-repeat;
   color: var(--color-white);
   animation: grow 8s ease-in-out infinite alternate;
+  transition: background-image 0.5s ease-in-out; 
+}
+
+.hero_img1 {
+  background-image: url(../../img/hero_main.jpg);
+}
+
+.hero_img2 {
+  background-image: url(../../img/hero_main1.jpg);
+}
+
+.hero_img3 {
+  background-image: url(../../img/hero_main2.jpg);
 }
 
 @keyframes grow {
@@ -64,11 +76,11 @@
 
 }
 
-.hero__btn:focus {
+.hero__btn:focus-visible {
   outline: none;
 }
 
-.hero__btn:focus::after {
+.hero__btn:focus-visible::after {
   opacity: 1;
 }
 

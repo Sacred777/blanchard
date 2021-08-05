@@ -26,11 +26,11 @@
   margin-right: 21px;
 }
 
-.social__link:focus {
+.social__link:focus-visible {
   outline: none;
 }
 
-.social__link:focus .social__svg_bg {
+.social__link:focus-visible .social__svg_bg {
   fill: var(--color-white);
 }
 

@@ -56,6 +56,20 @@ document.addEventListener('DOMContentLoaded', function () {
     new SimpleBar(el)
   });
 
+  // Смена картинок в Hero
+  const hero = document.querySelector('.hero');
+  const termId = setInterval(() => {
+    let indexImage = hero.dataset.image;
+    hero.classList.remove(`hero_img${indexImage}`);
+        if (indexImage == 3) {
+      indexImage = 1;
+    } else {
+      ++indexImage;
+    };
+    hero.classList.add(`hero_img${indexImage}`);
+    hero.setAttribute('data-image', indexImage);
+  }, 8000);
+
 
   // Селект в Gallery
   const selectGallery = () => {
@@ -79,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerGroup: 3,
     spaceBetween: 50,
     direction: 'horizontal',
-    
+
     pagination: {
       el: '.gallery-button__pagination',
       type: 'fraction',
@@ -180,16 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
       artistBtns.forEach((artistBtn) => {
         artistBtn.addEventListener('click', (event) => {
           artistBtns.forEach((button) => {
-            button.classList.remove('accordion__btn-active');
+            button.classList.remove('accordion__btn_active');
           });
-          artistBtn.classList.add('accordion__btn-active');
+          artistBtn.classList.add('accordion__btn_active');
           showArtistCard(activeCatalog);
         })
       });
     }
 
     function showArtistCard(activeCatalog) {
-      const activeArtistBtn = activeCatalog.querySelector('.accordion__btn-active');
+      const activeArtistBtn = activeCatalog.querySelector('.accordion__btn_active');
       if (activeArtistBtn) {
         if (activeArtistBtn.dataset.artist == 'Гирландайо') {
           createArtistCard(currentArtistData, activeCatalog);
@@ -238,17 +252,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Закрываем и открываем События
   const eventsItems = document.querySelectorAll('.events__item')
-  eventsItems.forEach((eventItem, index) => {
-    if (index > 2) {
-      eventItem.classList.add('events__item_invisible');
-    }
-  })
+  // eventsItems.forEach((eventItem, index) => {
+    // if (index > 2) {
+      // eventItem.classList.add('events__item_invisible');
+    // }
+  // })
 
   const eventButton = document.querySelector('.event__btn')
 
   eventButton.addEventListener('click', (event) => {
     eventsItems.forEach((eventItem) => {
-      eventItem.classList.remove('events__item_invisible');
+      eventItem.classList.add('events__item_visible');
     });
     eventButton.classList.add('event__btn-invisible');
   });
@@ -353,7 +367,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       submitHandler: function (form, values, ajax) {
         const formData = new formData(form);
-        fetch('mail.php', {
+        console.log(formData);
+        fetch('../mail.php', {
           method: 'POST',
           body: formData,
         })

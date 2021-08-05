@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 89px;
-  padding-bottom: 71px;
+  padding-bottom: 70px;
   height: 100%;
 }
 
@@ -109,7 +109,7 @@
 
 .choices[data-type*=select-one].is-open:after {
   margin-top: 0;
-  right: 18px;
+  right: 16px;
   border-color: var(--color-white);
   transform: rotate(135deg);
 }
@@ -121,10 +121,13 @@
 
 .gallery-filter__descr--wisteria {
   color: var(--color-wisteria);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  border-bottom: 2px solid transparent;
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
-.gallery-filter__descr--wisteria:focus {
+.gallery-filter__descr--wisteria:focus-visible {
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);
@@ -133,7 +136,7 @@
 .gallery-filter__descr--wisteria:hover {
   color: var(--color-amethyst);
   background-color: transparent;
-  border-bottom: 2px solid currentColor;
+  border-color: currentColor;
 }
 
 .gallery-filter__descr--wisteria:active {
@@ -145,8 +148,8 @@
 .gallery-slider {
   position: relative;
   margin: 0;
-  margin-bottom: 10px;
-  padding-top: 10px;
+  margin-bottom: 4px;
+  padding-top: 6px;
   padding-left: 3px;
   width: 72%;
   height: auto;
@@ -166,7 +169,7 @@
 .gallery-button {
   display: flex;
   align-items: center;
-  padding: 16px 0;
+  padding: 19px 0;
   padding-left: 3px;
 }
 
@@ -183,7 +186,7 @@
 }
 
 .gallery-button__prev {
-  margin-right: 20px;
+  margin-right: 18px;
 }
 
 .gallery-button__pagination {
@@ -234,8 +237,8 @@
 .gallery-swiper-slide {
   position: relative;
   display: block;
-  height: 350px;
-  width: 350px;
+  /* height: 350px; */
+  /* width: 350px; */
   z-index: 2;
   cursor: pointer;
 }
@@ -262,8 +265,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: 86%;
+  height: 86%;
   background-image: url(../../img/gallery_slide_hover.svg);
   background-repeat: no-repeat;
   background-position: center;

@@ -4,6 +4,7 @@
 @import "_vendor.css";
 @import "_variables.css";
 @import "_overall.css";
+@import "../libs/focus-visible.css";
 @import "components/_header.css";
 @import "components/_hero.css";
 @import "components/_us.css";
@@ -14,3 +15,4 @@
 @import "components/_projects.css";
 @import "components/_contacts.css";
 @import "components/_footer.css";
+@import "components/_modal.css";

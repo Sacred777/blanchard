@@ -76,7 +76,7 @@
   color: var(--color-nobel);
 }
 
-.contacts__input:focus {
+.contacts__input:focus-visible {
   outline: none;
   background-color: var(--color-whisp);
 }
@@ -121,11 +121,11 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.contacts__btn:focus {
+.contacts__btn:focus-visible{
   outline: none;
 }
 
-.contacts__btn:focus::after { 
+.contacts__btn:focus-visible::after { 
   opacity: 1;
 }
 
@@ -140,7 +140,7 @@
 }
 
 .contacts__btn:active {
-  padding: 13px 31px;
+  padding: 14px 32px;
   color: var(--color-white);
   background-color: var(--color-studio);
   border: 3px solid var(--color-mauve);
@@ -169,7 +169,7 @@
   transition: opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.messenger__link:focus {
+.messenger__link:focus-visible {
   outline: none;
   opacity: 0.6;
 }

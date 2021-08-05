@@ -41,7 +41,7 @@
               </li>
             </ul>
           </nav>
-          <a class="login list-reset" href="#">
+          <a class="login link-reset" href="#">
             <svg class="login-svg" width="13" height="13" viewBox="0 0 13 13" fill="none"
               xmlns="http://www.w3.org/2000/svg">
               <path class="login-svg_color"
@@ -196,7 +196,7 @@
     <main class="main">
 
       <!-- Секция Hero -->
-      <section class="hero">
+      <section class="hero hero_img1" data-image="1">
         <div class="hero__container container">
           <h1 class="site-title">Художественная галерея Blanchard</h1>
           <span class="hero__tagline">Прикоснитесь к&nbsp;прекрасному</span>
@@ -336,24 +336,26 @@
       <!-- Секция Catalog -->
       <section class="catalog" id="catalog">
         <div class="catalog__container container">
-          <h2 class="catolog-title section-title title-reset">Каталог</h2>
-          <ul class="tabs list-reset">
-            <li class="tabs__item">
-              <button class="tabs__btn btn-reset tabs__btn_fr" data-catalog="fr"></button>
-            </li>
-            <li class="tabs__item">
-              <button class="tabs__btn btn-reset tabs__btn_de" data-catalog="de"></button>
-            </li>
-            <li class="tabs__item">
-              <button class="tabs__btn tabs__btn_active btn-reset tabs__btn_it" data-catalog="it"></button>
-            </li>
-            <li class="tabs__item">
-              <button class="tabs__btn btn-reset tabs__btn_ru" data-catalog="ru"></button>
-            </li>
-            <li class="tabs__item">
-              <button class="tabs__btn btn-reset tabs__btn_be" data-catalog="be"></button>
-            </li>
-          </ul>
+          <div class="catalog__top">
+            <h2 class="catalog-title section-title title-reset">Каталог</h2>
+            <ul class="tabs list-reset">
+              <li class="tabs__item">
+                <button class="tabs__btn btn-reset tabs__btn_fr" data-catalog="fr"></button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__btn btn-reset tabs__btn_de" data-catalog="de"></button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__btn tabs__btn_active btn-reset tabs__btn_it" data-catalog="it"></button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__btn btn-reset tabs__btn_ru" data-catalog="ru"></button>
+              </li>
+              <li class="tabs__item">
+                <button class="tabs__btn btn-reset tabs__btn_be" data-catalog="be"></button>
+              </li>
+            </ul>
+          </div>
 
           <div class="tab-content" data-catalog="fr">
             <p class="tab-content__descr p-reset">Фра&#769;нция, официальное название&nbsp;&mdash; Францу&#769;зская
@@ -362,7 +364,7 @@
               Девиз Республики&nbsp;&mdash; &laquo;Свобода, равенство, братство&raquo;, её&nbsp;принцип&nbsp;&mdash;
               правление народа, народом и&nbsp;для народа.</p>
 
-            <div class="catolog-content">
+            <div class="catalog-content">
 
               <div class="artist-card"></div>
 
@@ -394,7 +396,7 @@
                       <button class="accordion__btn btn-reset" data-artist="unknow">Брамантино</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset accordion__btn-active" data-artist="unknow">Бреа,
+                      <button class="accordion__btn btn-reset accordion__btn_active" data-artist="unknow">Бреа,
                         Людовико</button>
                     </li>
                     <li class="accordion__item">
@@ -544,7 +546,7 @@
               территории&nbsp;&mdash; 357 408,74&nbsp;км&sup2;. Численность населения на&nbsp;30&nbsp;сентября 2019
               года&nbsp;&mdash; 83&nbsp;149&nbsp;300&nbsp;жителей. Занимает 18-е место в&nbsp;мире по&nbsp;численности
               населения (2-е в&nbsp;Европе) и&nbsp;62-е в&nbsp;мире по&nbsp;территории (8-е в&nbsp;Европе).</p>
-            <div class="catolog-content">
+            <div class="catalog-content">
 
               <div class="artist-card"></div>
 
@@ -598,7 +600,7 @@
                       <button class="accordion__btn btn-reset" data-artist="unknow">Граначчи, Франческо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset accordion__btn-active" data-artist="unknow">Грегорио ди
+                      <button class="accordion__btn btn-reset accordion__btn_active" data-artist="unknow">Грегорио ди
                         Чекко</button>
                     </li>
                     <li class="accordion__item">
@@ -725,7 +727,7 @@
               общечеловеческие нормы этики и&nbsp;морали. Являясь всего лишь частью общей картины, стремящиеся
               вытеснить традиционное производство, нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов,
               которые жаждут быть функционально разнесены на&nbsp;независимые элементы.</p>
-            <div class="catolog-content">
+            <div class="catalog-content">
 
               <div class="artist-card"></div>
 
@@ -769,7 +771,7 @@
                       <button class="accordion__btn btn-reset" data-artist="unknow">Андреа Верроккьо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset accordion__btn-active" data-artist="Гирландайо">Доменико
+                      <button class="accordion__btn btn-reset accordion__btn_active" data-artist="Гирландайо">Доменико
                         Гирландайо</button>
                     </li>
                     <li class="accordion__item">
@@ -907,7 +909,7 @@
               шестое&nbsp;&mdash; по&nbsp;объёму ВВП по&nbsp;ППС, и&nbsp;девятое&nbsp;&mdash; по&nbsp;численности
               населения. Столица&nbsp;&mdash; Москва. Государственный язык&nbsp;&mdash; русский. Денежная
               единица&nbsp;&mdash; российский рубль.</p>
-            <div class="catolog-content">
+            <div class="catalog-content">
 
               <div class="artist-card"></div>
 
@@ -918,7 +920,7 @@
                 <div class="accordion-content_full">
                   <ul class="accordion__list list-reset">
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset  accordion__btn-active" data-artist="unknow">Бенедетто ди
+                      <button class="accordion__btn btn-reset  accordion__btn_active" data-artist="unknow">Бенедетто ди
                         Биндо</button>
                     </li>
                     <li class="accordion__item">
@@ -962,7 +964,7 @@
                       <button class="accordion__btn btn-reset" data-artist="unknow">Граначчи, Франческо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset accordion__btn-active" data-artist="unknow">Грегорио ди
+                      <button class="accordion__btn btn-reset accordion__btn_active" data-artist="unknow">Грегорио ди
                         Чекко</button>
                     </li>
                     <li class="accordion__item">
@@ -1099,7 +1101,7 @@
 
               Официальные языки: французский, нидерландский и&nbsp;немецкий. Денежная единица&nbsp;&mdash; евро.
             </p>
-            <div class="catolog-content">
+            <div class="catalog-content">
 
               <div class="artist-card"></div>
 
@@ -1113,7 +1115,7 @@
                       <button class="accordion__btn btn-reset" data-artist="unknow">Бенедетто ди Биндо</button>
                     </li>
                     <li class="accordion__item">
-                      <button class="accordion__btn btn-reset   accordion__btn-active" data-artist="unknow">Бергоньоне,
+                      <button class="accordion__btn btn-reset   accordion__btn_active" data-artist="unknow">Бергоньоне,
                         Амброджо</button>
                     </li>
                     <li class="accordion__item">
@@ -1290,8 +1292,8 @@
                   <span class="event-card__time">с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля</span>
                   <div class="event-card__info">
                     <h3 class="event-card__title title-reset">Книжная гравюра в&nbsp;живом восприятии</h3>
-                    <span class="event-card__descr">Один из&nbsp;ведущих флорентийских художников Кватроченто,
-                      основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо.</span>
+                    <p class="event-card__descr p-reset">Один из&nbsp;ведущих флорентийских художников Кватроченто,
+                      основатель художественной династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо.</p>
                     <a href="" class="event-card__link link-reset">Подробнее</a>
                   </div>
                 </div>
@@ -1859,6 +1861,31 @@
     </footer>
   </div>
 
+  <div class="modal">
+    <div class="modal__container">
+      <!-- <div class="modal modal-slide"> -->
+      <button class="modal-close-btn btn-reset"></button>
+      <div class="modal-slide__left">
+        <img class="modal-slide__img" src="img/gallery1_1.jpg" alt="Изображение картины художника">
+      </div>
+      <div class="modal-slide__right">
+        <h4 class="modal-slide__artist-name title-reset">Казимир Малевич</h4>
+        <h5 class="modal-slide__picture-name title-reset">"Крестьянка"</h5>
+        <span class="modal-slide__picture-date">1928-1930</span>
+        <p class="modal-slide__descr p-reset">В&nbsp;центре картины&nbsp;&mdash; женщина, для изображения фигуры
+          которой, Малевич использовал всего лишь две краски: черную и&nbsp;белую. Этим он&nbsp;совершенно обезличил
+          грубый и&nbsp;мрачный образ. Художник применяет этот прием для того, чтобы показать массовость, одинаковость
+          и&nbsp;ничтожность всей жизни человека.</p>
+      </div>
+      <!-- </div> -->
+      <div class="modal__container">
+        <button class="modal-close-btn btn-reset"></button>
+
+
+      </div>
+    </div>
+  </div>
+
   <script src="libs/simplebar.js"></script>
   <script src="libs/choices.min.js"></script>
   <script src="libs/swiper-bundle.min.js"></script>
@@ -1868,6 +1895,7 @@
   <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
   <script src="libs/just-validate.min.js"></script>
   <script src="libs/inputmask.min.js"></script>
+  <script src="libs/focus-visible.js"></script>
   <script src="js/main.js"></script>
 </body>
 

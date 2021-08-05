@@ -1,21 +1,27 @@
 .catalog__container {
-  padding-top: 84px;
+  padding-top: 88px;
   padding-bottom: 84px;
 
 }
 
-.catolog-title {
-  display: inline-block;
-  margin-right: 36px;
+.catalog__top {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-bottom: 24px;
 
 }
 
+.catalog-title {
+  /* display: inline-block; */
+  margin-right: 41px;
+}
+
 .tabs {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  transform: translateY(6px);
+  transform: translateY(2px);
 }
 
 .tabs__item:not(:last-child) {
@@ -36,7 +42,7 @@
   transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.tabs__btn:focus {
+.tabs__btn:focus-visible {
   filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
@@ -91,7 +97,7 @@
   color: var(--color-night-rider);
 }
 
-.catolog-content {
+.catalog-content {
   display: flex;
   justify-content: space-between;
 }
@@ -135,7 +141,7 @@
   cursor: pointer; 
 }
 
-.artist-card__link:focus {
+.artist-card__link:focus-visible {
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);
@@ -160,7 +166,7 @@
 
 .ui-accordion-header {
   position: relative;
-  padding: 41px 0;
+  padding: 41px 0 40px 0;
   cursor: pointer;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
@@ -245,18 +251,23 @@
 
 
 /* Active */
-.ui-accordion-header:active {
+/* .ui-accordion-header:active {
   border-color: var(--color-studio);
-}
+} */
 
-.ui-accordion-header:active .accordion__title {
+/* .ui-accordion-header:active .accordion__title {
   color: var(--color-studio);
   background-color: transparent;
-}
+} */
 
-.ui-accordion-header:active::before {
+/* .ui-accordion-header:active::before {
   background-color: var(--color-mauve);
   border: 2px solid var(--color-amethyst);
+} */
+
+.ui-state-active .accordion__title {
+  color: var(--color-amethyst);
+  background-color: transparent;
 }
 
 .ui-accordion-header-active {
@@ -279,11 +290,9 @@
 }
 
 .accordion__list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: 343px;
-  padding: 24px 70px 23px 0;
+  padding-top: 24px;
+  column-count: 3;
+  height: 338px;
 }
 
 .accordion__btn {
@@ -302,7 +311,7 @@
   background-color: transparent;
 }
 
-.accordion__btn:focus {
+.accordion__btn:focus-visible {
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);
@@ -312,6 +321,10 @@
   color: var(--color-studio);
   border-color: transparent;
   background-color: transparent;
+}
+
+.accordion__btn_active {
+  color: var(--color-amethyst);    
 }
 
 .accordion-content {
@@ -364,7 +377,7 @@
   color: var(--color-amethyst);
 }
 
-.accordion-content__link:focus {
+.accordion-content__link:focus-visible {
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);

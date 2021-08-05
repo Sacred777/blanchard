@@ -128,7 +128,7 @@
   transition-timing-function: ease-in-out;
 }
 
-.projects-site__link:focus {
+.projects-site__link:focus-visible {
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);
@@ -185,7 +185,7 @@
   transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
 }
 
-.swiper-button-light:focus:not(.swiper-button-disabled) .swiper-button-light__backgroud {
+.swiper-button-light:focus-visible:not(.swiper-button-disabled) .swiper-button-light__backgroud {
   stroke: var(--color-amethyst);
 }
 

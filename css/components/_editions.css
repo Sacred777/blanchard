@@ -101,7 +101,7 @@
   opacity: 1;
 }
 
-.categories__input:focus + .categories__name {
+.categories__input:focus-visible + .categories__name {
   color: var(--color-wisteria);
 }
 
@@ -137,7 +137,7 @@
 
 
 .price-label__input {
-  padding-left: 7px;
+  padding-left: 8px;
   max-width: 73px;
   line-height: 32px;
   color: var(--color-white);
@@ -176,6 +176,11 @@
   padding-top: 22px;
   max-width: 1150px;
   height: auto;
+}
+
+.editions-swiper-container {
+  margin: 0 -7px;
+  padding: 0 7px;
 }
 
 .editions-button {
@@ -246,14 +251,14 @@
 }
 
 .editions-slide__artist-name {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   color: var(--color-white);
   font-size: 16px;
   line-height: 22px;
 }
 
 .editions-slide-btn__wrap {
-  padding-left: 3px;
+  /* padding-left: 3px; */
 }
 
 .editions-slide__btn {
@@ -274,11 +279,11 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.editions-slide__btn:focus {
+.editions-slide__btn:focus-visible {
   outline: none;
 }
 
-.editions-slide__btn:focus::after {
+.editions-slide__btn:focus-visible::after {
   opacity: 1;
 }
 
@@ -293,7 +298,7 @@
 }
 
 .editions-slide__btn:active {
-  padding: 5px 18px;
+  padding: 6px 17px;
   background-color: var(--color-studio);
   border: 3px solid var(--color-mauve);
 }
