@@ -57,18 +57,32 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Смена картинок в Hero
-  const hero = document.querySelector('.hero');
-  const termId = setInterval(() => {
-    let indexImage = hero.dataset.image;
-    hero.classList.remove(`hero_img${indexImage}`);
-        if (indexImage == 3) {
-      indexImage = 1;
-    } else {
-      ++indexImage;
-    };
-    hero.classList.add(`hero_img${indexImage}`);
-    hero.setAttribute('data-image', indexImage);
-  }, 8000);
+  // Слайдер
+  const swiper1 = new Swiper('.hero-swiper-container', {
+    direction: 'horizontal',
+    loop: true,
+    pagination: {
+      el: false,
+    },
+    autoplay: {
+      delay: 8000,
+    },
+  });
+
+
+
+  // const hero = document.querySelector('.hero');
+  // const termId = setInterval(() => {
+  //   let indexImage = hero.dataset.image;
+  //   hero.classList.remove(`hero_img${indexImage}`);
+  //       if (indexImage == 3) {
+  //     indexImage = 1;
+  //   } else {
+  //     ++indexImage;
+  //   };
+  //   hero.classList.add(`hero_img${indexImage}`);
+  //   hero.setAttribute('data-image', indexImage);
+  // }, 8000);
 
 
   // Селект в Gallery
