@@ -131,28 +131,36 @@ document.addEventListener('DOMContentLoaded', function () {
       pictureElement.setAttribute('src', pictureImgSrc);
       pictureElement.setAttribute('alt', pictureImgAlt);
       pictureWrapper.append(pictureElement);
-      const pagePosition = openModal(modalPictureCard);
-      controlModal(pictureWrapper, pagePosition);
+      const modalState = {
+        modalElement: modalPictureCard,
+        imgWrapper: pictureWrapper,
+      }
+      // const pagePosition = openModal(modalPictureCard);
+      modalState.pagePosition = openModal(modalPictureCard);
+      // controlModal(pictureWrapper, pagePosition);
+      controlModal(modalState);
     })
   });
 
-  function controlModal(pictureWrapper, pagePosition) {
-    modal.addEventListener('click', function (ev) {
+  // function controlModal(pictureWrapper, pagePosition) {
+    function controlModal(modalState) {
+      modal.addEventListener('click', function (ev) {
       const clickedElement = ev.target;
       if (clickedElement.classList.contains('modal') || clickedElement.classList.contains('modal-close-btn')) {
-        closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        closeModal(modalState);
       };
     });
 
     window.addEventListener('keydown', function (e) {
       if (e.key == 'Escape') {
         if (modal.classList.contains('is-open')) {
-        closeModal(modalPictureCard, pagePosition, pictureWrapper);
-        closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        closeModal(modalState);
         };
       };
     });
-
   };
 
   function openModal(modalContainer) {
@@ -166,13 +174,19 @@ document.addEventListener('DOMContentLoaded', function () {
     return pagePosition;
   };
 
-  function closeModal(modalContainer, pagePosition, pictureWrapper) {
-    modalContainer.classList.remove('animate-open');
+  // function closeModal(modalContainer, pagePosition, pictureWrapper) {
+  function closeModal(modalState) {
+    modalState.modalElement.classList.remove('animate-open');
+    // modalContainer.classList.remove('animate-open');
     setTimeout(() => {
       modal.classList.remove('is-open');
-      modalContainer.classList.remove('modal-open');
-      pictureWrapper.innerHTML = '';
-      enableScroll(pagePosition);
+      // modalContainer.classList.remove('modal-open');
+      modalState.modalElement.classList.remove('modal-open');
+      if (modalState.imgWrapper) {
+        console.log("Deleted Img");
+        modalState.imgWrapper.innerHTML = '';
+      };
+      enableScroll(modalState.pagePosition);
     }, 300);
   };
 
@@ -444,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function () {
   im.mask(phoneInput);
 
   // Validate
-  function validateForm(selector, rules) {
+  function validateForm(selector, rules, successModal) {
     new window.JustValidate(selector, {
       rules: rules,
 
@@ -459,29 +473,44 @@ document.addEventListener('DOMContentLoaded', function () {
 
       colorWrong: '#D11616',
 
-      submitHandler: function (form, values, ajax) {
-        const formData = new formData(form);
-        console.log(formData);
-        fetch('../mail.php', {
-          method: 'POST',
-          body: formData,
-        })
-          .then(function (data) {
-            // console.log(data);
-            // console.log('Отправлено');
-            form.reset();
-          });
+      submitHandler: function(form) {
+        console.log(form);
+
+        let formData = new FormData(form);
+  
+        let xhr = new XMLHttpRequest();
+  
+        xhr.onreadystatechange = function() {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log('Отправлено');
+              console.log(successModal);
+              const modalElement = modal.querySelector(successModal);
+              const modalState = {
+                modalElement: modalElement,
+                imgWrapper: null,
+              };
+              modalState.pagePosition = openModal(modalElement);
+              controlModal(modalState);
+            };
+          };
+        };
+  
+        xhr.open('POST', 'mail.php', true);
+        xhr.send(formData);
+  
+        form.reset();
       },
     });
   };
 
-  validateForm('.contacts', {
+  validateForm('.contacts-form', {
     name: {
       required: true,
     },
     tel: {
       required: true,
     },
-  })
+  }, '.modal-alert');
 
 });

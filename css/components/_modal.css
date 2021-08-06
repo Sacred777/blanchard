@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   z-index: 1000;
-  background-color: rgba(0,0,0, 0.7);
+  background-color: rgba(0,0,0, 0.4);
   cursor: pointer;
   overflow-y: auto;
   overflow-x: hidden;
@@ -73,9 +73,9 @@
   stroke: var(--color-amethyst);
 }
 
-/* .modal-close-btn:hover .modal-close-btn__svg_color {
+.modal-close-btn:hover .modal-close-btn__svg_color {
   stroke: var(--color-amethyst);
-} */
+}
 
 .modal-close-btn:active .modal-close-btn__svg_color {
   stroke: var(--color-studio);
@@ -131,7 +131,27 @@
 
 .modal-alert {
   display: none;
+  padding: 50px;
+  /* width: 500px; */
+  /* background-color: var(--color-white); */
 }
+
+.modal-alert__title {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+  color: var(--color-night-rider);
+}
+
+.modal-alert__text {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--color-night-rider);
+}
+
+
+
 
 .disable-scroll {
   position: fixed;

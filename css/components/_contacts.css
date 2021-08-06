@@ -43,24 +43,24 @@
   color: var(--color-night-rider);
 }
 
-.contacts__fieldset {
+.contacts-form__fieldset {
   display: flex;
   flex-direction: column;
   padding-top: 15px;
 }
 
-.contacts__legend {
+.contacts-form__legend {
   font-size: 24px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
 
-.contacts__label {
+.contacts-form__label {
   position: relative;
   max-width: 400px;
 }
 
-.contacts__input {
+.contacts-form__input {
   padding-left: 22px;
   margin-bottom: 23px;
   width: 100%;
@@ -70,23 +70,23 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.contacts__input::placeholder {
+.contacts-form__input::placeholder {
   font-weight: normal;
   font-size: 16px;
   line-height: 32px;
   color: var(--color-nobel);
 }
 
-.contacts__input:focus-visible {
+.contacts-form__input:focus-visible {
   outline: none;
   background-color: var(--color-whisp);
 }
 
-.contacts__input:hover {
+.contacts-form__input:hover {
   background-color: var(--color-whisp);
 }
 
-.contacts__input:active {
+.contacts-form__input:active {
   background-color: transparent;
 }
 
@@ -98,7 +98,7 @@
   line-height: 16px;
 }
 
-.contacts__btn {
+.contacts-form__btn {
   align-self: flex-start;
   padding: 15px 33px;
   font-size: 18px;
@@ -109,7 +109,7 @@
   transition-timing-function: ease-in-out;
 }
 
-.contacts__btn::after {
+.contacts-form__btn::after {
   content: '';
   position: absolute;
   top: -5px;
@@ -122,25 +122,25 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.contacts__btn:focus-visible{
+.contacts-form__btn:focus-visible{
   outline: none;
 }
 
-.contacts__btn:focus-visible::after { 
+.contacts-form__btn:focus-visible::after { 
   opacity: 1;
 }
 
-.contacts__btn:hover {
+.contacts-form__btn:hover {
   color: var(--color-white);
   background-color: var(--color-amethyst);
   border-color: var(--color-amethyst);
 }
 
-.contacts__btn:hover::after { 
+.contacts-form__btn:hover::after { 
   opacity: 0;
 }
 
-.contacts__btn:active {
+.contacts-form__btn:active {
   padding: 14px 32px;
   color: var(--color-white);
   background-color: var(--color-studio);

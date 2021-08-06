@@ -1769,20 +1769,20 @@
               <div class="contacts-left__box">
                 <h3 class="office-title title-reset">Шоурум №4</h3>
                 <address class="office-address">Леонтьевский переулок, дом 5/1</address>
-                <form class="contacts" action="admit">
-                  <fieldset class="contacts__fieldset fieldset-reset">
-                    <legend class="contacts__legend">Заказать обратный звонок</legend>
-                    <input type="hidden" name="admin_email[]" value="o9883403555#gmail.com">
+                <form class="contacts-form" action="mail.php" method="POST">
+                  <fieldset class="contacts-form__fieldset fieldset-reset">
+                    <legend class="contacts-form__legend">Заказать обратный звонок</legend>
+                    <input type="hidden" name="admin_email[]" value="o9883403555@gmail.com">
                     <input type="hidden" name="form_subject" value="Заявка с сайта blanchard.ru">
-                    <label class="contacts__label">
-                      <input class="contacts__input" type="text" name="name" placeholder="Имя*"
+                    <label class="contacts-form__label">
+                      <input class="contacts-form__input" type="text" name="name" placeholder="Имя*"
                         data-validate-field="name">
                     </label>
-                    <label class="contacts__label">
-                      <input class="contacts__input" type="tel" name="phone" placeholder="Телефон*"
+                    <label class="contacts-form__label">
+                      <input class="contacts-form__input" type="tel" name="phone" placeholder="Телефон*"
                         data-validate-field="tel">
                     </label>
-                    <button class="contacts__btn btn-secondary btn-reset" type="submit">Заказать</button>
+                    <button class="contacts-form__btn btn-secondary btn-reset" type="submit">Заказать</button>
                   </fieldset>
                 </form>
                 <div class="messengers">
@@ -1887,18 +1887,19 @@
             грубый и&nbsp;мрачный образ. Художник применяет этот прием для того, чтобы показать массовость, одинаковость
             и&nbsp;ничтожность всей жизни человека.</p>
         </div>
-        <div class="modal-alert modal__container">
-          <button class="modal-close-btn btn-reset"></button>
-          <svg class="modal-close-btn__svg" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
-            <path class="modal-close-btn__svg_color" d="M1 1l15.915 15.915M16.915 1L1 16.915" stroke-width="1.5"
-              stroke="#000" fill="none" fill-rule="evenodd" />
-          </svg>
-          <div class="modal-aletr__wrapper">
-            <h4 class="modal-alert__title">Поздравляем!</h4>
-            <p class="modal-alert__text">Ваши данные успешно переданы! <br>
-              Наш менеджер в течении 15 минут свяжется с Вами! </p>
-          </div>
-        </div>
+      </div>
+    </div>
+    <div class="modal-alert modal__container">
+      <button class="modal-close-btn btn-reset">
+        <svg class="modal-close-btn__svg" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path class="modal-close-btn__svg_color" d="M1 1l15.915 15.915M16.915 1L1 16.915" stroke-width="1.5"
+            stroke="#000" fill="none" fill-rule="evenodd" />
+        </svg>
+      </button>
+      <div class="modal-aletr__wrapper">
+        <h4 class="modal-alert__title title-reset">Поздравляем!</h4>
+        <p class="modal-alert__text p-reset">Ваши данные успешно переданы! <br>
+          Наш менеджер в течении 15 минут свяжется с Вами! </p>
       </div>
     </div>
   </div>
