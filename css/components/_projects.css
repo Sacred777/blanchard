@@ -1,14 +1,16 @@
 .projects__container {
-  margin-top: 88px;
-  margin-bottom: 91px;
+  /* padding: 89px 0; */
+  padding-bottom: 89px;
+  padding-top: 89px;
 }
 
 .projects__title {
+  padding-left: 1px;
   margin-bottom: 25px;
 }
 
 .projects__info {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   max-width: 1079px;
   line-height: 32px;
   color: var(--color-night-rider);
@@ -150,7 +152,7 @@
 }
 
 .projects__subtitle {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
   padding-left: 1px;
   font-weight: 600;
   font-size: 24px;

@@ -1867,26 +1867,38 @@
   </div>
 
   <div class="modal">
-    <div class="modal__container">
-      <!-- <div class="modal modal-slide"> -->
-      <button class="modal-close-btn btn-reset"></button>
-      <div class="modal-slide__left">
-        <img class="modal-slide__img" src="img/gallery1_1.jpg" alt="Изображение картины художника">
-      </div>
-      <div class="modal-slide__right">
-        <h4 class="modal-slide__artist-name title-reset">Казимир Малевич</h4>
-        <h5 class="modal-slide__picture-name title-reset">"Крестьянка"</h5>
-        <span class="modal-slide__picture-date">1928-1930</span>
-        <p class="modal-slide__descr p-reset">В&nbsp;центре картины&nbsp;&mdash; женщина, для изображения фигуры
-          которой, Малевич использовал всего лишь две краски: черную и&nbsp;белую. Этим он&nbsp;совершенно обезличил
-          грубый и&nbsp;мрачный образ. Художник применяет этот прием для того, чтобы показать массовость, одинаковость
-          и&nbsp;ничтожность всей жизни человека.</p>
-      </div>
-      <!-- </div> -->
-      <div class="modal__container">
-        <button class="modal-close-btn btn-reset"></button>
-
-
+    <div class="modal-picture-card modal__container">
+      <button class="modal-close-btn btn-reset">
+        <svg class="modal-close-btn__svg" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path class="modal-close-btn__svg_color" d="M1 1l15.915 15.915M16.915 1L1 16.915" stroke-width="1.5"
+            stroke="#000" fill="none" fill-rule="evenodd" />
+        </svg>
+      </button>
+      <div class="modal-picture-info">
+        <div class="modal-picture-info__left">
+        </div>
+        <div class="modal-picture-info__right">
+          <h4 class="modal-picture-info__artist-name title-reset">Казимир Малевич</h4>
+          <h5 class="modal-picture-info__picture-name title-reset">"Крестьянка"</h5>
+          <span class="modal-picture-info__picture-date">1928-1930</span>
+          <p class="modal-picture-info__descr p-reset">В&nbsp;центре картины&nbsp;&mdash; женщина, для изображения
+            фигуры
+            которой, Малевич использовал всего лишь две краски: черную и&nbsp;белую. Этим он&nbsp;совершенно обезличил
+            грубый и&nbsp;мрачный образ. Художник применяет этот прием для того, чтобы показать массовость, одинаковость
+            и&nbsp;ничтожность всей жизни человека.</p>
+        </div>
+        <div class="modal-alert modal__container">
+          <button class="modal-close-btn btn-reset"></button>
+          <svg class="modal-close-btn__svg" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
+            <path class="modal-close-btn__svg_color" d="M1 1l15.915 15.915M16.915 1L1 16.915" stroke-width="1.5"
+              stroke="#000" fill="none" fill-rule="evenodd" />
+          </svg>
+          <div class="modal-aletr__wrapper">
+            <h4 class="modal-alert__title">Поздравляем!</h4>
+            <p class="modal-alert__text">Ваши данные успешно переданы! <br>
+              Наш менеджер в течении 15 минут свяжется с Вами! </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1902,6 +1914,7 @@
   <script src="libs/inputmask.min.js"></script>
   <script src="libs/focus-visible.js"></script>
   <script src="js/main.js"></script>
+
 </body>
 
 </html>

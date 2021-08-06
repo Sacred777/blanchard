@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
         closeDropdowns();
       }
     });
-
   };
 
   function closeDropdowns() {
@@ -68,21 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
       delay: 8000,
     },
   });
-
-
-
-  // const hero = document.querySelector('.hero');
-  // const termId = setInterval(() => {
-  //   let indexImage = hero.dataset.image;
-  //   hero.classList.remove(`hero_img${indexImage}`);
-  //       if (indexImage == 3) {
-  //     indexImage = 1;
-  //   } else {
-  //     ++indexImage;
-  //   };
-  //   hero.classList.add(`hero_img${indexImage}`);
-  //   hero.setAttribute('data-image', indexImage);
-  // }, 8000);
 
 
   // Селект в Gallery
@@ -128,6 +112,102 @@ document.addEventListener('DOMContentLoaded', function () {
       },
     }
   });
+
+  // Модальное окно в Галерее (инф о картине)
+  const modal = document.querySelector('.modal');
+
+  const modalPictureCard = modal.querySelector('.modal-picture-card');
+
+  const openPictureCardButtons = document.querySelectorAll('.gallery-swiper-slide');
+
+  openPictureCardButtons.forEach((openPictureCardButton) => {
+    openPictureCardButton.addEventListener('click', (event) => {
+      const imgElement = event.currentTarget.querySelector('.gallery-slide__img');
+      const pictureImgSrc = imgElement.getAttribute('src');
+      const pictureImgAlt = imgElement.getAttribute('alt');
+      const pictureWrapper = modalPictureCard.querySelector('.modal-picture-info__left');
+      const pictureElement = document.createElement('img');
+      pictureElement.classList.add('modal-picture-info__img');
+      pictureElement.setAttribute('src', pictureImgSrc);
+      pictureElement.setAttribute('alt', pictureImgAlt);
+      pictureWrapper.append(pictureElement);
+      const pagePosition = openModal(modalPictureCard);
+      controlModal(pictureWrapper, pagePosition);
+    })
+  });
+
+  function controlModal(pictureWrapper, pagePosition) {
+    modal.addEventListener('click', function (ev) {
+      const clickedElement = ev.target;
+      if (clickedElement.classList.contains('modal') || clickedElement.classList.contains('modal-close-btn')) {
+        closeModal(modalPictureCard, pagePosition, pictureWrapper);
+      };
+    });
+
+    window.addEventListener('keydown', function (e) {
+      if (e.key == 'Escape') {
+        if (modal.classList.contains('is-open')) {
+        closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        closeModal(modalPictureCard, pagePosition, pictureWrapper);
+        };
+      };
+    });
+
+  };
+
+  function openModal(modalContainer) {
+    modal.classList.add('is-open');
+    const pagePosition = disableScroll();
+    modalContainer.classList.add('modal-open');
+    setTimeout(() => {
+      modalContainer.classList.add('animate-open');
+    }, 300);
+
+    return pagePosition;
+  };
+
+  function closeModal(modalContainer, pagePosition, pictureWrapper) {
+    modalContainer.classList.remove('animate-open');
+    setTimeout(() => {
+      modal.classList.remove('is-open');
+      modalContainer.classList.remove('modal-open');
+      pictureWrapper.innerHTML = '';
+      enableScroll(pagePosition);
+    }, 300);
+  };
+
+  function disableScroll() {
+    const pagePosition = window.scrollY;
+    lockPadding();
+    document.body.classList.add('disable-scroll');
+    document.body.style.top = -pagePosition + 'px';
+    return pagePosition;
+  };
+
+  function enableScroll(pagePosition) {
+    unlockPadding();
+    document.body.style.top = 'auto';
+    document.body.classList.remove('disable-scroll');
+    window.scroll({ top: pagePosition, left: 0 });
+    document.body.removeAttribute('data-position');
+  };
+
+  const fixBlocks = document.querySelectorAll('.fix-block');
+
+  function lockPadding() {
+    const paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+    fixBlocks.forEach((fixBlock) => {
+      fixBlock.style.paddingRight = paddingOffset;
+    });
+    document.body.style.paddingRight = paddingOffset;
+  };
+
+  function unlockPadding() {
+    fixBlocks.forEach((fixBlock) => {
+      fixBlock.style.paddingRight = '0px';
+    });
+    document.body.style.paddingRight = '0px';
+  };
 
 
   // Плавный скрол к секции по нажатию на навигацию верхнего меню
@@ -267,9 +347,9 @@ document.addEventListener('DOMContentLoaded', function () {
   // Закрываем и открываем События
   const eventsItems = document.querySelectorAll('.events__item')
   // eventsItems.forEach((eventItem, index) => {
-    // if (index > 2) {
-      // eventItem.classList.add('events__item_invisible');
-    // }
+  // if (index > 2) {
+  // eventItem.classList.add('events__item_invisible');
+  // }
   // })
 
   const eventButton = document.querySelector('.event__btn')

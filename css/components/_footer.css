@@ -10,6 +10,7 @@
 
 .footer__logo {
   padding: 49px 0;
+  transform: translateX(1px);
 }
 
 .social {

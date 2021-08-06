@@ -228,7 +228,7 @@
 }
 
 .editions-slide__img {
-  margin-bottom: 24px;
+  margin-bottom: 23px;
 }
 
 .editions-slide__title-wrap {
@@ -262,7 +262,7 @@
 }
 
 .editions-slide__btn {
-  padding: 7px 18px;
+  padding: 7px 19px;
   transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 

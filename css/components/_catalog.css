@@ -92,7 +92,7 @@
 
 .tab-content__descr {
   margin-bottom: 39px;
-  padding-right: 488px;
+  padding-right: 489px;
   line-height: 32px;
   color: var(--color-night-rider);
 }
@@ -107,11 +107,11 @@
 }
 
 .artist-card__img {
-  margin-bottom: 28px;
+  margin-bottom: 26px;
 }
 
 .artist-card__name {
-  margin-bottom: 4px;
+  margin-bottom: 5px;
   padding-left: 1px;
   font-weight: 600;
   font-size: 24px;
@@ -121,7 +121,7 @@
 
 .artist-card__dates {
   display: inline-block;
-  margin-bottom: 9px;
+  margin-bottom: 7px;
   font-size: 12px;
   line-height: 16px;
   color: var(--color-nobel)
@@ -251,19 +251,19 @@
 
 
 /* Active */
-/* .ui-accordion-header:active {
+.ui-accordion-header:active {
   border-color: var(--color-studio);
-} */
+}
 
-/* .ui-accordion-header:active .accordion__title {
+.ui-accordion-header:active .accordion__title {
   color: var(--color-studio);
   background-color: transparent;
-} */
+}
 
-/* .ui-accordion-header:active::before {
+.ui-accordion-header:active::before {
   background-color: var(--color-mauve);
   border: 2px solid var(--color-amethyst);
-} */
+}
 
 .ui-state-active .accordion__title {
   color: var(--color-amethyst);
