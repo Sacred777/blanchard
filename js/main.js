@@ -2,19 +2,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
   //  Выпадающие списки в header-bottom
   function controlDropdows() {
-    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__btn');
-    dropdownLinks.forEach((dropdownLink) => {
-      dropdownLink.addEventListener('click', (event) => {
+    const siteContainer = document.querySelector('.site-container');
+    const dropdownButtons = siteContainer.querySelectorAll('.header-bottom-nav__btn');
+    const header = siteContainer.querySelector('.header');
+    console.log(header);
+    let previousActiveElement = null;
+
+    dropdownButtons.forEach((dropdownButton) => {
+      dropdownButton.addEventListener('click', (event) => {
         event.stopImmediatePropagation();
-        const dropdown = dropdownLink.nextElementSibling;
+        const dropdown = dropdownButton.nextElementSibling;
         if (dropdown.classList.contains('open')) {
           dropdown.classList.remove('open');
-          dropdownLink.classList.remove('rotait');
+          dropdownButton.classList.remove('rotait');
         } else {
           closeDropdowns();
+          previousActiveElement = document.activeElement;
           dropdown.classList.add('open');
-          dropdownLink.classList.add('rotait');
+          dropdownButton.classList.add('rotait');
           getLink(dropdown);
+          Array.from(siteContainer.children).forEach((child) => {
+            if (child !== header) {
+              child.inert = true;
+            }
+          });
+
+          header.querySelector('.header-top').inert = true;
+          const navItems = header.querySelectorAll('.header-bottom-nav__item');
+
+          const curruntParentElement = dropdownButton.parentElement;
+
+          // const
+          dropdown.inert = false;
         };
       });
     });
@@ -29,16 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function closeDropdowns() {
-    const dropdownLinks = document.querySelectorAll('.header-bottom-nav__btn');
-    dropdownLinks.forEach((dropdownLink) => {
-      dropdownLink.classList.remove('rotait');
-      dropdownLink.nextElementSibling.classList.remove('open');
+    const dropdownButtons = document.querySelectorAll('.header-bottom-nav__btn');
+    dropdownButtons.forEach((dropdownButton) => {
+      dropdownButton.classList.remove('rotait');
+      dropdownButton.nextElementSibling.classList.remove('open');
     });
   };
 
   function getLink(dropdown) {
     const dropdownLiks = dropdown.querySelectorAll('.dropdown__link');
-
     dropdownLiks.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
@@ -115,11 +133,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Модальное окно в Галерее (инф о картине)
+  const siteContainer = document.querySelector('.site-container');
   const modal = document.querySelector('.modal');
-
   const modalPictureCard = modal.querySelector('.modal-picture-card');
-
-  const openPictureCardButtons = document.querySelectorAll('.gallery-swiper-slide');
+  const openPictureCardButtons = siteContainer.querySelectorAll('.gallery-swiper-slide');
+  let previousActiveElement = null;
 
   openPictureCardButtons.forEach((openPictureCardButton) => {
     openPictureCardButton.addEventListener('click', (event) => {
@@ -168,12 +186,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   function openModal(modalContainer) {
+    previousActiveElement = document.activeElement;
     modal.classList.add('is-open');
     const pagePosition = disableScroll();
     modalContainer.classList.add('modal-open');
     setTimeout(() => {
       modalContainer.classList.add('animate-open');
+      modalContainer.querySelector('.modal-close-btn').focus();
     }, 300);
+
+    Array.from(siteContainer.children).forEach((child) => {
+      child.inert = true;
+    });
 
     return pagePosition;
   };
@@ -191,8 +215,13 @@ document.addEventListener('DOMContentLoaded', function () {
         imgElement.remove();
       };
       enableScroll(pagePosition);
+      previousActiveElement.focus();
+      previousActiveElement = null;
     }, 300);
 
+    Array.from(siteContainer.children).forEach((child) => {
+      child.inert = false;
+    });
   };
 
   function disableScroll() {
