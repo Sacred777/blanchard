@@ -8,13 +8,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 
 }
 
 .catalog-title {
-  /* display: inline-block; */
-  margin-right: 41px;
+  margin-right: 39px;
 }
 
 .tabs {
@@ -25,22 +24,38 @@
 }
 
 .tabs__item:not(:last-child) {
-  margin-right: 49px;
+  margin-right: 46px;
 }
 
-
 .tabs__btn {
-  width: 47px;
-  height: 47px;
+  position: relative;
+  width: 50px;
+  height: 50px;
   outline: none;
-  border: none;
+  border: 2px solid transparent;
+  border-radius: 100%;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
-  border-radius: 50%;
-  transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition-property: filter, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
+
+.tabs__btn::after {
+  content: '';
+  position: absolute;
+  top: -11px;
+  right: -11px;
+  bottom: -11px;
+  left: -11px;
+  border: 2px solid var(--color-studio);
+  border-radius: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
 
 .tabs__btn:focus-visible {
   filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
@@ -52,11 +67,11 @@
 
 .tabs__btn:active {
   filter: none;
-  box-shadow:0px 0px 0px 2px var(--color-studio);
+  border-color: var(--color-studio);
 }
 
-.tabs__btn_active {
-  box-shadow: 0px 0px 0px 6px var(--color-white), 0px 0px 0px 8px var(--color-studio);
+.tabs__btn_active::after {
+  opacity: 1;
 }
 
 .tabs__btn_fr {
@@ -82,7 +97,7 @@
 .tab-content {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 3s ease-in-out;
 }
 
 .tab-content_active {
@@ -138,7 +153,11 @@
   font-size: 16px;
   line-height: 22px;
   color: var(--color-amethyst);
-  cursor: pointer; 
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition-property: color, bockground-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .artist-card__link:focus-visible {
@@ -150,7 +169,7 @@
 .artist-card__link:hover {
   color: var(--color-wisteria);
   background-color: transparent;
-  border-bottom: 2px solid currentColor;
+  border-color: var(--color-wisteria);
 }
 
 .artist-card__link:active {
@@ -168,7 +187,9 @@
   position: relative;
   padding: 41px 0 40px 0;
   cursor: pointer;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function ease-in-out;
 }
 
 .accordion__title {
@@ -324,7 +345,7 @@
 }
 
 .accordion__btn_active {
-  color: var(--color-amethyst);    
+  color: var(--color-amethyst);
 }
 
 .accordion-content {
@@ -374,7 +395,11 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
+  border-bottom: 2px solid transparent;
   color: var(--color-amethyst);
+  transition-property: color, background-color, border-color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .accordion-content__link:focus-visible {
@@ -386,11 +411,10 @@
 .accordion-content__link:hover {
   color: var(--color-wisteria);
   background-color: transparent;
-  border-bottom: 2px solid currentColor;
+  border-color: var(--color-wisteria);
 }
 
 .accordion-content__link:active {
   color: var(--color-studio);
   background-color: transparent;
 }
-

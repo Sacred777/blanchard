@@ -6,3 +6,5 @@
 /img/new/*.*
 /img/old/*.*
 /docs
+/css/components/_media.css
+settings.json

@@ -60,6 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const swiper1 = new Swiper('.hero-swiper-container', {
     direction: 'horizontal',
     loop: true,
+    effect: 'fade',
     pagination: {
       el: false,
     },
@@ -131,37 +132,40 @@ document.addEventListener('DOMContentLoaded', function () {
       pictureElement.setAttribute('src', pictureImgSrc);
       pictureElement.setAttribute('alt', pictureImgAlt);
       pictureWrapper.append(pictureElement);
-      const modalState = {
-        modalElement: modalPictureCard,
-        imgWrapper: pictureWrapper,
-      }
-      // const pagePosition = openModal(modalPictureCard);
-      modalState.pagePosition = openModal(modalPictureCard);
-      // controlModal(pictureWrapper, pagePosition);
-      controlModal(modalState);
+      const pagePosition = openModal(modalPictureCard);
+      controlModal(modalPictureCard, pagePosition);
     })
   });
 
-  // function controlModal(pictureWrapper, pagePosition) {
-    function controlModal(modalState) {
-      modal.addEventListener('click', function (ev) {
+  function controlModal(modalElement, pagePosition) {
+    modal.addEventListener('click', clickCloseButtonHandler);
+
+    window.addEventListener('keydown', keydownCloseHandler);
+
+    function clickCloseButtonHandler(ev) {
       const clickedElement = ev.target;
       if (clickedElement.classList.contains('modal') || clickedElement.classList.contains('modal-close-btn')) {
-        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
-        closeModal(modalState);
+        closeModal(modalElement, pagePosition);
+        deleteEvents();
       };
-    });
+    };
 
-    window.addEventListener('keydown', function (e) {
-      if (e.key == 'Escape') {
+    function keydownCloseHandler(e) {
+      if (e.key === 'Escape') {
         if (modal.classList.contains('is-open')) {
-        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
-        // closeModal(modalPictureCard, pagePosition, pictureWrapper);
-        closeModal(modalState);
+          closeModal(modalElement, pagePosition);
+          deleteEvents();
         };
       };
-    });
+    };
+
+    function deleteEvents() {
+      modal.removeEventListener('click', clickCloseButtonHandler);
+
+      window.removeEventListener('keydown', keydownCloseHandler);
+    };
   };
+
 
   function openModal(modalContainer) {
     modal.classList.add('is-open');
@@ -174,20 +178,21 @@ document.addEventListener('DOMContentLoaded', function () {
     return pagePosition;
   };
 
-  // function closeModal(modalContainer, pagePosition, pictureWrapper) {
-  function closeModal(modalState) {
-    modalState.modalElement.classList.remove('animate-open');
-    // modalContainer.classList.remove('animate-open');
+  function closeModal(modalElement, pagePosition) {
+    console.log('Закрытие окна');
+    modalElement.classList.remove('animate-open');
     setTimeout(() => {
       modal.classList.remove('is-open');
-      // modalContainer.classList.remove('modal-open');
-      modalState.modalElement.classList.remove('modal-open');
-      if (modalState.imgWrapper) {
+      modalElement.classList.remove('modal-open');
+      const imgElement = modalElement.querySelector('.modal-picture-info__img');
+      console.log(imgElement);
+      if (imgElement) {
         console.log("Deleted Img");
-        modalState.imgWrapper.innerHTML = '';
+        imgElement.remove();
       };
-      enableScroll(modalState.pagePosition);
+      enableScroll(pagePosition);
     }, 300);
+
   };
 
   function disableScroll() {
@@ -473,32 +478,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
       colorWrong: '#D11616',
 
-      submitHandler: function(form) {
+      submitHandler: function (form) {
         console.log(form);
 
         let formData = new FormData(form);
-  
+
         let xhr = new XMLHttpRequest();
-  
-        xhr.onreadystatechange = function() {
+
+        xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
               console.log('Отправлено');
               console.log(successModal);
               const modalElement = modal.querySelector(successModal);
-              const modalState = {
-                modalElement: modalElement,
-                imgWrapper: null,
-              };
-              modalState.pagePosition = openModal(modalElement);
-              controlModal(modalState);
+              const pagePosition = openModal(modalElement);
+              controlModal(modalElement, pagePosition);
             };
           };
         };
-  
+
         xhr.open('POST', 'mail.php', true);
         xhr.send(formData);
-  
+
         form.reset();
       },
     });

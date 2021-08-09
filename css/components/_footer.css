@@ -19,12 +19,12 @@
   justify-content: space-between;
 }
 
-.social__svg_bg {
-  transition: fill 0.3s ease-in-out;
+.social__item:not(:last-child) {
+  margin-right: 21px;
 }
 
-.social__link:not(:last-child) {
-  margin-right: 21px;
+.social__svg_bg {
+  transition: fill 0.3s ease-in-out;
 }
 
 .social__link:focus-visible {
