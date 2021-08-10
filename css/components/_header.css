@@ -21,6 +21,12 @@
   padding-bottom: 29px;
 }
 
+.burger {
+  display: none;
+  width: 36px;
+  height: 28px;
+}
+
 .logo__link {
   margin-right: 173px;
 }
@@ -107,6 +113,11 @@
 
 .login:active .login-svg_color {
   fill: var(--color-amethyst);
+}
+
+.search-form-touchscreen,
+.search-form-touchscreen__label {
+  display: none;
 }
 
 .header-bottom {
