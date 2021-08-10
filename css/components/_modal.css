@@ -73,9 +73,9 @@
   stroke: var(--color-amethyst);
 }
 
-.modal-close-btn:hover .modal-close-btn__svg_color {
+/* .modal-close-btn:hover .modal-close-btn__svg_color {
   stroke: var(--color-amethyst);
-}
+} */
 
 .modal-close-btn:active .modal-close-btn__svg_color {
   stroke: var(--color-studio);

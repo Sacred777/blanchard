@@ -98,11 +98,11 @@
   box-shadow: 0 0 0 8px var(--color-amethyst);
 }
 
-.event-card__link:hover {
+/* .event-card__link:hover {
   color: var(--color-studio);
   background-color: transparent;
   box-shadow: none;
-}
+} */
 
 .event-card__link:active {
   color: var(--color-night-rider);
@@ -136,7 +136,7 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.event__btn:focus { 
+.event__btn:focus {
   outline: none;
 }
 
@@ -144,15 +144,15 @@
   opacity: 1;
 }
 
-.event__btn:hover {
+/* .event__btn:hover {
   color: var(--color-white);
   border-color: var(--color-amethyst);
   background-color: var(--color-amethyst);
-}
+} */
 
-.event__btn:hover::after {
+/* .event__btn:hover::after {
   opacity: 0;
-}
+} */
 
 .event__btn:active {
   padding: 14px 33px;

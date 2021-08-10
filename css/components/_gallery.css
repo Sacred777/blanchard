@@ -55,9 +55,9 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-.choices__inner:hover {
+/* .choices__inner:hover {
   background-color: rgba(255, 255, 255, 0.2);
-}
+} */
 
 .choices__list--single {
   padding-left: 7px;
@@ -69,7 +69,8 @@
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
-  background-color: rgba(255, 255, 255, 0.2);
+  /* background-color: rgba(255, 255, 255, 0.2); */
+  background-color: transparent;
 }
 
 .is-open .choices__inner, .is-focused .choices__inner {
@@ -133,11 +134,11 @@
   background-color: var(--color-amethyst);
 }
 
-.gallery-filter__descr--wisteria:hover {
+/* .gallery-filter__descr--wisteria:hover {
   color: var(--color-amethyst);
   background-color: transparent;
   border-color: currentColor;
-}
+} */
 
 .gallery-filter__descr--wisteria:active {
   color: var(--color-studio);
@@ -173,7 +174,7 @@
   padding-left: 3px;
 }
 
-.gallery-button__prev, 
+.gallery-button__prev,
 .gallery-button__next {
   position: static;
   display: inline-block;
@@ -224,10 +225,10 @@
   stroke: var(--color-black);
 }
 
-.swiper-button-gray:hover .swiper-button-gray__background {
+/* .swiper-button-gray:hover .swiper-button-gray__background {
   fill: var(--color-amethyst);
   stroke: var(--color-amethyst);
-}
+} */
 
 .swiper-button-gray:active .swiper-button-gray__background {
   fill: var(--color-studio);
@@ -277,10 +278,10 @@
   transition: opacity 0.3s ease-in-out;
 }
 
-.gallery-swiper-slide:hover::after {
+/* .gallery-swiper-slide:hover::after {
   opacity: 1;
   z-index: 2;
-}
+} */
 
 .gallery-swiper-slide:focus::after {
   opacity: 1;

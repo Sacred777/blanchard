@@ -35,9 +35,9 @@
   fill: var(--color-white);
 }
 
-.social__link:hover .social__svg_bg {
+/* .social__link:hover .social__svg_bg {
   fill: var(--color-white);
-}
+} */
 
 .social__link:active .social__svg_bg {
   fill: var(--color-amethyst);

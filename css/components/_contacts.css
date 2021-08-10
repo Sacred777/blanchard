@@ -94,9 +94,9 @@
   background-color: var(--color-whisp);
 }
 
-.contacts-form__input:hover {
+/* .contacts-form__input:hover {
   background-color: var(--color-whisp);
-}
+} */
 
 .contacts-form__input:active {
   background-color: transparent;
@@ -142,15 +142,15 @@
   opacity: 1;
 }
 
-.contacts-form__btn:hover {
+/* .contacts-form__btn:hover {
   color: var(--color-white);
   background-color: var(--color-amethyst);
   border-color: var(--color-amethyst);
-}
+} */
 
-.contacts-form__btn:hover::after {
+/* .contacts-form__btn:hover::after {
   opacity: 0;
-}
+} */
 
 .contacts-form__btn:active {
   padding: 14px 32px;
@@ -196,9 +196,9 @@
   opacity: 0.6;
 }
 
-.messenger__link:hover {
+/* .messenger__link:hover {
   opacity: 0.6;
-}
+} */
 
 .messenger__link:active {
   opacity: 1;

@@ -21,7 +21,7 @@
   background-position: center;
   background-repeat: no-repeat;
   animation: grow 8s ease-in-out infinite alternate;
-  transition: background-image 0.5s ease-in-out; 
+  transition: background-image 0.5s ease-in-out;
 }
 
 .hero-swiper-slide_1 {
@@ -102,15 +102,10 @@
   opacity: 1;
 }
 
-.hero__btn:hover {
-  border-color: var(--color-mauve);  
-}
+/* .hero__btn:hover {
+  border-color: var(--color-mauve);
+} */
 
 .hero__btn:active {
   background-color: var(--color-studio);
 }
-
-
-
-
-

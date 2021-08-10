@@ -549,4 +549,24 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   }, '.modal-alert');
 
+
+  // Отключение свайпинга у слайдеров
+  const currentInnerWidth = window.innerWidth;
+  const gallerySwiper = document.querySelector('.gallery-swiper-container');
+  const editionsSwiper = document.querySelector('.editions-swiper-container');
+  if (currentInnerWidth > 1024) {
+    gallerySwiper.classList.add('swiper-no-swiping');
+    editionsSwiper.classList.add('swiper-no-swiping');
+  }
+
+  window.addEventListener('resize', (event) => {
+    if (window.innerWidth > 1024) {
+      gallerySwiper.classList.add('swiper-no-swiping');
+    editionsSwiper.classList.add('swiper-no-swiping');
+    } else {
+      gallerySwiper.classList.remove('swiper-no-swiping');
+    editionsSwiper.classList.remove('swiper-no-swiping');
+    }
+  });
+
 });

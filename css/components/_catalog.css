@@ -61,9 +61,9 @@
   filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
 }
 
-.tabs__btn:hover {
+/* .tabs__btn:hover {
   filter: drop-shadow(0px 0px 20px rgba(157, 92, 208, 0.7));
-}
+} */
 
 .tabs__btn:active {
   filter: none;
@@ -166,11 +166,11 @@
   background-color: var(--color-amethyst);
 }
 
-.artist-card__link:hover {
+/* .artist-card__link:hover {
   color: var(--color-wisteria);
   background-color: transparent;
   border-color: var(--color-wisteria);
-}
+} */
 
 .artist-card__link:active {
   color: var(--color-studio);
@@ -257,18 +257,18 @@
 }
 
 /* Hover */
-.ui-accordion-header-collapsed:hover {
+/* .ui-accordion-header-collapsed:hover {
   border-color: var(--color-amethyst);
-}
+} */
 
-.ui-state-hover .accordion__title {
+/* .ui-state-hover .accordion__title {
   color: var(--color-amethyst);
   background-color: transparent;
-}
+} */
 
-.ui-state-hover::before {
+/* .ui-state-hover::before {
   background-color: var(--color-mauve);
-}
+} */
 
 
 /* Active */
@@ -326,11 +326,11 @@
   transition: color 0.3s ease-in-out, border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.accordion__btn:hover {
+/* .accordion__btn:hover {
   color: var(--color-amethyst);
   border-color: currentColor;
   background-color: transparent;
-}
+} */
 
 .accordion__btn:focus-visible {
   outline: none;
@@ -408,11 +408,11 @@
   background-color: var(--color-amethyst);
 }
 
-.accordion-content__link:hover {
+/* .accordion-content__link:hover {
   color: var(--color-wisteria);
   background-color: transparent;
   border-color: var(--color-wisteria);
-}
+} */
 
 .accordion-content__link:active {
   color: var(--color-studio);
