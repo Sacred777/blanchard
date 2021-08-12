@@ -118,11 +118,19 @@ document.addEventListener('DOMContentLoaded', function () {
     },
 
     breakpoints: {
-      1920: {
-        slidesPerView: 3,
-        slidesPerColumnFill: 'row',
+
+      768: {
+        slidesPerView: 2,
         slidesPerColumn: 2,
-        spaceBetween: 50,
+        spaceBetween: 34,
+        slidesPerGroup: 2,
+      },
+
+      1025: {
+        slidesPerView: 3,
+        // slidesPerColumnFill: 'row',
+        slidesPerColumn: 2,
+        spaceBetween: 45,
         slidesPerGroup: 3,
       },
     }
@@ -429,8 +437,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     breakpoints: {
 
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+      },
 
-      1920: {
+      1025: {
         slidesPerView: 3,
         spaceBetween: 50,
         // slidesPerGroup: 3,
@@ -455,7 +467,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // keyboard: true,
 
     breakpoints: {
-      1920: {
+
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50,
+        slidesPerGroup: 2,
+      },
+
+      1025: {
         slidesPerView: 3,
         spaceBetween: 50,
         slidesPerGroup: 3,
@@ -561,6 +580,12 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   window.addEventListener('resize', (event) => {
+
+    mySwiperGallery.update();
+    mySwiperEditions.update();
+    mySwiperProjects.update();
+
+
     if (window.innerWidth > 1024) {
       gallerySwiper.classList.add('swiper-no-swiping');
       editionsSwiper.classList.add('swiper-no-swiping');
