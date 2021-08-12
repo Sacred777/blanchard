@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+  const DELAY_TIME = 300;
+  const overlay = document.querySelector('.overlay');
+  const siteContainer = document.querySelector('.site-container');
+  const burger = siteContainer.querySelector('.burger');
+  const burgerMenu = siteContainer.querySelector('.menu-touchscreen');
+  const burgerMenuCloseBtn = burgerMenu.querySelector('.header-nav-btn-close');
+
 
   //  Выпадающие списки в header-bottom
   function controlDropdows() {
-    const siteContainer = document.querySelector('.site-container');
     const dropdownButtons = siteContainer.querySelectorAll('.header-bottom-nav__btn');
-    // const header = siteContainer.querySelector('.header');
-    // console.log(header);
-    // let previousActiveElement = null;
 
     dropdownButtons.forEach((dropdownButton) => {
       dropdownButton.addEventListener('click', (event) => {
@@ -17,22 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
           dropdownButton.classList.remove('rotait');
         } else {
           closeDropdowns();
-          // previousActiveElement = document.activeElement;
           dropdown.classList.add('open');
           dropdownButton.classList.add('rotait');
           getLink(dropdown);
-          // Array.from(siteContainer.children).forEach((child) => {
-          // if (child !== header) {
-          // child.inert = true;
-          // }
-          // });
-
-          // header.querySelector('.header-top').inert = true;
-          // const navItems = header.querySelectorAll('.header-bottom-nav__item');
-          // const curruntParentElement = dropdownButton.parentElement;
-
-          // const
-          // dropdown.inert = false;
         };
       });
     });
@@ -139,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Модальное окно в Галерее (инф о картине)
-  const siteContainer = document.querySelector('.site-container');
+  // const siteContainer = document.querySelector('.site-container');
   const modal = document.querySelector('.modal');
   const modalPictureCard = modal.querySelector('.modal-picture-card');
   const openPictureCardButtons = siteContainer.querySelectorAll('.gallery-swiper-slide');
@@ -209,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function closeModal(modalElement, pagePosition) {
-    console.log('Закрытие окна');
+    // console.log('Закрытие окна');
     modalElement.classList.remove('animate-open');
     setTimeout(() => {
       modal.classList.remove('is-open');
@@ -270,8 +260,13 @@ document.addEventListener('DOMContentLoaded', function () {
     linksToSections.forEach((link) => {
       link.addEventListener('click', (event) => {
         event.preventDefault();
-        const path = link.dataset.path
-        showSection(path);
+        if (burgerMenu.classList.contains('menu-touchscreen_visible')) {
+          hideBurgerMenu();
+        };
+        setTimeout(() => {
+          const path = link.dataset.path;
+          showSection(path);
+        }, 150);
       });
     });
 
@@ -550,23 +545,171 @@ document.addEventListener('DOMContentLoaded', function () {
   }, '.modal-alert');
 
 
-  // Отключение свайпинга у слайдеров
+  // Оформление стилей для устройств с шириной экрана < 1024
+
   const currentInnerWidth = window.innerWidth;
   const gallerySwiper = document.querySelector('.gallery-swiper-container');
   const editionsSwiper = document.querySelector('.editions-swiper-container');
+
   if (currentInnerWidth > 1024) {
-    gallerySwiper.classList.add('swiper-no-swiping');
-    editionsSwiper.classList.add('swiper-no-swiping');
-  }
+    gallerySwiper.classList.add('swiper-no-swiping'); // Запрещаем свайпинг у слайдеров
+    editionsSwiper.classList.add('swiper-no-swiping'); // Запрещаем свайпинг у слайдеров
+    // burgerMenu.inert = false;
+    // inertElements.forEach((el) => {
+      // el.inert = true;
+    // });
+  };
 
   window.addEventListener('resize', (event) => {
     if (window.innerWidth > 1024) {
       gallerySwiper.classList.add('swiper-no-swiping');
-    editionsSwiper.classList.add('swiper-no-swiping');
-    } else {
+      editionsSwiper.classList.add('swiper-no-swiping');
+      // burgerMenu.inert = false;
+      // inertElements.forEach((el) => {
+        // el.inert = true;
+      // });
+    } else if (window.innerWidth < 1025) {
       gallerySwiper.classList.remove('swiper-no-swiping');
-    editionsSwiper.classList.remove('swiper-no-swiping');
-    }
+      editionsSwiper.classList.remove('swiper-no-swiping');
+      // burgerMenu.inert = true;
+      // inertElements.forEach((el) => {
+        // el.inert = false;
+      // });
+    };
   });
+
+
+  // Открытие бургера
+  const inertElements = getInertElements(burgerMenu, siteContainer);
+  let pagePosition = null;
+  let burgerSimpleBar = null;
+
+  burgerMenuCloseBtn.inert = true;
+
+  // burgerMenu.inert = true;
+
+  burger.addEventListener('click', showBurgerMenu);
+  burgerMenuCloseBtn.addEventListener('click', ckickMenuCloseBtnHandler);
+  overlay.addEventListener('click', clickOverlayHandler);
+  window.addEventListener('keydown', keydownHandler);
+
+  function clickOverlayHandler() {
+    hideBurgerMenu();
+  }
+
+  function keydownHandler(event) {
+    if (event.key === 'Escape') {
+      if (burgerMenu.classList.contains('menu-touchscreen_visible')) {
+        hideBurgerMenu();
+      };
+    };
+  };
+
+
+  function showBurgerMenu() {
+    previousActiveElement = document.activeElement;
+    // console.log(previousActiveElement);
+
+    burgerMenuCloseBtn.inert = false;
+
+    inertElements.forEach((el) => {
+      el.inert = true;
+    });
+
+    showOverlay();
+
+    pagePosition = disableScroll();
+
+    burgerMenu.classList.add('menu-touchscreen_visible');
+
+    // burgerSimpleBar = new SimpleBar(burgerMenu);
+
+    setTimeout(() => {
+      burgerMenu.classList.add('menu-touchscreen_animate');
+      burgerMenuCloseBtn.focus();
+      // console.log(document.activeElement);
+    }, 100);
+
+  };
+
+
+
+  function ckickMenuCloseBtnHandler(event) {
+    const clickedElement = event.target;
+    // console.log(clickedElement);
+    if (clickedElement.classList.contains('overlay') || clickedElement === burgerMenuCloseBtn) {
+      hideBurgerMenu();
+    };
+  };
+
+  function hideBurgerMenu() {
+
+    inertElements.forEach((el) => {
+      el.inert = false;
+    });
+
+    burgerMenuCloseBtn.inert = true;
+
+    enableScroll(pagePosition);
+
+    // burgerSimpleBar.unMount();
+
+    burgerMenu.classList.remove('menu-touchscreen_animate');
+
+
+    hideOverlay();
+
+    // burgerMenu.inert = true;
+
+    // inertElements.forEach((el) => {
+      // el.inert = false;
+    // });
+
+    // console.log(previousActiveElement);
+
+    setTimeout(() => {
+      burgerMenu.classList.remove('menu-touchscreen_visible');
+      previousActiveElement.focus();
+      previousActiveElement = null;
+      // console.log(document.activeElement);
+    }, 100);
+  };
+
+  function showOverlay() {
+    overlay.classList.add('overlay-visible');
+  }
+
+  function hideOverlay() {
+    overlay.classList.remove('overlay-visible');
+  }
+
+  function getInertElements(element, container) {  // Получает все соседние элементы родителей от element до container
+    const siblingsElements = [];
+    while (element !== container) {
+      siblingsElements.push(...(getSiblings(element)));
+      element = element.parentElement;
+    };
+
+    return siblingsElements;
+  };
+
+  function getSiblings(elem) {  // Получает все соседние элементы от elem
+    const siblings = [];
+    let sibling = elem;
+    while (sibling.previousSibling) {
+      sibling = sibling.previousSibling;
+      sibling.nodeType == 1 && siblings.push(sibling);
+    };
+
+    sibling = elem;
+    while (sibling.nextSibling) {
+      sibling = sibling.nextSibling;
+      sibling.nodeType == 1 && siblings.push(sibling);
+    };
+
+    return siblings;
+  };
+
+
 
 });
