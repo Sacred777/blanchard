@@ -119,7 +119,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     breakpoints: {
 
-      768: {
+      577: {
+        slidesPerView: 2,
+        slidesPerColumn: 2,
+        spaceBetween: 36,
+        slidesPerGroup: 2,
+      },
+
+      769: {
         slidesPerView: 2,
         slidesPerColumn: 2,
         spaceBetween: 34,
@@ -420,7 +427,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Слайдер в Editions
-  let mySwiperEditions = new Swiper('.editions-swiper-container', {
+  const mySwiperEditions = new Swiper('.editions-swiper-container', {
     slidesPerView: 3,
     spaceBetween: 50,
     // slidesPerGroup: 3,
@@ -437,7 +444,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     breakpoints: {
 
-      768: {
+      577: {
+        slidesPerView: 2,
+        spaceBetween: 36,
+      },
+
+      769: {
         slidesPerView: 2,
         spaceBetween: 50,
       },
@@ -447,11 +459,11 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 50,
         // slidesPerGroup: 3,
       },
-    }
+    },
   });
 
   // Слайдер в Projects
-  let mySwiperProjects = new Swiper('.projects-swiper-container', {
+  const mySwiperProjects = new Swiper('.projects-swiper-container', {
     slidesPerView: 3,
     spaceBetween: 50,
     slidesPerGroup: 3,
@@ -468,7 +480,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     breakpoints: {
 
-      768: {
+      577: {
+        slidesPerView: 2,
+        spaceBetween: 34,
+        slidesPerGroup: 2,
+      },
+
+      769: {
         slidesPerView: 2,
         spaceBetween: 50,
         slidesPerGroup: 2,
