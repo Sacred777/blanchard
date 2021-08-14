@@ -1,5 +1,298 @@
 @media (max-width: 576px) {
 
+  .container {
+    max-width: 318px;
+    padding: 0 13px;
+  }
 
+  .section-title {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .header-top__container {
+    padding: 11px 9px 8px 11px;
+    /* padding-left: 4px; */
+    max-width: 318px;
+  }
+
+  .burger {
+    width: 29px;
+    height: 18px;
+  }
+
+  .burger-svg {
+    padding-left: 1px;
+    width: 29px;
+    height: 18px;
+    transform: translateY(-2px);
+  }
+
+  .logo__img {
+    width: 97px;
+  }
+
+  .search-form-touchscreen-svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .hero {
+    padding-top: 0;
+    min-height: 355px;
+  }
+
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 77px;
+    /* background-color: gray; */
+  }
+
+  .hero__tagline {
+    text-align: center;
+    font-size: 32px;
+    line-height: 39px;
+  }
+
+  .hero__descr {
+    margin-bottom: 41px;
+    padding: 0 8px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+
+  .hero__btn {
+    /* display: inline-block; */
+    margin: 0 auto;
+    padding: 9px 15px;
+    max-width: 200px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .us__container {
+    padding-top: 50px;
+    padding-bottom: 41px;
+  }
+
+  .us__title {
+    margin-bottom: 12px;
+    /* font-size: 28px; */
+    /* line-height: 38px; */
+  }
+
+  .us__descr {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .gallery__container {
+    padding-top: 51px;
+    padding-bottom: 193px;
+  }
+
+  .gallery__title {
+    margin-bottom: 12px;
+  }
+
+  .gallery-filter {
+    width: 100%;
+  }
+
+  .gallery-filter__label {
+    margin-bottom: 5px;
+  }
+
+  .gallery-filter__descr {
+    bottom: 39px;
+    padding-right: 8px;
+  }
+
+  /* TODO Это временно - не работает слайдер как нужно */
+  .swiper-container-multirow>.swiper-wrapper {
+    flex-wrap: nowrap;
+  }
+
+  .gallery-swiper-container {
+    display: flex;
+    flex-direction: column-reverse;
+    /* min-height: 367px; */
+    /* height: 367px; */
+  }
+
+  .gallery-button {
+    justify-content: center;
+    padding: 0;
+    transform: translateY(-11px);
+  }
+
+  .gallery-slide__img {
+    max-height: none;
+    min-height: 367px;
+  }
+
+  .catalog__top {
+    display: block;
+    margin-bottom: 19px;
+  }
+
+  .tabs {
+    display: inline-flex;
+  }
+
+  .tabs__btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .tabs__btn::after {
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+
+  }
+
+  .catalog__container {
+    padding-top: 51px;
+  }
+
+  .catalog-title {
+    margin-bottom: 10px;
+  }
+
+  .tabs__item:not(:last-child) {
+    margin-right: 29px;
+  }
+
+  .tab-content__descr {
+    display: none;
+  }
+
+  .accordion__title {
+    font-size: 18px;
+  }
+
+  .ui-accordion-header::before {
+    width: 30px;
+    height: 30px;
+  }
+
+  .ui-accordion-header::after {
+    right: 11px;
+    width: 7px;
+    height: 7px;
+  }
+
+  .ui-accordion-header {
+    padding: 20px 0;
+  }
+
+  .accordion__list {
+    padding-top: 19px;
+    padding-bottom: 20px;
+    column-count: unset;
+    height: auto;
+  }
+
+  .artist-card {
+    padding-top: 44px;
+  }
+
+  .artist-card__img {
+    margin-bottom: 15px;
+  }
+
+  .artist-card__name {
+    margin-bottom: 11px;
+  }
+
+  .artist-card__info {
+    margin-bottom: 46px;
+    padding-right: 6px;
+  }
+
+  .events {
+    padding-bottom: 74px;
+  }
+
+  .events__title {
+    margin-bottom: 12px;
+  }
+
+  .events-swiper-container {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .events__item {
+    margin: 0;
+    width: 100%;
+  }
+
+  .events__item:nth-child(1n+3) {
+    display: flex;
+  }
+
+  .events__list {
+    /* display: block; */
+    flex-wrap: unset;
+    /* overflow: hidden; */
+  }
+
+
+  .event__btn {
+    display: none;
+  }
+
+  .event-card__img {
+    min-height: 200px;
+    width: 290px;
+  }
+
+  .events__item:not(:nth-child(2n)) {
+    margin-right: 0;
+  }
+
+  .event-card__bottom {
+    padding: 11px 13px;
+    padding-bottom: 0;
+    min-height: 455px;
+  }
+
+  .event-card__descr {
+    padding-right: 7px;
+  }
+
+  .event-card__info {
+    padding-bottom: 40px;
+  }
+
+  .events-swiper-pagination {
+    text-align: center;
+  }
+
+
+
+  .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0;
+  }
+
+  .events-swiper-pagination:not(:last-child) .swiper-pagination-bullet {
+    margin-right: 15px;
+  }
+
+  .events-swiper-pagination .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-vl-grey);
+  }
+
+  .events-swiper-pagination .swiper-pagination-bullet-active {
+    background-color: var(--color-dim-gray);
+  }
 
 }
