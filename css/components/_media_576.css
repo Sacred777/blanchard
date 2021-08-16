@@ -1,8 +1,8 @@
 @media (max-width: 576px) {
 
   .container {
-    max-width: 318px;
-    padding: 0 13px;
+    max-width: 304px;
+    padding: 0 7px;
   }
 
   .section-title {
@@ -11,9 +11,9 @@
   }
 
   .header-top__container {
-    padding: 11px 9px 8px 11px;
+    padding: 11px 2px 8px 4px;
     /* padding-left: 4px; */
-    max-width: 318px;
+    max-width: 304px;
   }
 
   .burger {
@@ -125,8 +125,18 @@
 
   .gallery-button {
     justify-content: center;
-    padding: 0;
-    transform: translateY(-11px);
+    padding-top: 26px;
+    padding-bottom: 10px;
+    /* padding: 0; */
+    /* transform: translateY(-11px); */
+  }
+
+  .gallery-button__prev {
+    margin-right: 12px;
+  }
+
+  .gallery-button__pagination {
+    margin-right: 16px;
   }
 
   .gallery-slide__img {
@@ -212,11 +222,11 @@
 
   .artist-card__info {
     margin-bottom: 46px;
-    padding-right: 6px;
+    /* padding-right: 6px; */
   }
 
   .events {
-    padding-bottom: 74px;
+    padding-bottom: 47px;
   }
 
   .events__title {
@@ -258,20 +268,34 @@
   }
 
   .event-card__bottom {
-    padding: 11px 13px;
+    padding-top: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    /* padding: 11px 13px; */
     padding-bottom: 0;
-    min-height: 455px;
+    min-height: 467px;
   }
+
+  .event-card__place,
+  .event-card__time {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+
 
   .event-card__descr {
     padding-right: 7px;
   }
 
   .event-card__info {
-    padding-bottom: 40px;
+    padding-bottom: 51px;
   }
 
   .events-swiper-pagination {
+    padding-top: 8px;
+    padding-left: 13px;
     text-align: center;
   }
 
@@ -294,5 +318,66 @@
   .events-swiper-pagination .swiper-pagination-bullet-active {
     background-color: var(--color-dim-gray);
   }
+
+  .editions__container {
+    padding-top: 50px;
+    padding-left: 5px;
+  }
+
+  .editions__title {
+    margin-bottom: 12px;
+  }
+
+  .categorits__title {
+    position: relative;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  .categorits__title::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    right: 2.5px;
+    height: 7px;
+    width: 7px;
+    border-left: 1px solid var(--color-white);
+    border-bottom: 1px solid var(--color-white);
+    pointer-events: none;
+    transform: rotate(-45deg);
+  }
+
+  .categorits__list {
+    display: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
