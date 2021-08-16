@@ -421,11 +421,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const eventsSlider = siteContainer.querySelector('.events-swiper-container')
   let mySwiperEvents;
 
-  function mobileSlider() {
-    console.log(window.innerWidth);
-    console.log(eventsSlider.dataset.mobile);
+  function setEventsSlider() {
+    // console.log(window.innerWidth);
+    // console.log(eventsSlider.dataset.mobile);
     if (window.innerWidth < 577 && eventsSlider.dataset.mobile == "false") {
-      console.log("Начинаем!")
+      // console.log("Начинаем!")
       mySwiperEvents = new Swiper(eventsSlider, {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -444,13 +444,13 @@ document.addEventListener('DOMContentLoaded', function () {
       eventsSlider.dataset.mobile = "false";
 
       if (eventsSlider.classList.contains('swiper-container-initialized')) {
-        console.log('Есть свайпер');
+        // console.log('Есть свайпер');
         mySwiperEvents.destroy();
       };
     };
   };
 
-  mobileSlider();
+  setEventsSlider();
 
 
   // Закрываем и открываем События
@@ -472,46 +472,66 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Слайдер в Editions
-  const mySwiperEditions = new Swiper('.editions-swiper-container', {
-    slidesPerView: 3,
-    spaceBetween: 50,
-    // slidesPerGroup: 3,
-    // direction: 'horizontal',
-    pagination: {
-      el: '.editions-button__pagination',
-      type: 'fraction',
-    },
+  const editionsSlider = siteContainer.querySelector('.editions-swiper-container');
+  let mySwiperEditions;
 
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
-    breakpoints: {
-
-      150: {
-        slidesPerView: 1,
-        spaceBetween: 10,
-      },
-
-
-      577: {
-        slidesPerView: 2,
-        spaceBetween: 36,
-      },
-
-      769: {
-        slidesPerView: 2,
-        spaceBetween: 50,
-      },
-
-      1025: {
+  function setEditionsSlider() {
+    if (window.innerWidth > 576) {
+      editionsSlider.dataset.mobile == "false";
+      mySwiperEditions = new Swiper(editionsSlider, {
         slidesPerView: 3,
         spaceBetween: 50,
         // slidesPerGroup: 3,
-      },
-    },
-  });
+        // direction: 'horizontal',
+        pagination: {
+          el: '.editions-button__pagination',
+          type: 'fraction',
+        },
+
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+
+        breakpoints: {
+
+          // 150: {
+          // slidesPerView: 1,
+          // spaceBetween: 10,
+          // },
+
+
+          577: {
+            slidesPerView: 2,
+            spaceBetween: 36,
+          },
+
+          769: {
+            slidesPerView: 2,
+            spaceBetween: 50,
+          },
+
+          1025: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+            // slidesPerGroup: 3,
+          },
+        },
+      });
+    };
+
+    if (window.innerWidth < 577 && editionsSlider.dataset.mobile == "false") {
+      editionsSlider.dataset.mobile = "true";
+
+      if (editionsSlider.classList.contains('swiper-container-initialized')) {
+        mySwiperEditions.destroy();
+      };
+
+    };
+  };
+
+  setEditionsSlider();
+
 
   // Слайдер в Projects
   const mySwiperProjects = new Swiper('.projects-swiper-container', {
@@ -530,6 +550,13 @@ document.addEventListener('DOMContentLoaded', function () {
     // keyboard: true,
 
     breakpoints: {
+
+      150: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerGroup: 1,
+      },
+
 
       577: {
         slidesPerView: 2,
@@ -557,7 +584,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function init() {
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-      center: [55.760081, 37.7223],
+      center: [55.761497, 37.614109],
+      // center: [55.760081, 37.7223],
       zoom: 14,
       controls: [],
     });
@@ -651,8 +679,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('resize', (event) => {
 
     mySwiperGallery.update();
-    mobileSlider();
-    mySwiperEditions.update();
+    setEventsSlider();
+    setEditionsSlider();
+    // mySwiperEditions.update();
     mySwiperProjects.update();
 
 

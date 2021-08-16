@@ -1,7 +1,7 @@
 @media (max-width: 576px) {
 
   .container {
-    max-width: 304px;
+    /* max-width: 304px; */
     padding: 0 7px;
   }
 
@@ -11,9 +11,9 @@
   }
 
   .header-top__container {
-    padding: 11px 2px 8px 4px;
+    padding: 11px 1px 10px 4px;
     /* padding-left: 4px; */
-    max-width: 304px;
+    /* max-width: 304px; */
   }
 
   .burger {
@@ -45,14 +45,15 @@
   .hero__container {
     display: flex;
     flex-direction: column;
-    padding-top: 77px;
+    padding-top: 78px;
     /* background-color: gray; */
   }
 
   .hero__tagline {
+    margin-bottom: 13px;
     text-align: center;
     font-size: 32px;
-    line-height: 39px;
+    line-height: 37px;
   }
 
   .hero__descr {
@@ -67,7 +68,7 @@
   .hero__btn {
     /* display: inline-block; */
     margin: 0 auto;
-    padding: 9px 15px;
+    padding: 9px 13px 9px 17px;
     max-width: 200px;
     font-size: 12px;
     line-height: 16px;
@@ -80,22 +81,26 @@
 
   .us__title {
     margin-bottom: 12px;
+    padding-left: 0;
     /* font-size: 28px; */
     /* line-height: 38px; */
   }
 
   .us__descr {
+    padding-left: 0;
     font-size: 14px;
     line-height: 28px;
   }
 
   .gallery__container {
-    padding-top: 51px;
-    padding-bottom: 193px;
+    padding-top: 50px;
+    padding-bottom: 198px;
+    /* padding-left: 0; */
   }
 
   .gallery__title {
     margin-bottom: 12px;
+    padding-left: 0;
   }
 
   .gallery-filter {
@@ -104,10 +109,24 @@
 
   .gallery-filter__label {
     margin-bottom: 5px;
+    padding-left: 0;
   }
 
+  .choices__inner {
+    padding-top: 7px;
+  }
+
+  .choices[data-type*=select-one]:after {
+    right: 12px;
+  }
+
+  .choices[data-type*=select-one].is-open:after {
+    right: 14px;
+  }
+
+
   .gallery-filter__descr {
-    bottom: 39px;
+    bottom: 40px;
     padding-right: 8px;
   }
 
@@ -126,7 +145,7 @@
   .gallery-button {
     justify-content: center;
     padding-top: 26px;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
     /* padding: 0; */
     /* transform: translateY(-11px); */
   }
@@ -171,7 +190,7 @@
   }
 
   .catalog-title {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
   }
 
   .tabs__item:not(:last-child) {
@@ -213,24 +232,31 @@
   }
 
   .artist-card__img {
-    margin-bottom: 15px;
+    margin-bottom: 17px;
   }
 
   .artist-card__name {
     margin-bottom: 11px;
+    padding-left: 0;
+  }
+
+  .artist-card__dates {
+    margin-bottom: 6px;
   }
 
   .artist-card__info {
     margin-bottom: 46px;
+    /* padding-left: 0; */
     /* padding-right: 6px; */
   }
 
   .events {
-    padding-bottom: 47px;
+    padding-bottom: 55px;
   }
 
   .events__title {
     margin-bottom: 12px;
+    padding-left: 0;
   }
 
   .events-swiper-container {
@@ -268,9 +294,9 @@
   }
 
   .event-card__bottom {
-    padding-top: 13px;
+    padding-top: 11px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 9px;
     /* padding: 11px 13px; */
     padding-bottom: 0;
     min-height: 467px;
@@ -291,11 +317,12 @@
 
   .event-card__info {
     padding-bottom: 51px;
+    padding-left: 18px;
   }
 
   .events-swiper-pagination {
-    padding-top: 8px;
-    padding-left: 13px;
+    padding-top: 7px;
+    padding-left: 14px;
     text-align: center;
   }
 
@@ -326,6 +353,7 @@
 
   .editions__title {
     margin-bottom: 12px;
+    padding-left: 1px;
   }
 
   .categories__title {
@@ -353,31 +381,236 @@
     display: none;
   }
 
+  /* TODO paddibg-top временно */
+  .price__title {
+    padding-top: 32px;
+  }
+
+  .editions-right {
+    margin-bottom: 0;
+    padding-top: 51px;
+    /* padding-right: 1px; */
+    /* padding-bottom: 1px; */
+    padding-left: 2px;
+  }
+
+  .editions-slide__img {
+    margin-bottom: 9px;
+    max-height: ;
+  }
 
 
+  .editions-button {
+    display: none;
+  }
+
+  .editions-swiper-container {
+    padding: 0 7px;
+  }
+
+  .editions__swiper-wrapper {
+    flex-wrap: wrap;
+  }
+
+  .editions-slide {
+    --cards-gap: 30px;
+    position: relative;
+    margin-bottom: 46px;
+    width: calc((100% - var(--cards-gap)) / 2);
+  }
+
+  .editions-slide:not(:nth-child(2n)) {
+    margin-right: 30px;
+  }
+
+  .editions-slide__title,
+  .editions-slide__artist-name {
+    font-size: 12px;
+    line-height: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .editions-slide__artist-name {
+    margin-bottom: 29px;
+  }
 
 
+  .editions-slide__price {
+    position: absolute;
+    bottom: 56px;
+    left: -1px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .editions-slide__btn {
+    padding: 9px 34px;
+    padding-bottom: 10px;
+    /* padding-right: 25px; */
+    /* padding-left: 25px; */
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .editions-slide__btn:active {
+    padding: 8px 33px;
+    padding-bottom: 9px;
+  }
 
 
+  /* TODO padding-top: 49px; - раскомментировать */
+  .projects__container {
+    /* padding-top: 49px; */
+  }
 
+  /* TODO   /* margin-bottom: 12px; - раскомментировать отрицательный удалить */
+  .projects__title {
+    /* margin-bottom: 12px; */
+    margin-bottom: -3px;
 
+    padding-left: 0;
+  }
 
+  .projects__subtitle {
+    margin-bottom: 11px;
+    font-size: 18px;
+    line-height: 32px;
+  }
 
+  .projects__info {
+    margin-bottom: 9px;
+  }
 
+  .projects__subtitle {
+    padding-left: 0;
+  }
 
+  .projects-swiper-container {
+    max-width: 228px;
+  }
 
+  .partners-slide__logo {
+    min-height: unset;
+  }
 
+  .projects-button__next, .projects-button__prev {
+    height: 42px;
+  }
 
+  .projects-button__next, .swiper-container-rtl .projects-button__prev {
+    right: -11px;
+  }
 
+  .contacts__container {
+    position: relative;
+    padding-top: 49px;
+  }
 
+  .contacts__title {
+    margin-bottom: 70px;
+    padding-left: 0;
+  }
 
+  .contacts__wraper {
+   flex-direction: column-reverse;
+  }
 
+  .office-title {
+    position: absolute;
+    top: 99px;
+    left: 7px;
+    font-size: 18px;
+    line-height: 25px;
+  }
 
+  .office-address {
+    position: absolute;
+    top: 122px;
+    left: 7px;
+    font-size: 14px;
+    line-height: 19px;
+  }
 
+  .contacts__container {
+    padding-bottom: 26px;
+  }
 
+  .contacts-left {
+    width: 100%;
+    padding: 0 6px;
+    border: 0;
+  }
 
+  .contacts-form__legend {
+    margin-bottom: 3px;
+    padding-top: 19px;
+    font-size: 18px;
+    line-height: 32px;
+  }
 
+  .contacts-right {
+    width: 100%;
+    height: 320px;
+  }
+  .contacts-form__label {
+    margin-bottom: 20px;
+  }
 
+  .contacts-form__btn {
+    padding: 11px 33px;
+    padding-bottom: 9px;
+    font-size: 12px;
+    line-height: 16px;
+  }
 
+  .contacts-form__btn:active {
+    padding-top: 10px;
+    padding-bottom: 8px;
+  }
+
+  .messengers {
+    padding-top: 20px;
+  }
+
+  .messengers__title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  .messenger__link-svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .messengers__item:first-child {
+    margin-right: 20px;
+  }
+
+  .footer__container {
+    flex-direction: column-reverse;
+    padding-top: 20px;
+    padding-bottom: 16px;
+  }
+
+  .social {
+    margin-bottom: 17px;
+  }
+
+  .social__link-svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .footer__logo {
+    padding: 0;
+    max-width: 97px;
+
+  }
+
+  .social__link-svg {
+  }
 
 }
