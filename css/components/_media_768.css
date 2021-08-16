@@ -149,7 +149,7 @@
     margin-bottom: 25px;
   }
 
-  .categorits__list {
+  .categories__list {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
