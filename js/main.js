@@ -533,6 +533,86 @@ document.addEventListener('DOMContentLoaded', function () {
   setEditionsSlider();
 
 
+
+  // Показываем категории в мобильном
+  const categoriesBtn = siteContainer.querySelector('.categories__title');
+  function showCategories() {
+    if (window.innerWidth < 577) {
+      categoriesBtn.setAttribute('role', 'button');
+      categoriesBtn.setAttribute('aria-label', 'Показать категории');
+      categoriesBtn.addEventListener('click', openCategoriesList);
+    } else {
+      categoriesBtn.removeAttribute('role');
+      categoriesBtn.removeAttribute('aria-label');
+      categoriesBtn.removeEventListener('click', openCategoriesList);
+    };
+  };
+
+  const categoriesList = siteContainer.querySelector('.categories__list');
+
+  function openCategoriesList() {
+    let timeoutID; //TODO Подумать над удалением таймаута
+    categoriesBtn.classList.toggle('categories__title_is-open');
+    if (categoriesBtn.classList.contains('categories__title_is-open')) {
+      categoriesList.classList.add('categories__list_visible');
+      timeoutID = setTimeout(() => {
+        categoriesList.classList.add('categories__list_animate');
+      }, 100);
+    } else {
+      categoriesList.classList.remove('categories__list_animate');
+      timeoutID = setTimeout(() => {
+        categoriesList.classList.remove('categories__list_visible');
+        showCheckedCategories();
+      }, 100);
+    };
+  };
+
+  function showCheckedCategories() {
+    const checkedCategories = [];
+    const categoriesInputs = categoriesList.querySelectorAll('.categories__input');
+    categoriesInputs.forEach((input) => {
+      if (!input.checked) {
+        // checkedCategories.push(input);
+        // console.log(input);
+        // addCheckedCategory(input);
+        getParentElement(input, 'categories__item').classList.add('categories__item_unvisible');
+      } else {
+        checkedCategories.push(input);
+      };
+    });
+
+    if (checkedCategories.length) {
+      categoriesList.classList.add('categories__list_static');
+      categoriesList.classList.add('categories__list_visible');
+      setTimeout(() => {
+        categoriesList.classList.add('categories__list_animate');
+      }, 100);
+      // const categoriesWrapp = siteContainer.querySelector('.0categories__wrap');
+      // const categoriesList = document.createElement('ul');
+      // categoriesList.classList.add('categories-checked');
+      // checkedCategories.forEach((element) => {
+
+      // });
+    };
+  };
+
+  function getParentElement(element, classParentElement) {
+    while (element !== document.body) {
+      if ( element.classList.contains(classParentElement)) {
+        return element;
+      } else {
+        element = element.parentElement;
+      };
+    };
+  };
+
+  function addCheckedCategory(input) {
+    // const
+  }
+
+  showCategories();
+
+
   // Слайдер в Projects
   const mySwiperProjects = new Swiper('.projects-swiper-container', {
     slidesPerView: 3,
@@ -584,7 +664,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function init() {
     // Создание карты.
     var myMap = new ymaps.Map("map", {
-      center: [55.761497, 37.614109],
+      center: [55.759063, 37.611243],
+      // center: [55.758967, 37.609362],
       // center: [55.760081, 37.7223],
       zoom: 14,
       controls: [],

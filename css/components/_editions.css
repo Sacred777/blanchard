@@ -105,6 +105,10 @@
   color: var(--color-wisteria);
 }
 
+.categories__close-btn {
+  display: none;
+}
+
 .price {
   max-width: 277px;
 }
