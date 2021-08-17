@@ -294,16 +294,19 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
 
-    function showSection(path) {
-      const targetSection = document.getElementById(path);
-      targetSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    };
   };
 
-  smoothScrollToAnchor();
+  function showSection(path) {
+    // console.log(path);
+    const targetSection = document.getElementById(path);
+    // console.log(targetSection);
+    targetSection.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
+  // smoothScrollToAnchor();
 
 
   // Табы в Каталоге, рефреш аккордиона
@@ -416,6 +419,35 @@ document.addEventListener('DOMContentLoaded', function () {
       };
     };
   });
+
+  // Скролл к данным художника при выборе в аккордионе секции Каталог
+
+  function scrollToArtist() {
+    const accordionBtns = siteContainer.querySelectorAll('.accordion__btn');
+    if (window.innerWidth < 577) {
+      accordionBtns.forEach((accordionBtn) => {
+        accordionBtn.addEventListener('click', smoothScrollToArtist);
+      });
+    } else {
+      accordionBtns.forEach((accordionBtn) => {
+        accordionBtn.removeEventListener('click', smoothScrollToArtist);
+      });
+    };
+  };
+
+  function smoothScrollToArtist(event) {
+    event.preventDefault();
+    const parentElement = getParentElement(event.target, 'catalog-content');
+    // console.log(parentElement);
+    const artistCard = parentElement.querySelector('.artist-card');
+      artistCard.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+  };
+
+  scrollToArtist();
+
 
   // Слайдер в Events
   const eventsSlider = siteContainer.querySelector('.events-swiper-container')
@@ -534,8 +566,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  // Показываем категории в мобильном
+  // Показываем спойлер с категориями в мобильном
   const categoriesBtn = siteContainer.querySelector('.categories__title');
+  const categoriesList = siteContainer.querySelector('.categories__list');
+  const categoriesListItems = categoriesList.querySelectorAll('.categories__item');
+  const categoriesCloseBtns = categoriesList.querySelectorAll('.categories__close-btn');;
+
   function showCategories() {
     if (window.innerWidth < 577) {
       categoriesBtn.setAttribute('role', 'button');
@@ -548,19 +584,28 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   };
 
-  const categoriesList = siteContainer.querySelector('.categories__list');
-
   function openCategoriesList() {
-    let timeoutID; //TODO Подумать над удалением таймаута
     categoriesBtn.classList.toggle('categories__title_is-open');
     if (categoriesBtn.classList.contains('categories__title_is-open')) {
+
+      categoriesListItems.forEach((el) => {
+        el.classList.remove('categories__item_unvisible');
+        el.removeEventListener('click', hideUncheckedCategory);
+      });
+
+      categoriesCloseBtns.forEach((btn) => {
+        btn.classList.remove('categories__close-btn_visible');
+      });
+      categoriesList.classList.remove('categories__list_static');
       categoriesList.classList.add('categories__list_visible');
-      timeoutID = setTimeout(() => {
+      setTimeout(() => {
         categoriesList.classList.add('categories__list_animate');
       }, 100);
+
     } else {
+
       categoriesList.classList.remove('categories__list_animate');
-      timeoutID = setTimeout(() => {
+      setTimeout(() => {
         categoriesList.classList.remove('categories__list_visible');
         showCheckedCategories();
       }, 100);
@@ -570,13 +615,16 @@ document.addEventListener('DOMContentLoaded', function () {
   function showCheckedCategories() {
     const checkedCategories = [];
     const categoriesInputs = categoriesList.querySelectorAll('.categories__input');
+
     categoriesInputs.forEach((input) => {
+      const categoriesItem = getParentElement(input, 'categories__item');
+
       if (!input.checked) {
-        // checkedCategories.push(input);
-        // console.log(input);
-        // addCheckedCategory(input);
-        getParentElement(input, 'categories__item').classList.add('categories__item_unvisible');
+        categoriesItem.classList.add('categories__item_unvisible');
       } else {
+        const categoriesCloseBtn = categoriesItem.querySelector('.categories__close-btn')
+        categoriesCloseBtn.classList.add('categories__close-btn_visible');
+        categoriesItem.addEventListener('click', hideUncheckedCategory);
         checkedCategories.push(input);
       };
     });
@@ -584,31 +632,33 @@ document.addEventListener('DOMContentLoaded', function () {
     if (checkedCategories.length) {
       categoriesList.classList.add('categories__list_static');
       categoriesList.classList.add('categories__list_visible');
+
       setTimeout(() => {
         categoriesList.classList.add('categories__list_animate');
       }, 100);
-      // const categoriesWrapp = siteContainer.querySelector('.0categories__wrap');
-      // const categoriesList = document.createElement('ul');
-      // categoriesList.classList.add('categories-checked');
-      // checkedCategories.forEach((element) => {
-
-      // });
     };
+  };
+
+  function hideUncheckedCategory(event) {
+    event.preventDefault();
+    const uncheckedItem = event.currentTarget;
+    console.log(uncheckedItem);
+    console.log(uncheckedItem.querySelector('categories__input'));
+    uncheckedItem.querySelector('.categories__input').checked = 0;
+    // setAttribute('checked', 'false');
+    uncheckedItem.classList.add('categories__item_unvisible');
+
   };
 
   function getParentElement(element, classParentElement) {
     while (element !== document.body) {
-      if ( element.classList.contains(classParentElement)) {
+      if (element.classList.contains(classParentElement)) {
         return element;
       } else {
         element = element.parentElement;
       };
     };
   };
-
-  function addCheckedCategory(input) {
-    // const
-  }
 
   showCategories();
 
@@ -764,6 +814,11 @@ document.addEventListener('DOMContentLoaded', function () {
     setEditionsSlider();
     // mySwiperEditions.update();
     mySwiperProjects.update();
+
+    if (window.innerWidth < 577) {
+      scrollToArtist();
+      showCategories();
+    }
 
 
     if (window.innerWidth > 1024) {
