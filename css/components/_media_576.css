@@ -142,7 +142,6 @@
     padding-right: 8px;
   }
 
-  /* TODO Это временно - не работает слайдер как нужно */
   .swiper-container-multirow>.swiper-wrapper {
     flex-wrap: nowrap;
   }
@@ -240,6 +239,21 @@
     padding-bottom: 20px;
     column-count: unset;
     height: auto;
+  }
+
+  .accordion-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .accordion-left__wrap {
+    margin: 0;
+    width: 100%;
+  }
+
+  .accordion-content__info {
+    padding-right: 0;
   }
 
   .artist-card {
@@ -484,12 +498,6 @@
     display: inline-block;
   }
 
-
-  /* TODO paddibg-top временно */
-  .price__title {
-    /* padding-top: 32px; */
-  }
-
   .editions-right {
     margin-bottom: 0;
     padding-top: 51px;
@@ -516,12 +524,12 @@
   }
 
   .editions-slide {
-    --cards-gap: 30px;
+    /* --cards-gap: 30px; */
     position: relative;
     margin-bottom: 46px;
     margin-right: 0;
     /* width: 100%; */
-    width: calc((100% - var(--cards-gap)) / 2);
+    width: calc((100% - 30px) / 2);
   }
 
   .editions-slide:not(:nth-child(2n)) {

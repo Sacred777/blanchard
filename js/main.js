@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const DELAY_TIME = 300;
   const overlay = document.querySelector('.overlay');
   const siteContainer = document.querySelector('.site-container');
   const burger = siteContainer.querySelector('.burger');
@@ -136,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function () {
           closeFormBtn.classList.remove('serch-form-close-btn_animate');
 
           setTimeout(() => {
-            console.log('Должно удалить абсолют')
+            // console.log('Должно удалить абсолют')
             closeFormBtn.classList.remove('serch-form-close-btn_visible');
             serchFormLabel.classList.remove('search-form-touchscreen__label_visible');
             serchFormTouchscreen.classList.remove('search-form-touchscreen_absolute');
@@ -338,9 +337,9 @@ document.addEventListener('DOMContentLoaded', function () {
       modal.classList.remove('is-open');
       modalElement.classList.remove('modal-open');
       const imgElement = modalElement.querySelector('.modal-picture-info__img');
-      console.log(imgElement);
+      // console.log(imgElement);
       if (imgElement) {
-        console.log("Deleted Img");
+        // console.log("Deleted Img");
         imgElement.remove();
       };
       enableScroll(pagePosition);
@@ -745,8 +744,8 @@ document.addEventListener('DOMContentLoaded', function () {
   function hideUncheckedCategory(event) {
     event.preventDefault();
     const uncheckedItem = event.currentTarget;
-    console.log(uncheckedItem);
-    console.log(uncheckedItem.querySelector('categories__input'));
+    // console.log(uncheckedItem);
+    // console.log(uncheckedItem.querySelector('categories__input'));
     uncheckedItem.querySelector('.categories__input').checked = 0;
     // setAttribute('checked', 'false');
     uncheckedItem.classList.add('categories__item_unvisible');
@@ -859,7 +858,7 @@ document.addEventListener('DOMContentLoaded', function () {
       colorWrong: '#D11616',
 
       submitHandler: function (form) {
-        console.log(form);
+        // console.log(form);
 
         let formData = new FormData(form);
 
@@ -868,8 +867,8 @@ document.addEventListener('DOMContentLoaded', function () {
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             if (xhr.status === 200) {
-              console.log('Отправлено');
-              console.log(successModal);
+              // console.log('Отправлено');
+              // console.log(successModal);
               const modalElement = modal.querySelector(successModal);
               const pagePosition = openModal(modalElement);
               controlModal(modalElement, pagePosition);

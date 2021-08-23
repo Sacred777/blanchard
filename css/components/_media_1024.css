@@ -1,11 +1,10 @@
-
 @media (max-width: 1024px) {
 
   .container {
     max-width: 953px;
   }
 
-  // Hero
+   /* Hero  */
 
   .header {
     background-color: var(--color-black);
@@ -103,14 +102,14 @@
   }
 
   .menu-touchscreen {
-    --burger-width: 400px;
+    /* --burger-width: 400px; */
     position: fixed;
     top: 0;
     left: 0;
     display: block;
     padding-top: 65px;
     padding-right: 4px;
-    max-width: var(--burger-width);
+    max-width: 400px;
     width: 80%;
     height: 100vh;
     z-index: 100;
@@ -118,7 +117,7 @@
     overflow-x: hidden;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(calc( 0px - var(--burger-width)));
+    transform: translateX(-400px);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   }
 

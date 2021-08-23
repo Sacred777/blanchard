@@ -29,7 +29,8 @@
   }
 
   .us__descr {
-    min-width: none;
+    /* min-width: none; */
+    min-width: unset;
   }
 
   .gallery__container {
