@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const burger = siteContainer.querySelector('.burger');
   const burgerMenu = siteContainer.querySelector('.menu-touchscreen');
   const burgerMenuCloseBtn = burgerMenu.querySelector('.header-nav-btn-close');
-
+  // let currentInnerWidth = window.innerWidth;
 
   //  Выпадающие списки в header-bottom
   function controlDropdows() {
@@ -63,6 +63,106 @@ document.addEventListener('DOMContentLoaded', function () {
 
   controlDropdows();
 
+  // Показ мобильного поиска
+  function showSerchFormOnTouchscreen() {
+    const serchFormOpenBtn = siteContainer.querySelector('.search-form-touchscreen__btn');
+    const closeFormBtn = siteContainer.querySelector('.serch-form-close-btn')
+    const serchFormTouchscreen = siteContainer.querySelector('.search-form-touchscreen');
+    const serchFormLabel = siteContainer.querySelector('.search-form-touchscreen__label');
+    const logo = siteContainer.querySelector('.logo__link');
+    const headerTopContainer = siteContainer.querySelector('.header-top__container');
+
+    if (window.innerWidth > 1024) {
+      if (serchFormOpenBtn.dataset.width) {
+        hideSerchForm();
+        serchFormOpenBtn.removeAttribute('data-width');
+      };
+    } else if (window.innerWidth > 800 && window.innerWidth < 1025) {
+      if (serchFormOpenBtn.dataset.width !== 'large') {
+        hideSerchForm();
+        serchFormOpenBtn.setAttribute('data-width', 'large');
+        setListener();
+      };
+    } else if (window.innerWidth < 801) {
+      if (serchFormOpenBtn.dataset.width !== 'small') {
+        hideSerchForm();
+        serchFormOpenBtn.setAttribute('data-width', 'small');
+        setListener();
+      };
+    };
+
+    function setListener() {
+      serchFormOpenBtn.addEventListener('click', showSerchForm);
+    };
+
+    function showSerchForm() {
+      switch (serchFormOpenBtn.dataset.width) {
+
+        case 'large':
+          serchFormTouchscreen.classList.add('search-form-touchscreen_absolute');
+          closeFormBtn.classList.add('serch-form-close-btn_visible');
+          serchFormLabel.classList.add('search-form-touchscreen__label_animate');
+          setTimeout(() => {
+            serchFormLabel.classList.add('search-form-touchscreen__label_visible');
+            closeFormBtn.classList.add('serch-form-close-btn_animate');
+          }, 100);
+
+          closeFormBtn.addEventListener('click', hideSerchForm);
+          break;
+
+        case 'small':
+          burger.classList.add('burger_unvisible');
+          logo.classList.add('logo__link_unvisible');
+          headerTopContainer.classList.add('header-top__container_width-60');
+          serchFormTouchscreen.classList.add('search-form-touchscreen_width-100pr');
+          serchFormLabel.classList.add('search-form-touchscreen__label_visible');
+
+          setTimeout(() => {
+            closeFormBtn.classList.add('serch-form-close-btn_visible');
+            serchFormLabel.classList.add('search-form-touchscreen__label_animate');
+            closeFormBtn.classList.add('serch-form-close-btn_animate');
+          }, 100);
+
+          closeFormBtn.addEventListener('click', hideSerchForm);
+          break;
+      };
+    };
+
+    function hideSerchForm() {
+      switch (serchFormOpenBtn.dataset.width) {
+
+        case 'large':
+          serchFormLabel.classList.remove('search-form-touchscreen__label_animate');
+          closeFormBtn.classList.remove('serch-form-close-btn_animate');
+
+          setTimeout(() => {
+            console.log('Должно удалить абсолют')
+            closeFormBtn.classList.remove('serch-form-close-btn_visible');
+            serchFormLabel.classList.remove('search-form-touchscreen__label_visible');
+            serchFormTouchscreen.classList.remove('search-form-touchscreen_absolute');
+          }, 100);
+          break;
+
+        case 'small':
+          serchFormLabel.classList.remove('search-form-touchscreen__label_animate');
+          closeFormBtn.classList.remove('serch-form-close-btn_animate');
+
+          setTimeout(() => {
+            serchFormLabel.classList.remove('search-form-touchscreen__label_visible');
+            closeFormBtn.classList.remove('serch-form-close-btn_visible');
+            serchFormTouchscreen.classList.remove('search-form-touchscreen_width-100pr');
+            headerTopContainer.classList.remove('header-top__container_width-60');
+            logo.classList.remove('logo__link_unvisible');
+            burger.classList.remove('burger_unvisible');
+          }, 100);
+          break;
+
+      };
+    };
+
+  };
+
+  showSerchFormOnTouchscreen();
 
   // Скроллы в выпадающих списках в header-bottom
   document.querySelectorAll('.dropdown__list').forEach(el => {
@@ -123,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
         slidesPerView: 1,
         // slidesPerColumnFill: 'column',
         slidesPerColumn: 1,
-        // spaceBetween: 10,
+        // spaceBetween: 100,
         slidesPerGroup: 1,
       },
 
@@ -143,11 +243,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
       1025: {
         slidesPerView: 3,
-        // slidesPerColumnFill: 'row',
+        slidesPerColumn: 2,
+        spaceBetween: 34,
+        slidesPerGroup: 3,
+      },
+
+      1411: {
+        slidesPerView: 3,
         slidesPerColumn: 2,
         spaceBetween: 45,
         slidesPerGroup: 3,
       },
+
+
     }
   });
 
@@ -163,13 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
     openPictureCardButton.addEventListener('click', (event) => {
       const imgElement = event.currentTarget.querySelector('.gallery-slide__img');
       const pictureImgSrc = imgElement.getAttribute('src');
-      const pictureImgAlt = imgElement.getAttribute('alt');
+      // const pictureImgAlt = imgElement.getAttribute('alt');
       const pictureWrapper = modalPictureCard.querySelector('.modal-picture-info__left');
-      const pictureElement = document.createElement('img');
-      pictureElement.classList.add('modal-picture-info__img');
-      pictureElement.setAttribute('src', pictureImgSrc);
-      pictureElement.setAttribute('alt', pictureImgAlt);
-      pictureWrapper.append(pictureElement);
+      pictureWrapper.style.backgroundImage = `url("${pictureImgSrc}")`;
+      // const pictureElement = document.createElement('img');
+      // pictureElement.classList.add('modal-picture-info__img');
+      // pictureElement.setAttribute('src', pictureImgSrc);
+      // pictureElement.setAttribute('alt', pictureImgAlt);
+      // pictureWrapper.append(pictureElement);
       const pagePosition = openModal(modalPictureCard);
       controlModal(modalPictureCard, pagePosition);
     })
@@ -306,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   };
 
-  // smoothScrollToAnchor();
+  smoothScrollToAnchor();
 
 
   // Табы в Каталоге, рефреш аккордиона
@@ -440,10 +549,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const parentElement = getParentElement(event.target, 'catalog-content');
     // console.log(parentElement);
     const artistCard = parentElement.querySelector('.artist-card');
-      artistCard.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+    artistCard.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   };
 
   scrollToArtist();
@@ -527,12 +636,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         breakpoints: {
 
-          // 150: {
-          // slidesPerView: 1,
-          // spaceBetween: 10,
-          // },
-
-
           577: {
             slidesPerView: 2,
             spaceBetween: 36,
@@ -543,11 +646,11 @@ document.addEventListener('DOMContentLoaded', function () {
             spaceBetween: 50,
           },
 
-          1025: {
+          1200: {
             slidesPerView: 3,
             spaceBetween: 50,
-            // slidesPerGroup: 3,
           },
+
         },
       });
     };
@@ -683,7 +786,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       150: {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 30,
         slidesPerGroup: 1,
       },
 
@@ -794,47 +897,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Оформление стилей для устройств с шириной экрана < 1024
 
-  const currentInnerWidth = window.innerWidth;
+
   const gallerySwiper = document.querySelector('.gallery-swiper-container');
   const editionsSwiper = document.querySelector('.editions-swiper-container');
 
-  if (currentInnerWidth > 1024) {
+  if (window.innerWidth > 1024) {
     gallerySwiper.classList.add('swiper-no-swiping'); // Запрещаем свайпинг у слайдеров
     editionsSwiper.classList.add('swiper-no-swiping'); // Запрещаем свайпинг у слайдеров
-    // burgerMenu.inert = false;
-    // inertElements.forEach((el) => {
-    // el.inert = true;
-    // });
   };
+
+
 
   window.addEventListener('resize', (event) => {
 
+    const currentInnerWidth = window.innerWidth;
+
+    showSerchFormOnTouchscreen();
     mySwiperGallery.update();
     setEventsSlider();
     setEditionsSlider();
-    // mySwiperEditions.update();
     mySwiperProjects.update();
 
-    if (window.innerWidth < 577) {
+    if (currentInnerWidth < 577) {
       scrollToArtist();
       showCategories();
     }
 
 
-    if (window.innerWidth > 1024) {
+    if (currentInnerWidth > 1024) {
       gallerySwiper.classList.add('swiper-no-swiping');
       editionsSwiper.classList.add('swiper-no-swiping');
-      // burgerMenu.inert = false;
-      // inertElements.forEach((el) => {
-      // el.inert = true;
-      // });
-    } else if (window.innerWidth < 1025) {
+    } else if (currentInnerWidth < 1025) {
       gallerySwiper.classList.remove('swiper-no-swiping');
       editionsSwiper.classList.remove('swiper-no-swiping');
-      // burgerMenu.inert = true;
-      // inertElements.forEach((el) => {
-      // el.inert = false;
-      // });
     };
   });
 

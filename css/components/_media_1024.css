@@ -12,6 +12,7 @@
   }
 
   .header-top__container {
+    position: relative;
     /* margin: 0 auto; */
     max-width: 953px;
 
@@ -21,7 +22,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 28px 11px 28px 15px;
+    padding: 28px 11px 26px 15px;
   }
 
   .header-bottom {
@@ -30,7 +31,8 @@
 
   .burger,
   .search-form-touchscreen {
-    display: block;
+    display: flex;
+    align-items: center;
   }
 
   .burger:focus-visible {
@@ -49,6 +51,10 @@
     fill: var(--color-studio);
   }
 
+  .burger_unvisible {
+    display: none;
+  }
+
   .logo {
     margin: 0;
   }
@@ -56,6 +62,11 @@
   .logo__img {
     width: 187px;
     transform: translateX(-3px);
+  }
+
+  .search-form-touchscreen_absolute {
+    position: absolute;
+    right: 37px;
   }
 
   .search-form-touchscreen__btn {
@@ -76,6 +87,19 @@
 
   .search-form-touchscreen__btn:active .search-form-touchscreen-svg_color {
     fill: var(--color-studio);
+  }
+
+  .search-form-touchscreen__label {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .search-form-touchscreen__label_visible {
+    display: inline-block;
+  }
+
+  .search-form-touchscreen__label_animate {
+    opacity: 1;
   }
 
   .menu-touchscreen {
@@ -220,7 +244,7 @@
 
   /* Gallery */
   .gallery__container {
-    padding-bottom: 71px;
+    padding-bottom: 70px;
   }
 
   .gallery-filter {
@@ -229,8 +253,19 @@
 
   .gallery-slider {
     padding-left: 7px;
+    padding-bottom: 5px;
     width: 65%;
   }
+
+  /* .gallery-swiper-slide::before {
+    content: none;
+  } */
+
+  .gallery-swiper-slide::after {
+    content: none;
+  }
+
+
 
   .gallery-button {
     padding-top: 19px;
@@ -246,9 +281,9 @@
     transform: translateY(10px);
   }
 
-  .tab-content__descr {
+  /* .tab-content__descr {
     padding-right: 0;
-  }
+  } */
 
   .artist-card {
     width: 47.3%;
@@ -300,7 +335,7 @@
   }
 
   .event-card__bottom {
-    min-height: 479px;
+    min-height: 451px;
   }
 
 
@@ -321,6 +356,10 @@
     margin-bottom: 11px;
   }
 
+  .editions-slide__title-wrap {
+    padding-left: 0;
+  }
+
   /* Projects */
   .projects-swiper-container {
     max-width: 846px;
@@ -328,7 +367,7 @@
 
   /* Contacts */
   .contacts-left {
-    padding-right: 99px;
+    /* padding-right: 99px; */
     width: 47.5%;
   }
 

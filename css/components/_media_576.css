@@ -106,7 +106,7 @@
 
   .gallery__container {
     padding-top: 50px;
-    padding-bottom: 198px;
+    padding-bottom: 200px;
     /* padding-left: 0; */
   }
 
@@ -148,10 +148,9 @@
   }
 
   .gallery-swiper-container {
+    /* width: 70%; */
     display: flex;
     flex-direction: column-reverse;
-    /* min-height: 367px; */
-    /* height: 367px; */
   }
 
   .gallery-button {
@@ -168,6 +167,10 @@
 
   .gallery-button__pagination {
     margin-right: 16px;
+  }
+
+  .gallery-swiper-slide {
+    text-align: center;
   }
 
   .gallery-slide__img {
@@ -263,7 +266,7 @@
   }
 
   .events {
-    padding-bottom: 55px;
+    padding-bottom: 47px;
   }
 
   .events__title {
@@ -274,6 +277,7 @@
   .events-swiper-container {
     overflow: hidden;
     width: 100%;
+    max-width: 400px;
   }
 
   .events__item {
@@ -298,7 +302,7 @@
 
   .event-card__img {
     min-height: 200px;
-    width: 290px;
+    width: 100%;
   }
 
   .events__item:not(:nth-child(2n)) {
@@ -370,6 +374,7 @@
 
   .categories__wrap {
     position: relative;
+    margin-bottom: 16px;
   }
 
   .categories__title {
@@ -482,7 +487,7 @@
 
   /* TODO paddibg-top временно */
   .price__title {
-    padding-top: 32px;
+    /* padding-top: 32px; */
   }
 
   .editions-right {
@@ -495,7 +500,6 @@
 
   .editions-slide__img {
     margin-bottom: 9px;
-    max-height: ;
   }
 
 
@@ -515,20 +519,23 @@
     --cards-gap: 30px;
     position: relative;
     margin-bottom: 46px;
+    margin-right: 0;
+    /* width: 100%; */
     width: calc((100% - var(--cards-gap)) / 2);
   }
 
   .editions-slide:not(:nth-child(2n)) {
     margin-right: 30px;
+
   }
 
   .editions-slide__title,
   .editions-slide__artist-name {
     font-size: 12px;
     line-height: 16px;
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
   }
 
   .editions-slide__artist-name {
@@ -559,16 +566,12 @@
   }
 
 
-  /* TODO padding-top: 49px; - раскомментировать */
   .projects__container {
-    /* padding-top: 49px; */
+    padding-top: 49px;
   }
 
-  /* TODO   /* margin-bottom: 12px; - раскомментировать отрицательный удалить */
   .projects__title {
-    /* margin-bottom: 12px; */
-    margin-bottom: -3px;
-
+    margin-bottom: 12px;
     padding-left: 0;
   }
 
@@ -587,7 +590,8 @@
   }
 
   .projects-swiper-container {
-    max-width: 228px;
+    padding: 0 30px;
+    /* max-width: 228px; */
   }
 
   .partners-slide__logo {
@@ -637,6 +641,7 @@
   }
 
   .contacts-left {
+    justify-content: center;
     width: 100%;
     padding: 0 6px;
     border: 0;
@@ -706,10 +711,39 @@
   .footer__logo {
     padding: 0;
     max-width: 97px;
-
   }
 
-  .social__link-svg {
+
+  .modal__container {
+    width: 90%;
   }
+
+  .modal-picture-info__right {
+    padding: 10px 10px;
+  }
+
+  .modal-picture-info__artist-name {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .modal-picture-info__picture-name {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  .modal-picture-info__picture-date {
+    /* margin-bottom: 5px; */
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .modal-picture-info__descr {
+    /* text-align: left; */
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+
 
 }

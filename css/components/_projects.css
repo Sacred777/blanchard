@@ -209,7 +209,8 @@
 .projects-swiper-container {
   margin: 0 auto;
   padding: 0 15px;
-  max-width: 1480px;
+  /* max-width: 1480px; */
+  width: 92.4%;
 }
 
 .partners-slide__logo {

@@ -178,7 +178,8 @@
   margin: 0;
   margin-bottom: 10px;
   padding-top: 22px;
-  max-width: 1150px;
+  /* max-width: 1150px; */
+  width: 72%;
   height: auto;
 }
 
@@ -232,13 +233,14 @@
 }
 
 .editions-slide__img {
-  margin-bottom: 23px;
+  margin-bottom: 22px;
 }
 
 .editions-slide__title-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-left: 3px;
 }
 
 .editions-slide__title {
@@ -246,12 +248,16 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .editions-slide__price {
   font-style: italic;
   line-height: 22px;
   color: var(--color-white);
+  white-space: nowrap;
 }
 
 .editions-slide__artist-name {
@@ -259,6 +265,9 @@
   color: var(--color-white);
   font-size: 16px;
   line-height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .editions-slide-btn__wrap {
@@ -302,7 +311,7 @@
 } */
 
 .editions-slide__btn:active {
-  padding: 6px 17px;
+  padding: 6px 18px;
   background-color: var(--color-studio);
   border: 3px solid var(--color-mauve);
 }
