@@ -339,8 +339,6 @@
     line-height: 16px;
   }
 
-
-
   .event-card__descr {
     padding-right: 7px;
   }
@@ -356,8 +354,6 @@
     text-align: center;
   }
 
-
-
   .swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0;
   }
@@ -369,7 +365,9 @@
   .events-swiper-pagination .swiper-pagination-bullet {
     width: 10px;
     height: 10px;
+    visibility: visible;
     background-color: var(--color-vl-grey);
+    opacity: 1;
   }
 
   .events-swiper-pagination .swiper-pagination-bullet-active {
@@ -524,26 +522,28 @@
   }
 
   .editions-slide {
-    /* --cards-gap: 30px; */
     position: relative;
     margin-bottom: 46px;
-    margin-right: 0;
-    /* width: 100%; */
     width: calc((100% - 30px) / 2);
   }
 
   .editions-slide:not(:nth-child(2n)) {
     margin-right: 30px;
+  }
 
+  .editions-slide_reset {
+    margin-right: 0 !important;
+    width: calc((100% - 30px) / 2) !important;
+  }
+
+  .editions-slide_reset:not(:nth-child(2n)) {
+    margin-right: 30px !important;
   }
 
   .editions-slide__title,
   .editions-slide__artist-name {
     font-size: 12px;
     line-height: 16px;
-    /* white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
   }
 
   .editions-slide__artist-name {

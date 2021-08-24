@@ -150,6 +150,11 @@
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
 
+.price-label__input::placeholder {
+  color: var(--color-white);
+  opacity: 1;
+}
+
 .price-label__input:focus {
   outline: none;
   border-color: var(--color-white);
@@ -170,6 +175,20 @@
   padding: 0 10px;
   line-height: 32px;
   color: var(--color-white);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input[type="number"]:hover,
+input[type="number"]:focus {
+  -moz-appearance: number-input;
 }
 
 /* Slider */

@@ -566,6 +566,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // console.log(eventsSlider.dataset.mobile);
     if (window.innerWidth < 577 && eventsSlider.dataset.mobile == "false") {
       // console.log("Начинаем!")
+      eventsSlider.dataset.mobile = "true";
       mySwiperEvents = new Swiper(eventsSlider, {
         slidesPerView: 1,
         spaceBetween: 10,
@@ -573,6 +574,7 @@ document.addEventListener('DOMContentLoaded', function () {
         pagination: {
           el: '.events-swiper-pagination',
           type: 'bullets',
+          clickable: true,
         },
       });
 
@@ -582,7 +584,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (window.innerWidth > 576) {
       eventsSlider.dataset.mobile = "false";
-
       if (eventsSlider.classList.contains('swiper-container-initialized')) {
         // console.log('Есть свайпер');
         mySwiperEvents.destroy();
@@ -613,11 +614,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Слайдер в Editions
   const editionsSlider = siteContainer.querySelector('.editions-swiper-container');
+  const editionsSliders = document.querySelectorAll('.editions-slide');
   let mySwiperEditions;
 
   function setEditionsSlider() {
     if (window.innerWidth > 576) {
-      editionsSlider.dataset.mobile == "false";
+
+      editionsSliders.forEach((slider) => {
+        slider.classList.remove('editions-slide_reset');
+      });
+
+      editionsSlider.dataset.mobile = "false";
+
       mySwiperEditions = new Swiper(editionsSlider, {
         slidesPerView: 3,
         spaceBetween: 50,
@@ -638,6 +646,7 @@ document.addEventListener('DOMContentLoaded', function () {
           577: {
             slidesPerView: 2,
             spaceBetween: 36,
+            // clickable: true,
           },
 
           769: {
@@ -656,12 +665,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (window.innerWidth < 577 && editionsSlider.dataset.mobile == "false") {
       editionsSlider.dataset.mobile = "true";
+      editionsSliders.forEach((slider) => {
+        slider.classList.add('editions-slide_reset');
+      });
 
       if (editionsSlider.classList.contains('swiper-container-initialized')) {
         mySwiperEditions.destroy();
       };
-
     };
+
   };
 
   setEditionsSlider();

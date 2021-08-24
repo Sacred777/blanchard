@@ -301,16 +301,13 @@
   font-weight: 600;
   font-size: 14px;
   color: var(--color-white);
+  transition: border 0.3s ease-in-out;
 }
 
 .dropdown__link:focus-visible {
   outline: none;
   border: 2px solid  var(--color-amethyst);
 }
-
-/* .dropdown__link:hover {
-  border: 2px solid  var(--color-amethyst);
-} */
 
 .dropdown__link:after {
   content: '';
