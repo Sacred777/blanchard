@@ -21,9 +21,11 @@
   padding-bottom: 29px;
 }
 
-.header-top__container_width-60 {
-  width: 60%;
-}
+/* .header-top__container_width-60 {
+  padding-top: 33px;
+  padding-bottom: 31px;
+  width: 87%;
+} */
 
 .burger {
   display: none;

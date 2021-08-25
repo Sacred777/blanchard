@@ -65,7 +65,7 @@
 
   .search-form-touchscreen_absolute {
     position: absolute;
-    right: 37px;
+    right: 33px;
   }
 
   .search-form-touchscreen__btn {
@@ -99,6 +99,10 @@
 
   .search-form-touchscreen__label_animate {
     opacity: 1;
+  }
+
+  .search-form__field::placeholder {
+    visibility: hidden;
   }
 
   .menu-touchscreen {

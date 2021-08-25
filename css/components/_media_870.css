@@ -31,4 +31,22 @@
     padding-right: 36px;
   }
 
+  .header-top__container_width-60 {
+    padding-top: 33px;
+    padding-bottom: 31px;
+    width: 100%;
+  }
+
+  .header-top__container_width-60 .serch-form-close-btn::before,
+  .header-top__container_width-60 .serch-form-close-btn::after {
+     width: 33px;
+  }
+
+  .header-top__container_width-60 .search-form-touchscreen__btn {
+    margin-right: 7px;
+  }
+
+  .header-top__container_width-60 .search-form-touchscreen__label {
+    margin-right: 23px;
+  }
 }
