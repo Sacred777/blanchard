@@ -22,4 +22,13 @@
     max-height: unset;
   }
 
+  .modal-picture-card {
+    width: 88%;
+    /* min-height: 594px; */
+  }
+
+  .modal-picture-info__right {
+    padding-right: 36px;
+  }
+
 }

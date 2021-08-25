@@ -726,6 +726,10 @@
     width: 90%;
   }
 
+  .modal-picture-card {
+    padding-bottom: 28px;
+  }
+
   .modal-picture-info__right {
     padding: 10px 10px;
   }
@@ -750,6 +754,49 @@
     /* text-align: left; */
     font-size: 12px;
     line-height: 22px;
+  }
+
+  .modal-picture-card {
+    /* flex-direction: column; */
+    width: 91%;
+    min-height: auto;
+  }
+
+ .modal-picture-info {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .modal-picture-info__left {
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .modal-picture-info__right {
+    padding: 0 20px;
+    width: 100%;
+  }
+
+  .modal-picture-info__artist-name {
+    font-size: 24px;
+    line-height: 33px;
+  }
+
+  .modal-picture-info__picture-name {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .modal-picture-info__picture-date {
+    margin-bottom: 5px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .modal-picture-info__descr {
+    font-size: 16px;
+    line-height: 32px;
   }
 
 

@@ -43,8 +43,16 @@
     padding-right: 99px;
   }
 
-  .modal-picture-info {
-    min-height: 400px;
+  .modal__container {
+    width: 59%;
+  }
+
+  .modal-picture-card {
+    min-height: 594px;
+  }
+
+  .modal-picture-info__left {
+    min-height: 594px;
   }
 
 }
