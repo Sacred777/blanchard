@@ -30,6 +30,49 @@
     transform: translateY(-2px);
   }
 
+  .menu-touchscreen {
+    padding-top: 46px;
+    padding-left: 9px;
+  }
+
+  .header-nav-btn-close {
+    top: 11px;
+    left: 12px;
+  }
+
+  .header-nav-btn-close__svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .header-nav__list {
+    margin-bottom: 18px;
+  }
+
+  .header-nav__link {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .login {
+    padding: 10px 30px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+
+  .login:active {
+    padding: 9px 29px;
+    /* color: var(--color-white); */
+    /* background-color: var(--color-studio); */
+    /* border: 3px solid var(--color-mauve); */
+  }
+
+  .login-svg {
+    width: 9px;
+    height: 9px;
+    transform: none;
+  }
+
   .logo__link {
     transform: translateY(1px);
   }
