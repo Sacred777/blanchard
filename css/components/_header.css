@@ -175,6 +175,7 @@
   height: 2px;
   background-color: var(--color-white);
   transform: translateY(-50%) rotate(-45deg);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .serch-form-close-btn::after {
@@ -186,6 +187,21 @@
   height: 2px;
   background-color: var(--color-white);
   transform: translateY(-50%) rotate(45deg);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.serch-form-close-btn:focus-visible {
+  outline: none;
+}
+
+.serch-form-close-btn:focus-visible::before,
+.serch-form-close-btn:focus-visible::after {
+  background-color: var(--color-amethyst);
+}
+
+.serch-form-close-btn:active::before,
+.serch-form-close-btn:active::after {
+  background-color: var(--color-studio);
 }
 
 .header-bottom {
