@@ -19,16 +19,29 @@
     min-width: 160%;
   }
 
+  .hero__descr {
+    max-width: 50%;
+  }
+
   .tab-content__descr {
     padding-right: 0;
   }
 
+  .accordion-right__wrap {
+    /* padding: 41px 0; */
+    width: 55%;
+  }
+
+  .events__list {
+    gap: 27px;
+  }
+
   .events__item {
-    width: calc((100% - 60px) / 3);
+    /* width: calc((100% - 60px) / 3); */
   }
 
   .events__item:not(:nth-child(3n)) {
-    margin-right: 30px;
+    /* margin-right: 30px; */
   }
 
   .editions-left {

@@ -257,7 +257,7 @@
 
   .catalog__top {
     display: block;
-    margin-bottom: 19px;
+    /* margin-bottom: 19px; */
   }
 
   .tabs {
@@ -282,7 +282,7 @@
   }
 
   .catalog-title {
-    margin-bottom: 9px;
+    /* margin-bottom: 9px; */
   }
 
   .tabs__item:not(:last-child) {
@@ -320,14 +320,35 @@
   }
 
   .accordion-content {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
-    padding: 20px;
+    padding: 31px 0;
   }
 
   .accordion-left__wrap {
-    margin: 0;
-    width: 100%;
+    /* margin: 0; */
+    margin-right: 25px;
+    /* padding-right: 26px; */
+    width: 32%;
+    max-height: 130px;
+    min-height: unset;
+  }
+
+  .accordion-left__wrap::before {
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+  }
+
+
+  .accordion-right__wrap {
+    /* margin: 0; */
+    width: 60%;
+  }
+
+  .accordion-content__title {
+    font-size: 18px;
   }
 
   .accordion-content__info {
@@ -358,7 +379,7 @@
   }
 
   .events {
-    padding-bottom: 47px;
+    padding-bottom: 0px;
   }
 
   .events__title {
@@ -382,8 +403,9 @@
   }
 
   .events__list {
-    /* display: block; */
+    display: flex;
     flex-wrap: unset;
+    gap: unset;
     /* overflow: hidden; */
   }
 
@@ -453,7 +475,7 @@
   }
 
   .editions__container {
-    padding-top: 50px;
+    padding-top: 47px;
     padding-left: 5px;
   }
 
@@ -574,6 +596,10 @@
     display: inline-block;
   }
 
+  .editions-left {
+    min-width: unset;
+  }
+
   .editions-right {
     margin-bottom: 0;
     padding-top: 51px;
@@ -677,6 +703,7 @@
 
   .projects-swiper-container {
     padding: 0 30px;
+    /* width: 85%; */
     /* max-width: 228px; */
   }
 
@@ -690,6 +717,31 @@
 
   .projects-button__next, .swiper-container-rtl .projects-button__prev {
     right: -11px;
+  }
+
+  .projects-tooltip .projects-tooltip__text {
+    bottom: calc(-100% - 6px);
+  }
+
+  .projects-tooltip__btn:focus .projects-tooltip__background {
+    fill: transparent;
+  }
+
+  .projects-tooltip__btn:active .projects-tooltip__background {
+    fill: var(--color-mauve);
+  }
+
+  .projects-tooltip__btn::before {
+    content: none;
+  }
+
+  .projects-tooltip .projects-tooltip__text {
+    background-color: var(--color-vl-grey);
+  }
+
+  .projects-tooltip__btn-close {
+    opacity: 1;
+    visibility: visible;
   }
 
   .contacts__container {

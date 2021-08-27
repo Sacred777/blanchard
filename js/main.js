@@ -1077,5 +1077,39 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
 
+  const tooltips = siteContainer.querySelectorAll('.projects-tooltip');
+
+  tooltips.forEach((tooltip) => {
+    tooltip.addEventListener('focusin', () => {
+      setTooltipWidth(tooltip);
+    });
+
+    if (window.innerWidth > 1024) {
+      tooltip.addEventListener('mouseover', (ev) => {
+        // setTooltipWidth(ev.currentTarget);
+        setTooltipWidth(tooltip);
+      });
+    };
+  });
+
+  function setTooltipWidth(tooltip) {
+    const textBox = tooltip.querySelector('.projects-tooltip__text');
+    const coords = tooltip.getBoundingClientRect();
+
+    let offset = (tooltip.offsetWidth - textBox.offsetWidth) / 2;
+
+    console.log(tooltip.offsetWidth);
+    console.log(textBox.offsetWidth);
+    console.log(coords.left);
+    console.log(offset);
+
+    if (coords.left + offset < 1) {
+      offset = 0;
+    } else if (coords.left + offset + textBox.offsetWidth - 1 > document.documentElement.scrollWidth) {
+      offset = document.documentElement.scrollWidth - coords.left - textBox.offsetWidth + 1;
+    };
+
+    textBox.style.left = offset + 'px';
+  };
 
 });

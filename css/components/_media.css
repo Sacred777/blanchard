@@ -131,6 +131,7 @@
 
   .projects-tooltip:hover .projects-tooltip__text,
   .projects-tooltip:hover .projects-tooltip__btn::before {
+    /* transform: translateX(-50%); */
     opacity: 1;
     visibility: visible;
   }

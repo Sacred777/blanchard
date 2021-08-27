@@ -366,16 +366,29 @@
   }
 
   .accordion-left__wrap {
-    min-width: 189px;
-    height: 130px;
+    margin-right: 24px;
+    width: 43%;
+    mibn-height: 130px;
+  }
+
+  .accordion-left__wrap:before {
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
   }
 
   .accordion-right__wrap {
-    padding: 0;
+    width: 49%;
+  }
+
+
+  .accordion-right__wrap {
+    /* padding: 0; */
   }
 
   .accordion-content__info {
-    padding-right: 43px;
+    /* padding-right: 43px; */
   }
 
   /* Events */
@@ -385,11 +398,11 @@
   }
 
   .events__item {
-    width: calc((100% - 54px) / 3);
+    /* width: calc((100% - 54px) / 3); */
   }
 
   .events__item:not(:nth-child(3n)) {
-    margin-right: 27px;
+    /* margin-right: 27px; */
   }
 
   .event-card__info {
@@ -408,6 +421,7 @@
 
   .editions-left {
     width: 30%;
+    min-width: 272px;
   }
 
   .editions-right {
@@ -425,6 +439,10 @@
   /* Projects */
   .projects-swiper-container {
     max-width: 846px;
+  }
+
+  .projects-tooltip .projects-tooltip__text {
+    width: 240px;
   }
 
   /* Contacts */
