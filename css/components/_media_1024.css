@@ -368,7 +368,7 @@
   .accordion-left__wrap {
     margin-right: 24px;
     width: 43%;
-    mibn-height: 130px;
+    min-height: 130px;
   }
 
   .accordion-left__wrap:before {
