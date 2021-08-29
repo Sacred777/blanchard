@@ -28,12 +28,15 @@
   vertical-align: middle;
   margin: 50px auto;
   width: 47%;
-  min-height: 500px;
   background-color: var(--color-white);
   cursor: default;
   opacity: 0;
   transform: translateY(-100px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.modal-picture-card {
+  min-height: 500px;
 }
 
 .modal.is-open {

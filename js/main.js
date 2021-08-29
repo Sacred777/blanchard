@@ -1098,10 +1098,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let offset = (tooltip.offsetWidth - textBox.offsetWidth) / 2;
 
-    console.log(tooltip.offsetWidth);
-    console.log(textBox.offsetWidth);
-    console.log(coords.left);
-    console.log(offset);
+    // console.log(tooltip.offsetWidth);
+    // console.log(textBox.offsetWidth);
+    // console.log(coords.left);
+    // console.log(offset);
 
     if (coords.left + offset < 1) {
       offset = 0;
