@@ -690,10 +690,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.innerWidth < 577) {
       categoriesBtn.setAttribute('role', 'button');
       categoriesBtn.setAttribute('aria-label', 'Показать категории');
+      setListenerOnCategories();
       categoriesBtn.addEventListener('click', openCategoriesList);
     } else {
       categoriesBtn.removeAttribute('role');
       categoriesBtn.removeAttribute('aria-label');
+      removeListenerOnCategories();
       categoriesBtn.removeEventListener('click', openCategoriesList);
     };
   };
@@ -704,20 +706,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
       categoriesListItems.forEach((el) => {
         el.classList.remove('categories__item_unvisible');
-        el.removeEventListener('click', hideUncheckedCategory);
       });
 
-      categoriesCloseBtns.forEach((btn) => {
-        btn.classList.remove('categories__close-btn_visible');
-      });
-      categoriesList.classList.remove('categories__list_static');
       categoriesList.classList.add('categories__list_visible');
       setTimeout(() => {
         categoriesList.classList.add('categories__list_animate');
       }, 100);
 
     } else {
-
       categoriesList.classList.remove('categories__list_animate');
       setTimeout(() => {
         categoriesList.classList.remove('categories__list_visible');
@@ -727,41 +723,18 @@ document.addEventListener('DOMContentLoaded', function () {
   };
 
   function showCheckedCategories() {
-    const checkedCategories = [];
-    const categoriesInputs = categoriesList.querySelectorAll('.categories__input');
-
-    categoriesInputs.forEach((input) => {
-      const categoriesItem = getParentElement(input, 'categories__item');
-
-      if (!input.checked) {
-        categoriesItem.classList.add('categories__item_unvisible');
-      } else {
-        const categoriesCloseBtn = categoriesItem.querySelector('.categories__close-btn')
-        categoriesCloseBtn.classList.add('categories__close-btn_visible');
-        categoriesItem.addEventListener('click', hideUncheckedCategory);
-        checkedCategories.push(input);
-      };
+    categoriesListItems.forEach((categoriesListItem) => {
+      const categoriesInput = categoriesListItem.querySelector('.categories__input');
+      if (!categoriesInput.checked) {
+        categoriesListItem.classList.add('categories__item_unvisible');
+      }
     });
 
-    if (checkedCategories.length) {
-      categoriesList.classList.add('categories__list_static');
-      categoriesList.classList.add('categories__list_visible');
+    categoriesList.classList.add('categories__list_visible');
 
-      setTimeout(() => {
-        categoriesList.classList.add('categories__list_animate');
-      }, 100);
-    };
-  };
-
-  function hideUncheckedCategory(event) {
-    event.preventDefault();
-    const uncheckedItem = event.currentTarget;
-    // console.log(uncheckedItem);
-    // console.log(uncheckedItem.querySelector('categories__input'));
-    uncheckedItem.querySelector('.categories__input').checked = 0;
-    // setAttribute('checked', 'false');
-    uncheckedItem.classList.add('categories__item_unvisible');
-
+    setTimeout(() => {
+      categoriesList.classList.add('categories__list_animate');
+    }, 100);
   };
 
   function getParentElement(element, classParentElement) {
@@ -771,6 +744,37 @@ document.addEventListener('DOMContentLoaded', function () {
       } else {
         element = element.parentElement;
       };
+    };
+  };
+
+  function setListenerOnCategories() {
+    categoriesListItems.forEach((e) => {
+      e.addEventListener('click', switchCloseBtn);
+    });
+  };
+
+  function removeListenerOnCategories() {
+    categoriesListItems.forEach((e) => {
+      e.removeEventListener('click', switchCloseBtn);
+    });
+  };
+
+  function switchCloseBtn(event) {
+    const categoriesListItem = event.currentTarget;
+    const categoriesInput = categoriesListItem.querySelector('.categories__input');
+    const categoriesCloseBtn = categoriesListItem.querySelector('.categories__close-btn');
+
+    if (!categoriesInput.checked) {
+      categoriesCloseBtn.classList.remove('categories__close-btn_visible');
+      hideCategory(categoriesListItem);
+    } else {
+      categoriesCloseBtn.classList.add('categories__close-btn_visible');
+    };
+  };
+
+  function hideCategory(category) {
+    if (!categoriesBtn.classList.contains('categories__title_is-open')) {
+      category.classList.add('categories__item_unvisible');
     };
   };
 

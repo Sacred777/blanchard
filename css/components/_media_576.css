@@ -519,16 +519,16 @@
   }
 
   .categories__list {
-    position: absolute;
+    /* position: absolute; */
     display: none;
-    top: 40px;
-    left: 0;
+    /* top: 40px; */
+    /* left: 0; */
     width: 100%;
     /* position: relative; */
     max-height: unset;
     z-index: 100;
     opacity: 0;
-    background-color: rgba(0,0,0, 0.8);
+    /* background-color: rgba(0,0,0, 0.8); */
     /* display: none; */
     transition: opacity 0.3s ease-in-out;
   }
