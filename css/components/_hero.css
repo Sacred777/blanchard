@@ -21,8 +21,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  animation: grow 8s ease-in-out infinite alternate;
   transition: background-image 0.5s ease-in-out;
+  animation: grow 8s ease-in-out infinite alternate;
 }
 
 .hero-swiper-slide_1 {
@@ -39,20 +39,17 @@
 
 @keyframes grow {
   0% {background-size: 124%;}
-  /* 100% {background-size: 134%;} */
   100% {background-size: 150%;}
 }
 
 .hero__container {
-  /* display: none; */
   padding-top: 70px;
-  /* z-index: 5; */
 }
 
 .site-title {
+  position: absolute;
   height: 0;
   overflow: hidden;
-  position: absolute;
 }
 
 .hero__tagline {
@@ -70,10 +67,10 @@
   margin-bottom: 92px;
   padding-left: 1px;
   max-width: 37%;
+  color: var(--color-white);
   font-weight: 700;
   font-size: 18px;
   line-height: 30px;
-  color: var(--color-white);
 }
 
 .hero__btn {
@@ -93,7 +90,6 @@
   border-radius: 100px;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-
 }
 
 .hero__btn:focus-visible {
@@ -103,10 +99,6 @@
 .hero__btn:focus-visible::after {
   opacity: 1;
 }
-
-/* .hero__btn:hover {
-  border-color: var(--color-mauve);
-} */
 
 .hero__btn:active {
   background-color: var(--color-studio);

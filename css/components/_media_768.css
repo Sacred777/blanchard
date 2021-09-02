@@ -11,7 +11,6 @@
 
   .hero__container {
     padding-top: 71px;
-    /* padding-left: 49px; */
   }
 
   .header-top__container_width-60 {
@@ -21,13 +20,10 @@
   }
 
   .hero__tagline {
-    /* padding-left: 36px; */
-    /* font-size: 65px; */
     max-width: none;
   }
 
   .hero__descr {
-    /* padding-left: 36px; */
     margin-bottom: 133px;
     max-width: none;
   }
@@ -37,7 +33,6 @@
   }
 
   .us__descr {
-    /* min-width: none; */
     min-width: unset;
   }
 
@@ -52,8 +47,8 @@
   }
 
   .choices__list--dropdown {
-    background-color: rgba(0,0,0, 0.7);
     z-index: 100;
+    background-color: rgba(0,0,0, 0.7);
   }
 
   .gallery-filter__descr {
@@ -98,7 +93,6 @@
   }
 
   .accordion-left__wrap {
-    /* margin-right: 24px; */
     width: 41%;
     min-height: 190px;
   }
@@ -111,7 +105,6 @@
   }
 
   .accordion__list {
-    /* padding-top: 24px; */
     column-count: 3;
     height: 338px;
   }
@@ -124,18 +117,6 @@
   .artist-card__img {
     margin-bottom: 26px;
   }
-
-  /* .events__item {
-    width: calc((100% - 34px) / 2);
-  } */
-
-  /* .events__item:not(:nth-child(3n)) {
-    margin-right: 0;
-  } */
-
-  /* .events__item:not(:nth-child(2n)) {
-    margin-right: 34px;
-  } */
 
   .event-card__img {
     width: 316px;
@@ -150,10 +131,6 @@
   .event-card__info{
     padding: 3px 2px 38px 17px;
   }
-
-  /* .events__item:nth-child(1n+3) {
-    display: none;
-  } */
 
   .editions__container {
     flex-direction: column;
@@ -181,7 +158,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    /* align-items: center; */
     max-height: 146px;
   }
 
@@ -222,10 +198,6 @@
 
   .projects-swiper-container {
     max-width: 592px;
-  }
-
-  .swiper-slide {
-    /* min-height: 106px; */
   }
 
   .partners-slide__logo {

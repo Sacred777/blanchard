@@ -1,8 +1,8 @@
 .header {
   position: absolute;
-  z-index: 100;
   top: 0;
   left: 0;
+  z-index: 100;
   width: 100%;
 }
 
@@ -13,19 +13,13 @@
 .header-top__container {
   display: flex;
   align-items: center;
-  max-width: 1640px;
   margin: 0 auto;
   padding: 0 12px;
   padding-left: 20px;
   padding-top: 28px;
   padding-bottom: 29px;
+  max-width: 1640px;
 }
-
-/* .header-top__container_width-60 {
-  padding-top: 33px;
-  padding-bottom: 31px;
-  width: 87%;
-} */
 
 .burger {
   display: none;
@@ -74,10 +68,10 @@
 
 .header-nav__link {
   padding: 3px 6px 4px 6px;
+  color: var(--color-white);
   font-weight: 600;
   font-size: 18px;
   line-height: 1;
-  color: var(--color-white);
   transition: color 0.3s ease-in-out;
 }
 
@@ -86,10 +80,6 @@
   background-color: var(--color-studio);
 }
 
-/* .header-nav__link:hover {
-  color: var(--color-wisteria);
-} */
-
 .header-nav__link:active {
   background-color: transparent;
   color: var(--color-studio);
@@ -97,10 +87,10 @@
 
 .login {
   padding: 5px 6px 5px 7px;
-  font-size: 18px;
-  line-height: 1;
   text-align: center;
   color: var(--color-white);
+  font-size: 18px;
+  line-height: 1;
   transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
@@ -116,16 +106,6 @@
   outline: none;
   background-color: var(--color-studio);
 }
-
-/* .login:hover {
-  color: var(--color-wisteria);
-  background-color: transparent;
-} */
-
-/* .login:hover .login-svg_color {
-  fill: var(--color-wisteria);
-} */
-
 
 .login:active {
   color: var(--color-amethyst);
@@ -210,14 +190,14 @@
 
 .header-bottom__container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 1640px;
+  justify-content: space-between;
   margin: 0 auto;
   padding: 0 12px;
   padding-top: 22px;
   padding-right: 22px;
   padding-bottom: 20px;
+  max-width: 1640px;
 }
 
 .header-bottom-nav__list {
@@ -246,9 +226,9 @@
   display: inline-flex;
   align-items: center;
   padding: 4px 22px 4px 7px;
+  color: var(--color-white);
   font-size: 18px;
   line-height: 1;
-  color: var(--color-white);
   transition: color 0.3s ease-in-out;
 }
 
@@ -269,14 +249,6 @@
   background-color: var(--color-studio);
 }
 
-/* .header-bottom-nav__btn:hover {
-  color: var(--color-wisteria);
-} */
-
-/* .header-bottom-nav__btn:hover::after {
-  border-color: var(--color-wisteria);
-} */
-
 .rotait::after {
   transform: rotate(225deg) translate(-3px,-4px);
 }
@@ -286,9 +258,9 @@
   top:47px;
   left: 8px;
   display: block;
-  visibility: hidden;
   padding: 40px 20px 40px 40px;
   background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -299,8 +271,8 @@
 }
 
 .dropdown__list {
-  max-height: 220px;
   min-width: 240px;
+  max-height: 220px;
   overflow: auto;
 }
 
@@ -316,15 +288,15 @@
   width: 220px;
   height: 40px;
   border: 2px solid  transparent;
+  color: var(--color-white);
   font-weight: 600;
   font-size: 14px;
-  color: var(--color-white);
   transition: border 0.3s ease-in-out;
 }
 
 .dropdown__link:focus-visible {
-  outline: none;
   border: 2px solid  var(--color-amethyst);
+  outline: none;
 }
 
 .dropdown__link:after {
@@ -334,9 +306,9 @@
   right: 0;
   bottom: 0;
   left: 0;
+  border: 2px solid var(--color-mauve);
   background-color: transparent;
   background-image: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
-  border: 2px solid var(--color-mauve);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -460,10 +432,6 @@
   transform: translateY(-1px);
 }
 
-/* .search-form:hover .search-form__field {
-  border-color: var(--color-wisteria);
-} */
-
 .search-form:active .search-form__field {
   border-color: var(--color-wisteria);
 }
@@ -482,22 +450,20 @@
 }
 
 .search-form__field {
-  /* padding: 10px 0; */
+  width: 100%;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.85);
-  /* width: 219px; */
-  width: 100%;
+  color: rgba(255, 255, 255, 0.85);
   font-size: 18px;
   line-height: 25px;
-  color: rgba(255, 255, 255, 0.85);
   background: transparent;
-  transition: border-color 0.3s ease-in-out;
   cursor: pointer;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .search-form__field:focus-visible {
-  outline: none;
   border-color: var(--color-wisteria);
+  outline: none;
   cursor: none;
 }
 
@@ -510,9 +476,9 @@
 }
 
 .search-form__field::placeholder {
+  color: rgba(255, 255, 255, 0.85);
   font-size: 18px;
   line-height: 1;
-  color: rgba(255, 255, 255, 0.85);
   transition: color 0.3s ease-in-out;
 }
 

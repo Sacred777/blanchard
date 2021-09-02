@@ -42,9 +42,9 @@
   }
 
   .gallery-filter__descr--wisteria:hover {
+    border-color: currentColor;
     color: var(--color-amethyst);
     background-color: transparent;
-    border-color: currentColor;
   }
 
   .swiper-button-gray:hover .swiper-button-gray__background {
@@ -53,8 +53,8 @@
   }
 
   .gallery-swiper-slide:hover::after {
-    opacity: 1;
     z-index: 2;
+    opacity: 1;
   }
 
   .tabs__btn:hover {
@@ -62,9 +62,9 @@
   }
 
   .artist-card__link:hover {
+    border-color: var(--color-wisteria);
     color: var(--color-wisteria);
     background-color: transparent;
-    border-color: var(--color-wisteria);
   }
 
   .ui-accordion-header-collapsed:hover {
@@ -81,26 +81,26 @@
   }
 
   .accordion__btn:hover {
-    color: var(--color-amethyst);
     border-color: currentColor;
+    color: var(--color-amethyst);
     background-color: transparent;
   }
 
   .accordion-content__link:hover {
+    border-color: var(--color-wisteria);
     color: var(--color-wisteria);
     background-color: transparent;
-    border-color: var(--color-wisteria);
   }
 
   .event-card__link:hover {
+    box-shadow: none;
     color: var(--color-studio);
     background-color: transparent;
-    box-shadow: none;
   }
 
   .event__btn:hover {
-    color: var(--color-white);
     border-color: var(--color-amethyst);
+    color: var(--color-white);
     background-color: var(--color-amethyst);
   }
 
@@ -120,9 +120,9 @@
   }
 
   .editions-slide__btn:hover {
+    border-color: var(--color-amethyst);
     cursor: pointer;
     background-color: var(--color-amethyst);
-    border-color: var(--color-amethyst);
   }
 
   .editions-slide__btn:hover::after {
@@ -131,9 +131,8 @@
 
   .projects-tooltip:hover .projects-tooltip__text,
   .projects-tooltip:hover .projects-tooltip__btn::before {
-    /* transform: translateX(-50%); */
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
   }
 
   .projects-tooltip:hover .projects-tooltip__background {
@@ -141,10 +140,10 @@
   }
 
   .projects-site__link:hover {
+    border-color: var(--color-amethyst);
+    box-shadow: none;
     color: var(--color-amethyst);
     background-color: var(--color-white);
-    box-shadow: none;
-    border-color: var(--color-amethyst);
   }
 
   .swiper-button-light:hover:not(.swiper-button-disabled) .swiper-button-light__backgroud {
@@ -161,9 +160,9 @@
   }
 
   .contacts-form__btn:hover {
+    border-color: var(--color-amethyst);
     color: var(--color-white);
     background-color: var(--color-amethyst);
-    border-color: var(--color-amethyst);
   }
 
   .contacts-form__btn:hover::after {

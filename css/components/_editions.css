@@ -28,9 +28,9 @@
 .categories__title {
   margin: 0;
   padding: 0;
+  color: var(--color-white);
   font-weight: 700;
   line-height: 32px;
-  color: var(--color-white);
 }
 
 .categories__wrap {
@@ -42,11 +42,6 @@
 .categories__label {
   color: var(--color-white);
 }
-
-/* .categories__label:hover {
-  cursor: pointer;
-  color: var(--color-wisteria);
-} */
 
 .categories__input {
   position: absolute;
@@ -115,10 +110,10 @@
 
 .price__title {
   margin-bottom: 7px;
+  color: var(--color-white);
   font-weight: 700;
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-white);
 }
 
 .price__form {
@@ -135,17 +130,16 @@
 
 .price-label__name {
   padding: 0 10px;
-  line-height: 32px;
   color: var(--color-white);
+  line-height: 32px;
 }
-
 
 .price-label__input {
   padding-left: 8px;
   max-width: 73px;
-  line-height: 32px;
-  color: var(--color-white);
   border: 1px solid transparent;
+  color: var(--color-white);
+  line-height: 32px;
   background-color: rgba(157, 92, 208, 0.5);
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 }
@@ -156,16 +150,10 @@
 }
 
 .price-label__input:focus {
-  outline: none;
   border-color: var(--color-white);
+  outline: none;
   background-color: var(--color-amethyst);
 }
-
-/* .price-label__input:hover {
-  border-color: transparent;
-  background-color: var(--color-amethyst);
-  cursor: pointer;
-} */
 
 .price-label__input:active {
   background-color: var(--color-studio);
@@ -173,8 +161,8 @@
 
 .price__currency {
   padding: 0 10px;
-  line-height: 32px;
   color: var(--color-white);
+  line-height: 32px;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -191,13 +179,11 @@ input[type="number"]:focus {
   -moz-appearance: number-input;
 }
 
-/* Slider */
 .editions-right {
   position: relative;
   margin: 0;
   margin-bottom: 10px;
   padding-top: 22px;
-  /* max-width: 1150px; */
   width: 72%;
   height: auto;
 }
@@ -234,9 +220,9 @@ input[type="number"]:focus {
   display: inline-block;
   margin-right: 20px;
   width: auto;
+  color: var(--color-white);
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-white);
 }
 
 .editions-button__next.swiper-button-disabled,
@@ -248,7 +234,6 @@ input[type="number"]:focus {
   display: flex;
   flex-direction: column;
   padding-bottom: 5px;
-
 }
 
 .editions-slide__img {
@@ -273,9 +258,9 @@ input[type="number"]:focus {
 }
 
 .editions-slide__price {
+  color: var(--color-white);
   font-style: italic;
   line-height: 22px;
-  color: var(--color-white);
   white-space: nowrap;
 }
 
@@ -287,10 +272,6 @@ input[type="number"]:focus {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.editions-slide-btn__wrap {
-  /* padding-left: 3px; */
 }
 
 .editions-slide__btn {
@@ -319,18 +300,8 @@ input[type="number"]:focus {
   opacity: 1;
 }
 
-/* .editions-slide__btn:hover {
-  cursor: pointer;
-  background-color: var(--color-amethyst);
-  border-color: var(--color-amethyst);
-} */
-
-/* .editions-slide__btn:hover::after {
-  opacity: 0;
-} */
-
 .editions-slide__btn:active {
   padding: 6px 18px;
-  background-color: var(--color-studio);
   border: 3px solid var(--color-mauve);
+  background-color: var(--color-studio);
 }

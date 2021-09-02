@@ -1,19 +1,18 @@
 .projects__container {
-  /* padding: 89px 0; */
-  padding-bottom: 89px;
   padding-top: 89px;
+  padding-bottom: 89px;
 }
 
 .projects__title {
-  padding-left: 1px;
   margin-bottom: 25px;
+  padding-left: 1px;
 }
 
 .projects__info {
   margin-bottom: 18px;
   max-width: 1079px;
-  line-height: 32px;
   color: var(--color-night-rider);
+  line-height: 32px;
 }
 
 .projects-tooltip {
@@ -31,16 +30,15 @@
   left: 50%;
   bottom: calc(100% + 6px);
   padding: 10px 7px;
+  text-align: center;
   width: 264px;
+  color: var(--color-white);
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;
-  text-align: center;
-  color: var(--color-white);
   background-color: var(--color-amethyst);
-  /* transform: translateX(-50%); */
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
@@ -58,8 +56,8 @@
   border-style: solid;
   border-width: 8px 7px 0 7px;
   border-color: var(--color-amethyst) transparent transparent transparent;
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
   transform: translateX(-50%);
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -68,13 +66,8 @@
   position: absolute;
   bottom: -25px;
   left: 50%;
-  /* width: 0; */
-  /* height: 0; */
-  /* border-style: solid; */
-  /* border-width: 8px 7px 0 7px; */
-  /* border-color: var(--color-amethyst) transparent transparent transparent; */
-  opacity: 0;
   visibility: hidden;
+  opacity: 0;
   transform: translateX(-50%);
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -101,25 +94,14 @@
 
 .projects-tooltip__btn:focus + .projects-tooltip__text,
 .projects-tooltip__btn:focus::before {
-  /* transform: initial; */
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
-
-/* .projects-tooltip:hover .projects-tooltip__text,
-.projects-tooltip:hover .projects-tooltip__btn::before {
-  opacity: 1;
-  visibility: visible;
-} */
-
-/* .projects-tooltip:hover .projects-tooltip__background {
-  fill: var(--color-mauve);
-} */
 
 .projects-tooltip:active .projects-tooltip__text,
 .projects-tooltip:active .projects-tooltip__btn::before {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 
 .projects-tooltip:active .projects-tooltip__color {
@@ -147,36 +129,28 @@
 }
 
 .projects-site__link:focus-visible {
+  box-shadow: 0px 0px 0px 2px var(--color-amethyst);
   outline: none;
   color: var(--color-white);
   background-color: var(--color-amethyst);
-  box-shadow: 0px 0px 0px 2px var(--color-amethyst);
 }
 
-/* .projects-site__link:hover {
-  color: var(--color-amethyst);
-  background-color: var(--color-white);
-  box-shadow: none;
-  border-color: var(--color-amethyst);
-} */
-
 .projects-site__link:active {
+  border-color: var(--color-studio);
+  box-shadow: none;
   color: var(--color-studio);
   background-color: var(--color-white);
-  box-shadow: none;
-  border-color: var(--color-studio);
 }
 
 .projects__subtitle {
   margin-bottom: 23px;
   padding-left: 1px;
+  color: var(--color-night-rider);
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  color: var(--color-night-rider);
 }
 
-/* Slider */
 .projects-slider{
   position: relative;
 }
@@ -207,11 +181,6 @@
   stroke: var(--color-amethyst);
 }
 
-/* .swiper-button-light:hover:not(.swiper-button-disabled) .swiper-button-light__backgroud {
-  fill: var(--color-mauve);
-  stroke: var(--color-mauve);
-} */
-
 .swiper-button-light:active .swiper-button-light__backgroud {
   fill: var(--color-mauve);
   stroke: var(--color-amethyst);
@@ -225,7 +194,6 @@
 .projects-swiper-container {
   margin: 0 auto;
   padding: 0 15px;
-  /* max-width: 1480px; */
   width: 92.4%;
 }
 
@@ -235,7 +203,3 @@
   filter: grayscale(100%);
   transition: filter 0.3s ease-in-out;
 }
-
-/* .partners-slide__logo:hover {
-  filter: grayscale(0%);
-} */

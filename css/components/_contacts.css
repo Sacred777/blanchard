@@ -29,19 +29,19 @@
 
 .office-title {
   margin-bottom: 3px;
+  color: var(--color-night-rider);
   font-weight: 600;
   font-size: 24px;
   line-height: 32px;
-  color: var(--color-night-rider);
 }
 
 .office-address {
   margin-bottom: 29px;
+  color: var(--color-night-rider);
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-night-rider);
 }
 
 .contacts-form__fieldset {
@@ -51,22 +51,15 @@
 }
 
 .contacts-form__legend {
+  color: var(--color-night-rider);
   font-size: 24px;
   line-height: 32px;
-  color: var(--color-night-rider);
 }
 
 .contacts-form__label {
   position: relative;
   max-width: 400px;
 }
-
-/* .contacts-form__wrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 23px 0;
-} */
 
 .contacts-form__label {
   display: inline-block;
@@ -84,20 +77,16 @@
 }
 
 .contacts-form__input::placeholder {
+  color: var(--color-nobel);
   font-weight: normal;
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-nobel);
 }
 
 .contacts-form__input:focus-visible {
   outline: none;
   background-color: var(--color-whisp);
 }
-
-/* .contacts-form__input:hover {
-  background-color: var(--color-whisp);
-} */
 
 .contacts-form__input:active {
   background-color: transparent;
@@ -114,9 +103,9 @@
 .contacts-form__btn {
   align-self: flex-start;
   padding: 15px 33px;
+  color: var(--color-amethyst);
   font-size: 18px;
   line-height: 25px;
-  color: var(--color-amethyst);
   transition-property: color, border-color, background-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -143,21 +132,11 @@
   opacity: 1;
 }
 
-/* .contacts-form__btn:hover {
-  color: var(--color-white);
-  background-color: var(--color-amethyst);
-  border-color: var(--color-amethyst);
-} */
-
-/* .contacts-form__btn:hover::after {
-  opacity: 0;
-} */
-
 .contacts-form__btn:active {
   padding: 14px 32px;
   color: var(--color-white);
-  background-color: var(--color-studio);
   border: 3px solid var(--color-mauve);
+  background-color: var(--color-studio);
 }
 
 .messengers {
@@ -166,10 +145,10 @@
 
 .messengers__title {
   margin-bottom: 15px;
+  color: var(--color-night-rider);
   font-weight: 400;
   font-size: 24px;
   line-height: 32px;
-  color: var(--color-night-rider);
 }
 
 .messengers__list {
@@ -182,8 +161,6 @@
 }
 
 .messenger__link {
-  /* display: inline-block; */
-  /* margin-right: 16px; */
   width: 40px;
   height: 40px;
   border-radius: 100%;
@@ -197,13 +174,9 @@
   opacity: 0.6;
 }
 
-/* .messenger__link:hover {
-  opacity: 0.6;
-} */
-
 .messenger__link:active {
-  opacity: 1;
   box-shadow: 0 0 0 1px #9643A4;
+  opacity: 1;
 }
 
 .contacts-right {

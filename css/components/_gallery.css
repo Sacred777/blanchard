@@ -29,10 +29,10 @@
   display: block;
   margin-bottom: 10px;
   padding-left: 1px;
+  color: var(--color-white);
   font-weight: 600;
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-white);
 }
 
 .choices {
@@ -44,9 +44,9 @@
   min-height: 40px;
   border-radius: 6px;
   border: 1px solid var(--color-white);
+  color: var(--color-white);
   font-size: 16px;
   line-height: 14px;
-  color: var(--color-white);
   background-color: transparent;
   transition: background-color 0.3s ease-in-out;
 }
@@ -54,10 +54,6 @@
 .choices:focus {
   background-color: rgba(255, 255, 255, 0.2);
 }
-
-/* .choices__inner:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-} */
 
 .choices__list--single {
   padding-left: 7px;
@@ -69,7 +65,6 @@
 }
 
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
-  /* background-color: rgba(255, 255, 255, 0.2); */
   background-color: transparent;
 }
 
@@ -116,13 +111,13 @@
 }
 
 .gallery-filter__descr {
-  font-weight: 600;
   color: var(--color-white);
+  font-weight: 600;
 }
 
 .gallery-filter__descr--wisteria {
-  color: var(--color-wisteria);
   border-bottom: 2px solid transparent;
+  color: var(--color-wisteria);
   transition-property: color, background-color, border-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -134,22 +129,14 @@
   background-color: var(--color-amethyst);
 }
 
-/* .gallery-filter__descr--wisteria:hover {
-  color: var(--color-amethyst);
-  background-color: transparent;
-  border-color: currentColor;
-} */
-
 .gallery-filter__descr--wisteria:active {
   color: var(--color-studio);
   background-color: transparent;
 }
 
-/* Слайдер */
 .gallery-slider {
   position: relative;
   margin: 0;
-  /* margin-bottom: 4px; */
   padding-top: 6px;
   padding-bottom: 9px;
   padding-left: 3px;
@@ -196,9 +183,9 @@
   display: inline-block;
   margin-right: 18px;
   width: auto;
+  color: var(--color-white);
   font-size: 16px;
   line-height: 32px;
-  color: var(--color-white);
 }
 
 .swiper-button-prev:focus,
@@ -226,11 +213,6 @@
   stroke: var(--color-black);
 }
 
-/* .swiper-button-gray:hover .swiper-button-gray__background {
-  fill: var(--color-amethyst);
-  stroke: var(--color-amethyst);
-} */
-
 .swiper-button-gray:active .swiper-button-gray__background {
   fill: var(--color-studio);
   stroke: var(--color-black);
@@ -238,10 +220,8 @@
 
 .gallery-swiper-slide {
   position: relative;
-  display: block;
-  /* height: 350px; */
-  /* width: 350px; */
   z-index: 2;
+  display: block;
   cursor: pointer;
 }
 
@@ -252,9 +232,9 @@
   right: 0;
   left: 0;
   bottom: 0;
+  border: 2px solid var(--color-mauve);
   opacity: 0;
   background: linear-gradient(0deg, rgba(194, 131, 243, 0.4), rgba(194, 131, 243, 0.4));
-  border: 2px solid var(--color-mauve);
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -267,26 +247,21 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 1;
   width: 86%;
   height: 86%;
   background-image: url(../../img/gallery_slide_hover.svg);
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0;
-  z-index: 1;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
   transform: translate(-50%,-50%);
   transition: opacity 0.3s ease-in-out;
 }
 
-/* .gallery-swiper-slide:hover::after {
-  opacity: 1;
-  z-index: 2;
-} */
-
 .gallery-swiper-slide:focus::after {
-  opacity: 1;
   z-index: 2;
+  opacity: 1;
 }
 
 .gallery-swiper-slide:focus {

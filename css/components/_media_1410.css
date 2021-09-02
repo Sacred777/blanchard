@@ -1,4 +1,5 @@
 @media (max-width: 1410px) {
+
   .logo__link {
     margin-right: 30px;
   }
@@ -28,20 +29,11 @@
   }
 
   .accordion-right__wrap {
-    /* padding: 41px 0; */
     width: 55%;
   }
 
   .events__list {
     gap: 27px;
-  }
-
-  .events__item {
-    /* width: calc((100% - 60px) / 3); */
-  }
-
-  .events__item:not(:nth-child(3n)) {
-    /* margin-right: 30px; */
   }
 
   .editions-left {

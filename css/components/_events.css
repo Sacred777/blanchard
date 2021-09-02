@@ -16,8 +16,6 @@
 }
 
 .events__list {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 50px;
@@ -25,8 +23,6 @@
 
 .events__item {
   display: flex;
-  /* margin-bottom: 50px; */
-  /* width: calc((100% - 100px) / 3); */
   transition: visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
@@ -36,10 +32,6 @@
 
 .events__item_visible:nth-child(1n+4) {
   display: flex;
-}
-
-.events__item:not(:nth-child(3n)) {
-  /* margin-right: 50px; */
 }
 
 .event-card {
@@ -59,11 +51,10 @@
 .event-card__place,
 .event-card__time {
   display: block;
-  /* padding-right: 18px; */
   text-align: right;
+  color: var(--color-nobel);
   font-size: 12px;
   line-height: 16px;
-  color: var(--color-nobel);
 }
 
 .event-card__info {
@@ -76,23 +67,23 @@
 
 .event-card__title {
   margin-bottom: 3px;
+  color: var(--color-night-rider);
   font-weight: 600;
   font-size: 24px;
   line-height: 33px;
-  color: var(--color-night-rider);
 }
 
 .event-card__descr {
   margin-bottom: auto;
   padding-bottom: 5px;
-  line-height: 32px;
   color: var(--color-night-rider);
+  line-height: 32px;
 }
 
 .event-card__link {
   line-height: 23px;
-  color: var(--color-amethyst);
   border-bottom: 1px solid currentColor;
+  color: var(--color-amethyst);
   transition-property: color, border-color, box-shadow, background-color;
   transition-duration: 0.3s;
   transition-timing-function: ease-in-out;
@@ -104,12 +95,6 @@
   background-color: var(--color-amethyst);
   box-shadow: 0 0 0 8px var(--color-amethyst);
 }
-
-/* .event-card__link:hover {
-  color: var(--color-studio);
-  background-color: transparent;
-  box-shadow: none;
-} */
 
 .event-card__link:active {
   color: var(--color-night-rider);
@@ -151,21 +136,11 @@
   opacity: 1;
 }
 
-/* .event__btn:hover {
-  color: var(--color-white);
-  border-color: var(--color-amethyst);
-  background-color: var(--color-amethyst);
-} */
-
-/* .event__btn:hover::after {
-  opacity: 0;
-} */
-
 .event__btn:active {
   padding: 14px 33px;
+  border: 3px solid var(--color-mauve)
   color: var(--color-white);
   background-color: var(--color-studio);
-  border: 3px solid var(--color-mauve)
 }
 
 .events-swiper-pagination .swiper-pagination-bullet {
