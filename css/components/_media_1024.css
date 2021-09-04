@@ -402,6 +402,7 @@
     margin-right: 30px;
   }
 
+  .messenger__link,
   .messenger__link-svg {
     width: 60px;
     height: 60px;
